@@ -16,11 +16,31 @@ class _HomescreenState extends State<Homescreen> {
     //"https://static.vecteezy.com/system/resources/previews/000/621/356/original/vector-online-shop-or-ecommerce-landing-page-template.jpg"
   ];
   int currentIndex = 0;
+
+  int currentIndeex = 0;
+
+  final List<Movie> movies = [
+    Movie(
+      image: "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/sisu-road-to-revenge-et00448820-1766416553.jpg",
+      title: "Sisu: Road to Revenge",
+      info: "1h 31m • Action, War • A • English",
+      description:
+          "Follows an ex-soldier who finds gold in the Lapland wilderness...",
+    ),
+    Movie(
+      image:
+          "https://tse4.mm.bing.net/th/id/OIP.DSxaEsag2WTpL-u3ekr1jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
+      title: "Action Hero",
+      info: "2h 10m • Action • UA • English",
+      description: "A gripping action thriller with intense sequences...",
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.amber,
       appBar: AppBar(
+        //backgroundColor: Colors.transparent,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -71,7 +91,7 @@ class _HomescreenState extends State<Homescreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                color: Colors.amber,
+               // color: Colors.amber,
                 height: 90,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -338,7 +358,7 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 12),
 
             Container(
-              color: Colors.green,
+             // color: Colors.green,
               height: 260,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -826,7 +846,7 @@ class _HomescreenState extends State<Homescreen> {
                       colors: [
                         Color(0xFF0E0E0E),
                         Color(0xFF1C1C1C),
-                       // Color(0xFF0B0B0B),
+                        // Color(0xFF0B0B0B),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
@@ -899,50 +919,378 @@ class _HomescreenState extends State<Homescreen> {
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
             ),
+            SizedBox(height: 12),
 
             Container(
-              height: 150,
-              child: ListView.builder(
-                itemCount: 3,
+              height: 130,
+              child: ListView(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 240,
-                    margin: const EdgeInsets.only(right: 16),
-                    padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.only(left: 16),
+                children: [
+                  Container(
+                    width: 180,
+                    margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(20),
                       gradient: LinearGradient(
-                        colors: [Color(0xFF7AA1D2), Color(0xFF8EC5FC)],
+                        colors: [Color(0xFF1C1B5A), Color(0xFF3A3A9A)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Stack(
                       children: [
-                        Text(
-                          "title",
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            height: 1.2,
+                        /// Right Image
+                        Positioned(
+                          right: 10,
+                          bottom: 10,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.network(
+                              "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
+                              height: 80,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                        const Spacer(),
-
-                        Text(
-                          "subtitle",
-                          style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
+                        Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "ICC MEN'S\nT20WC\n2026",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  );
+                  ),
+                  Container(
+                    width: 180,
+                    margin: const EdgeInsets.only(right: 12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        colors: [Color(0xFFA9920E), Color(0xFFCC9E2A)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        /// Right Image
+                        Positioned(
+                          right: -10,
+                          bottom: 0,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.network(
+                              "https://tse2.mm.bing.net/th/id/OIP.96jH1Pm_2tgNBPSPNMjZsAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+                              height: 130,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "COMEDY\nSHOWS",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              //SizedBox(height: 8),
+                              Text(
+                                "3 Events",
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 170,
+                    margin: const EdgeInsets.only(right: 12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        colors: [Color(0xFF7FA8D8), Color(0xFF5E85C5)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        /// Right Image
+                        Positioned(
+                          right: 10,
+                          bottom: 0,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.network(
+                              "https://static.vecteezy.com/system/resources/previews/023/499/158/non_2x/woman-with-headphone-isolated-generative-ai-png.png",
+                              height: 130,
+                              fit: BoxFit.fitWidth,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "MUSIC\nSHOWS",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              //SizedBox(height: 8),
+                              Text(
+                                "15+ Events",
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 160,
+                    margin: const EdgeInsets.only(right: 12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        colors: [Color(0xFF3683DB), Color(0xFF173361)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        /// Right Image
+                        Positioned(
+                          left: 65,
+                          bottom: 1,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.network(
+                              "https://th.bing.com/th/id/R.a88861a27cabb8e2c2301b7f94ac743f?rik=3%2byWHFV6858lsg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2017%2f03%2fKids-Free-PNG-Image.png&ehk=mmYJJ281fFhO0FtH4PhE%2fDc0MFDNtosXINJWdz%2fQPKM%3d&risl=&pid=ImgRaw&r=0",
+                              height: 130,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "KIDS",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              //SizedBox(height: 8),
+                              Text(
+                                "6 Events",
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 15),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                "Watch Top Movies Online",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: Text(
+                "Buy or Rent movies on BMS STREAM",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+
+            const SizedBox(height: 16),
+
+            /// Carousel
+            CarouselSlider.builder(
+              itemCount: movies.length,
+              options: CarouselOptions(
+                //autoPlay: true,
+                height: 320,
+                viewportFraction: 1,
+                enableInfiniteScroll: false,
+                onPageChanged: (index, reason) {
+                  setState(() => currentIndex = index);
                 },
+              ),
+              itemBuilder: (context, index, _) {
+                final movie = movies[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          /// Poster
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Stack(
+                              children: [
+                                Image.network(
+                                  movie.image,
+                                  height: 250,
+                                  width: 170,
+                                  fit: BoxFit.cover,
+                                ),
+                                Positioned(
+                                  bottom: 1,
+                                  left: 0,
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 4,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(2),
+                                    ),
+                                    child: const Text(
+                                      "PREMIERE",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 12),
+
+                          /// Details
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  movie.title,
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  movie.info,
+                                  style: const TextStyle(color: Colors.grey),
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  movie.description,
+                                  maxLines: 4,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      /// Buy or Rent Button
+                      OutlinedButton(
+                        onPressed: () {},
+                        style: OutlinedButton.styleFrom(
+                          minimumSize: const Size(double.infinity, 48),
+                          side: const BorderSide(color: Colors.red),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: const Text(
+                          "Buy or Rent",
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+
+            const SizedBox(height: 12),
+
+            /// Dot Indicator
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                movies.length,
+                (index) => Container(
+                  width: currentIndex == index ? 10 : 8,
+                  height: 8,
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: currentIndex == index
+                        ? Colors.black
+                        : Colors.grey.shade400,
+                  ),
+                ),
               ),
             ),
           ],
@@ -950,4 +1298,18 @@ class _HomescreenState extends State<Homescreen> {
       ),
     );
   }
+}
+
+class Movie {
+  final String image;
+  final String title;
+  final String info;
+  final String description;
+
+  Movie({
+    required this.image,
+    required this.title,
+    required this.info,
+    required this.description,
+  });
 }

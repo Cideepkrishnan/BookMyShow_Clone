@@ -11,7 +11,13 @@ class _MoviesState extends State<Movies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+     // backgroundColor: Colors.green,
+     appBar: AppBar(
+      title: Text("Now Showing"),
+      actions: [
+        IconButton(onPressed: (){}, icon: Icon(Icons.search))
+      ],
+     ),
     );
   }
 }
