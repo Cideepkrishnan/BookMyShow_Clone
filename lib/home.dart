@@ -21,7 +21,8 @@ class _HomescreenState extends State<Homescreen> {
 
   final List<Movie> movies = [
     Movie(
-      image: "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/sisu-road-to-revenge-et00448820-1766416553.jpg",
+      image:
+          "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/sisu-road-to-revenge-et00448820-1766416553.jpg",
       title: "Sisu: Road to Revenge",
       info: "1h 31m • Action, War • A • English",
       description:
@@ -91,7 +92,7 @@ class _HomescreenState extends State<Homescreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-               // color: Colors.amber,
+                // color: Colors.amber,
                 height: 90,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -358,7 +359,7 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 12),
 
             Container(
-             // color: Colors.green,
+              // color: Colors.green,
               height: 260,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -922,16 +923,17 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 12),
 
             Container(
-              height: 130,
+              height: 100,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(left: 16),
                 children: [
                   Container(
-                    width: 180,
+                    width: 150,
+                     clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(14),
                       gradient: LinearGradient(
                         colors: [Color(0xFF1C1B5A), Color(0xFF3A3A9A)],
                         begin: Alignment.topLeft,
@@ -942,24 +944,24 @@ class _HomescreenState extends State<Homescreen> {
                       children: [
                         /// Right Image
                         Positioned(
-                          right: 10,
+                          right: 5,
                           bottom: 10,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(14),
                             child: Image.network(
                               "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
-                              height: 80,
+                              height: 55,
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 16.0,left: 13),
+                              child: Text(
                                 "ICC MEN'S\nT20WC\n2026",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -967,19 +969,20 @@ class _HomescreenState extends State<Homescreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    width: 180,
+                    width: 150,
+                    clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(14),
                       gradient: LinearGradient(
-                        colors: [Color(0xFFA9920E), Color(0xFFCC9E2A)],
+                        colors: [Color(0xFFDAC23E), Color.fromARGB(255, 215, 171, 60)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -988,24 +991,24 @@ class _HomescreenState extends State<Homescreen> {
                       children: [
                         /// Right Image
                         Positioned(
-                          right: -10,
-                          bottom: 0,
+                          right: -30,
+                          bottom: -20,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(14),
                             child: Image.network(
-                              "https://tse2.mm.bing.net/th/id/OIP.96jH1Pm_2tgNBPSPNMjZsAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
-                              height: 130,
-                              fit: BoxFit.fitHeight,
+                              "https://static.vecteezy.com/system/resources/previews/052/879/272/non_2x/young-man-in-yellow-shirt-with-glasses-smiling-confidently-png.png",
+                              height: 110,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              child: Text(
                                 "COMEDY\nSHOWS",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -1013,25 +1016,30 @@ class _HomescreenState extends State<Homescreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              //SizedBox(height: 8),
-                              Text(
+                            ),
+                            //SizedBox(height: 8),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              child: Text(
                                 "3 Events",
                                 style: const TextStyle(
                                   color: Colors.white70,
-                                  fontSize: 14,
+                                  fontSize: 10,
+                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    width: 170,
+                    width: 150,
+                     clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(14),
                       gradient: LinearGradient(
                         colors: [Color(0xFF7FA8D8), Color(0xFF5E85C5)],
                         begin: Alignment.topLeft,
@@ -1042,10 +1050,10 @@ class _HomescreenState extends State<Homescreen> {
                       children: [
                         /// Right Image
                         Positioned(
-                          right: 10,
-                          bottom: 0,
+                          right: -15,
+                          bottom: -30,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(14),
                             child: Image.network(
                               "https://static.vecteezy.com/system/resources/previews/023/499/158/non_2x/woman-with-headphone-isolated-generative-ai-png.png",
                               height: 130,
@@ -1053,13 +1061,13 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              child: Text(
                                 "MUSIC\nSHOWS",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -1067,25 +1075,30 @@ class _HomescreenState extends State<Homescreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              //SizedBox(height: 8),
-                              Text(
+                            ),
+                            //SizedBox(height: 8),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              child: Text(
                                 "15+ Events",
                                 style: const TextStyle(
                                   color: Colors.white70,
-                                  fontSize: 14,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    width: 160,
+                    width: 150,
+                    clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(14),
                       gradient: LinearGradient(
                         colors: [Color(0xFF3683DB), Color(0xFF173361)],
                         begin: Alignment.topLeft,
@@ -1099,7 +1112,7 @@ class _HomescreenState extends State<Homescreen> {
                           left: 65,
                           bottom: 1,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(14),
                             child: Image.network(
                               "https://th.bing.com/th/id/R.a88861a27cabb8e2c2301b7f94ac743f?rik=3%2byWHFV6858lsg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2017%2f03%2fKids-Free-PNG-Image.png&ehk=mmYJJ281fFhO0FtH4PhE%2fDc0MFDNtosXINJWdz%2fQPKM%3d&risl=&pid=ImgRaw&r=0",
                               height: 130,
@@ -1107,13 +1120,13 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 32.0,left: 13),
+                              child: Text(
                                 "KIDS",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -1121,16 +1134,20 @@ class _HomescreenState extends State<Homescreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              //SizedBox(height: 8),
-                              Text(
+                            ),
+                            //SizedBox(height: 8),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              child: Text(
                                 "6 Events",
                                 style: const TextStyle(
                                   color: Colors.white70,
-                                  fontSize: 14,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -1161,7 +1178,7 @@ class _HomescreenState extends State<Homescreen> {
             CarouselSlider.builder(
               itemCount: movies.length,
               options: CarouselOptions(
-                //autoPlay: true,
+                autoPlay: true,
                 height: 320,
                 viewportFraction: 1,
                 enableInfiniteScroll: false,
@@ -1291,6 +1308,162 @@ class _HomescreenState extends State<Homescreen> {
                         : Colors.grey.shade400,
                   ),
                 ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                "The Ultimate Events List",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF1F1F1F),
+                ),
+              ),
+            ),
+            // SizedBox(height: 3),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                "Good times outdoor or at home",
+                style: TextStyle(fontSize: 14, color: Color(0xFF6F6F6F)),
+              ),
+            ),
+            SizedBox(height: 16),
+
+            Container(
+              height: 90,
+              // color: Colors.green,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(left: 16),
+                children: [
+                  Container(
+                    width: 150,
+                     clipBehavior: Clip.hardEdge,
+                    margin: const EdgeInsets.only(right: 12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      gradient: LinearGradient(
+                    colors: [Color(0xFF7CA7A9), Color(0xFFBFD9DA)],
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                  ),
+                    ),
+                    child: Stack(
+                      children: [
+                        /// Right Image
+                        Positioned(
+                          right: -10,
+                          bottom: -40,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              "https://www.kindpng.com/picc/b/59-597262_fitness-woman-png.png",
+                              height: 130,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              child: Text(
+                                "WELLNESS\nEVENTS",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800,
+                                  height: 1.2,
+                                ),
+                              ),
+                            ),
+                            Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              child: Text(
+                                "8 Events",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                 fontWeight: FontWeight.w800,
+                                  height: 1.2,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                   Container(
+                    width: 150,
+                     clipBehavior: Clip.hardEdge,
+                    margin: const EdgeInsets.only(right: 12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      gradient: LinearGradient(
+                    colors: [Color(0xFF8D6AAE), Color(0xFFC2A7D8)],
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                    ),
+                    ),
+                    child: Stack(
+                      children: [
+                        /// Right Image
+                        Positioned(
+                          right: -60,
+                          bottom: -70,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.network(
+                              "https://static.vecteezy.com/system/resources/previews/066/305/457/non_2x/group-of-people-smiling-free-png.png",
+                              height: 150,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              child: Text(
+                               "COMEDY MUSIC\n& MORE",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800,
+                                  height: 1.2,
+                                  letterSpacing: -1
+                                ),
+                              ),
+                            ),
+                            Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              child: Text(
+                                "15+ Events",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                 fontWeight: FontWeight.w800,
+                                  height: 1.2,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
