@@ -653,6 +653,7 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 15),
             Container(
               height: 130,
+              //color: Colors.amber,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -661,7 +662,7 @@ class _HomescreenState extends State<Homescreen> {
                     child: Container(
                       width: 120,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(15),
                         child: Stack(
                           children: [
                             /// 🖼 Background Image
@@ -675,13 +676,13 @@ class _HomescreenState extends State<Homescreen> {
 
                             /// 🎨 Color Overlay
                             Positioned.fill(
-                              child: Container(color: Color(0x6CE6A3B3)),
+                              child: Container(color: Color(0x43E6A3B3)),
                             ),
 
                             /// 📝 Text Content
                             Padding(
                               padding: const EdgeInsets.only(
-                                top: 20,
+                                top: 40,
                                 left: 10,
                                 bottom: 5,
                               ),
@@ -720,7 +721,7 @@ class _HomescreenState extends State<Homescreen> {
                       width: 120,
 
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(15),
                         child: Stack(
                           children: [
                             /// 🖼 Background Image
@@ -734,13 +735,13 @@ class _HomescreenState extends State<Homescreen> {
 
                             /// 🎨 Color Overlay
                             Positioned.fill(
-                              child: Container(color: Color(0x8870AF1D)),
+                              child: Container(color: Color(0x6A70AF1D)),
                             ),
 
                             /// 📝 Text Content
                             Padding(
                               padding: const EdgeInsets.only(
-                                top: 20,
+                                top: 40,
                                 left: 10,
                                 bottom: 5,
                               ),
@@ -779,7 +780,7 @@ class _HomescreenState extends State<Homescreen> {
                       width: 120,
 
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(15),
                         child: Stack(
                           children: [
                             /// 🖼 Background Image
@@ -793,13 +794,13 @@ class _HomescreenState extends State<Homescreen> {
 
                             /// 🎨 Color Overlay
                             Positioned.fill(
-                              child: Container(color: Color(0xAB7CB2C0)),
+                              child: Container(color: Color(0x577CB2C0)),
                             ),
 
                             /// 📝 Text Content
                             Padding(
                               padding: const EdgeInsets.only(
-                                top: 20,
+                                top: 40,
                                 left: 10,
                                 bottom: 5,
                               ),
@@ -930,7 +931,7 @@ class _HomescreenState extends State<Homescreen> {
                 children: [
                   Container(
                     width: 150,
-                     clipBehavior: Clip.hardEdge,
+                    clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
@@ -960,7 +961,10 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 16.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                top: 16.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "ICC MEN'S\nT20WC\n2026",
                                 style: TextStyle(
@@ -982,7 +986,10 @@ class _HomescreenState extends State<Homescreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
                       gradient: LinearGradient(
-                        colors: [Color(0xFFDAC23E), Color.fromARGB(255, 215, 171, 60)],
+                        colors: [
+                          Color(0xFFDAC23E),
+                          Color.fromARGB(255, 215, 171, 60),
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -1007,7 +1014,10 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                top: 22.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "COMEDY\nSHOWS",
                                 style: TextStyle(
@@ -1019,13 +1029,16 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                             //SizedBox(height: 8),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                bottom: 4.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "3 Events",
                                 style: const TextStyle(
                                   color: Colors.white70,
                                   fontSize: 10,
-                                   fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -1036,7 +1049,7 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   Container(
                     width: 150,
-                     clipBehavior: Clip.hardEdge,
+                    clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
@@ -1066,7 +1079,10 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                top: 22.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "MUSIC\nSHOWS",
                                 style: TextStyle(
@@ -1078,7 +1094,10 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                             //SizedBox(height: 8),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                bottom: 4.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "15+ Events",
                                 style: const TextStyle(
@@ -1125,7 +1144,10 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 32.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                top: 32.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "KIDS",
                                 style: TextStyle(
@@ -1137,7 +1159,10 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                             //SizedBox(height: 8),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                bottom: 4.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "6 Events",
                                 style: const TextStyle(
@@ -1172,7 +1197,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
 
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
 
             /// Carousel
             CarouselSlider.builder(
@@ -1290,7 +1315,7 @@ class _HomescreenState extends State<Homescreen> {
               },
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12),
 
             /// Dot Indicator
             Row(
@@ -1310,6 +1335,8 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
             ),
+
+            const SizedBox(height: 15),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -1341,15 +1368,15 @@ class _HomescreenState extends State<Homescreen> {
                 children: [
                   Container(
                     width: 150,
-                     clipBehavior: Clip.hardEdge,
+                    clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       gradient: LinearGradient(
-                    colors: [Color(0xFF7CA7A9), Color(0xFFBFD9DA)],
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.topRight,
-                  ),
+                        colors: [Color(0xFF7CA7A9), Color(0xFFBFD9DA)],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      ),
                     ),
                     child: Stack(
                       children: [
@@ -1371,7 +1398,10 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                top: 22.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "WELLNESS\nEVENTS",
                                 style: const TextStyle(
@@ -1384,13 +1414,16 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                             Spacer(),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                bottom: 4.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "8 Events",
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
-                                 fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w800,
                                   height: 1.2,
                                 ),
                               ),
@@ -1401,17 +1434,17 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                   ),
 
-                   Container(
+                  Container(
                     width: 150,
-                     clipBehavior: Clip.hardEdge,
+                    clipBehavior: Clip.hardEdge,
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       gradient: LinearGradient(
-                    colors: [Color(0xFF8D6AAE), Color(0xFFC2A7D8)],
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.topRight,
-                    ),
+                        colors: [Color(0xFF8D6AAE), Color(0xFFC2A7D8)],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      ),
                     ),
                     child: Stack(
                       children: [
@@ -1433,27 +1466,33 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 22.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                top: 22.0,
+                                left: 13,
+                              ),
                               child: Text(
-                               "COMEDY MUSIC\n& MORE",
+                                "COMEDY MUSIC\n& MORE",
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.w800,
                                   height: 1.2,
-                                  letterSpacing: -1
+                                  letterSpacing: -1,
                                 ),
                               ),
                             ),
                             Spacer(),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 4.0,left: 13),
+                              padding: const EdgeInsets.only(
+                                bottom: 4.0,
+                                left: 13,
+                              ),
                               child: Text(
                                 "15+ Events",
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
-                                 fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w800,
                                   height: 1.2,
                                 ),
                               ),
@@ -1466,6 +1505,619 @@ class _HomescreenState extends State<Homescreen> {
                 ],
               ),
             ),
+
+            SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Must-Attend Live Events",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF1F1F1F),
+                    ),
+                  ),
+                  Text(
+                    "See All ›",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFE53935),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12),
+            Container(
+              // color: Colors.green,
+              height: 350,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 150,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 240,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "Sun, 1 Feb",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF6F6F6F),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+
+                              SizedBox(height: 4),
+
+                              /// Title
+                              Text(
+                                "The Lumineers: The Automatic World Tour",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1F1F1F),
+                                ),
+                              ),
+
+                              const SizedBox(height: 2),
+
+                              /// Venue
+                              Text(
+                                "Huda Ground: Gurugram",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF8A8A8A),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+
+            const SizedBox(height: 12),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                "The Laughter Therapy",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF1F1F1F),
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
+
+            Container(
+              //  color: Colors.green,
+              height: 320,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 160,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 240,
+                                    width: 160,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 8,
+                                    left: 8,
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8,
+                                        vertical: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.black.withOpacity(0.8),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: Text(
+                                        "ONLINE",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                "Thu, 29 Jan",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF6F6F6F),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+
+                              SizedBox(height: 4),
+
+                              /// Title
+                              Text(
+                                "Chalta Hai Comedy",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1F1F1F),
+                                ),
+                              ),
+
+                              const SizedBox(height: 2),
+
+                              /// Venue
+                              Text(
+                                "Multiple Venues",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF8A8A8A),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Popular Events",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF1F1F1F),
+                    ),
+                  ),
+                  Text(
+                    "See All ›",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFE53935),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12),
+            Container(
+              //  color: Colors.green,
+              height: 350,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 160,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 240,
+                                    width: 160,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 8,
+                                    left: 8,
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8,
+                                        vertical: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.black.withOpacity(0.8),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: Text(
+                                        "ONLINE",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                "Sun, 4 Jan",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF6F6F6F),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+
+                              SizedBox(height: 4),
+
+                              /// Title
+                              Text(
+                                "Solve the Rubik's Cube, Sharpen 6 Vital Skills",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1F1F1F),
+                                ),
+                              ),
+
+                              const SizedBox(height: 2),
+
+                              /// Venue
+                              Text(
+                                "Upskill",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF8A8A8A),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Top Games & Sports Events",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF1F1F1F),
+                    ),
+                  ),
+                  Text(
+                    "See All ›",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFE53935),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12),
+            Container(
+              // color: Colors.green,
+              height: 340,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 160,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 240,
+                                    width: 160,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 8,
+                                    left: 8,
+                                    child: Icon(
+                                      Icons.copy_outlined,
+                                      color: Colors.white,
+                                      size: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                "Thu, 1 Jan onwards",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF6F6F6F),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+
+                              SizedBox(height: 4),
+
+                              /// Title
+                              Text(
+                                "Chess Tournament",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1F1F1F),
+                                ),
+                              ),
+
+                              const SizedBox(height: 2),
+
+                              /// Venue
+                              Text(
+                                "Chess",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF8A8A8A),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Your Music Studio",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF1F1F1F),
+                    ),
+                  ),
+                  Text(
+                    "See All ›",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFE53935),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12),
+            Container(
+              //  color: Colors.green,
+              height: 360,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 160,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 240,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "Sun, 19 Apr",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF6F6F6F),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+
+                              SizedBox(height: 4),
+
+                              /// Title
+                              Text(
+                                "CALVIN HARRIS - Live in Delhi NCR",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1F1F1F),
+                                ),
+                              ),
+
+                              const SizedBox(height: 2),
+
+                              /// Venue
+                              Text(
+                                "Leisure Valley Ground: Gurgaon",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF8A8A8A),
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+
+                              /// Category
+                              Text(
+                                "Concerts",
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF8A8A8A),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                 Icon(
+              Icons.layers_outlined,
+              size: 18,
+              color: Color(0xFFE53935), // BookMyShow red
+            ),
+                const SizedBox(width: 8),
+            const Text(
+              "Explore All Categories",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFFE53935),
+              ),
+            ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Divider(thickness: 1,),
+            ),
+            const SizedBox(height: 48),
+
+        /// Optional faded watermark (can remove if not needed)
+        Opacity(
+          opacity: 0.20,
+          child: Center(
+            child: Image.network(
+              "https://latestlogo.com/wp-content/uploads/2024/03/bookmyshow.png",
+              height: 40,
+            ),
+          ),
+        ),
+
+        const SizedBox(height: 48),
+
           ],
         ),
       ),
