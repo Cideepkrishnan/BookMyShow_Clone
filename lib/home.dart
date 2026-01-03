@@ -1,3 +1,4 @@
+import 'package:book_my_show/model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -19,23 +20,6 @@ class _HomescreenState extends State<Homescreen> {
 
   int currentIndeex = 0;
 
-  final List<Movie> movies = [
-    Movie(
-      image:
-          "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/sisu-road-to-revenge-et00448820-1766416553.jpg",
-      title: "Sisu: Road to Revenge",
-      info: "1h 31m • Action, War • A • English",
-      description:
-          "Follows an ex-soldier who finds gold in the Lapland wilderness...",
-    ),
-    Movie(
-      image:
-          "https://tse4.mm.bing.net/th/id/OIP.DSxaEsag2WTpL-u3ekr1jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
-      title: "Action Hero",
-      info: "2h 10m • Action • UA • English",
-      description: "A gripping action thriller with intense sequences...",
-    ),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,17 +83,21 @@ class _HomescreenState extends State<Homescreen> {
                   itemCount: 8,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(right: 16),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 28,
-                            backgroundColor: Colors.grey.shade200,
-                            child: Icon(Icons.abc, color: Colors.red),
-                          ),
-                          const SizedBox(height: 6),
-                          Text("label", style: const TextStyle(fontSize: 12)),
-                        ],
+                      padding: const EdgeInsets.only(right: 12),
+                      child: Container(
+                        color: Colors.amber,
+
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 28,
+                              backgroundColor: Colors.grey.shade200,
+                              child: Icon(Icons.abc, color: Colors.red),
+                            ),
+                            const SizedBox(height: 6),
+                            Text("label", style: const TextStyle(fontSize: 12)),
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -249,7 +237,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24),
                 child: Container(
-                  height: 90,
+                  height: 85,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -266,8 +254,8 @@ class _HomescreenState extends State<Homescreen> {
                       /// 🎬 Left Image Section
                       Expanded(
                         flex: 6,
-                        child: Image.network(
-                          "https://www.dvdsreleasedates.com/posters/800/A/Anora-2024-movie-poster.jpg",
+                        child: Image.asset(
+                          "assets/images/Anora.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -356,55 +344,95 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
 
-            SizedBox(height: 12),
+            SizedBox(height: 10),
 
             Container(
-              // color: Colors.green,
-              height: 260,
+             // color: Colors.green,
+              height: 320,
               child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.only(left: 12),
-                itemCount: 3,
+                itemCount: Recomendedmovies.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: 160,
-                    margin: const EdgeInsets.only(right: 12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.network(
-                            banners[index],
-                            height: 200,
-                            fit: BoxFit.cover,
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 175,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 250,
+                                width: 175,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      Recomendedmovies[index]["image"],
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.star,
+                                      color: Colors.red,
+                                      size: 16,
+                                    ),
+                                    const SizedBox(width: 2),
+                                    Text(
+                                      Recomendedmovies[index]["rating"],
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                
+                                    Spacer(),
+                                    //styling separatly for text
+                                    Text(
+                                      Recomendedmovies[index]["votes"],
+                                      style: const TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 3),
+                                    const Text(
+                                      "Votes",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 9,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              SizedBox(height: 4),
+
+                              Text(
+                                Recomendedmovies[index]["title"],
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(height: 6),
-                        Row(
-                          children: [
-                            const Icon(Icons.star, color: Colors.red, size: 16),
-                            const SizedBox(width: 4),
-                            Text("6.9"),
-                            const SizedBox(width: 6),
-                            Text(
-                              "9.2K+ votes",
-                              style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "Movie name",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   );
                 },
               ),
@@ -419,7 +447,7 @@ class _HomescreenState extends State<Homescreen> {
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF3F6FA),
+                    color: const Color(0xF4F3F6FA),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -487,64 +515,61 @@ class _HomescreenState extends State<Homescreen> {
             Padding(
               padding: const EdgeInsets.all(12),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey.shade300),
-                    // borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Column(
-                    // mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.network(
-                        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7a83a72879611.5bf674d4f05f9.jpg",
-                        height: 220,
+                borderRadius: BorderRadius.circular(15),
+                child: Column(
+                  // mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                       height: 220,
                         width: double.infinity,
+                      child: Image.network(
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7a83a72879611.5bf674d4f05f9.jpg",
+                       
                         fit: BoxFit.cover,
                       ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 14,
-                        ),
-                        color: Colors.white,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Apply for the best offer now",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 12),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 48,
-                              child: OutlinedButton(
-                                onPressed: () {},
-                                style: OutlinedButton.styleFrom(
-                                  side: BorderSide(color: Colors.red),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                child: Text(
-                                  "Apply Now",
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 14,
                       ),
-                    ],
-                  ),
+                      color: Colors.white,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Apply for the best offer now",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            height: 48,
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(color: Colors.red),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                              ),
+                              child: Text(
+                                "Apply Now",
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -572,7 +597,7 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 20),
             Container(
               //color: Colors.green,
-              height: 320,
+              height: 340,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(left: 12),
@@ -584,14 +609,19 @@ class _HomescreenState extends State<Homescreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.network(
-                            banners[index],
-                            height: 220,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                       Container(
+                                height: 240,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      banners[index],
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
                         SizedBox(height: 6),
                         Text(
                           index == 0 ? "Wed, 31 Dec" : "Wed, 31 Dec onwards",
@@ -1212,7 +1242,7 @@ class _HomescreenState extends State<Homescreen> {
                 },
               ),
               itemBuilder: (context, index, _) {
-                final movie = movies[index];
+                //final movie = movies[index];
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
@@ -1226,7 +1256,7 @@ class _HomescreenState extends State<Homescreen> {
                             child: Stack(
                               children: [
                                 Image.network(
-                                  movie.image,
+                                 movies[index].image,
                                   height: 250,
                                   width: 170,
                                   fit: BoxFit.cover,
@@ -1265,7 +1295,7 @@ class _HomescreenState extends State<Homescreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  movie.title,
+                                   movies[index].title,
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -1273,12 +1303,12 @@ class _HomescreenState extends State<Homescreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  movie.info,
+                                   movies[index].info,
                                   style: const TextStyle(color: Colors.grey),
                                 ),
                                 const SizedBox(height: 12),
                                 Text(
-                                  movie.description,
+                                  movies[index].description,
                                   maxLines: 4,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -1508,7 +1538,7 @@ class _HomescreenState extends State<Homescreen> {
 
             SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -1536,7 +1566,7 @@ class _HomescreenState extends State<Homescreen> {
               // color: Colors.green,
               height: 350,
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
                 itemBuilder: (context, index) {
@@ -1627,7 +1657,7 @@ class _HomescreenState extends State<Homescreen> {
               //  color: Colors.green,
               height: 320,
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
                 itemBuilder: (context, index) {
@@ -1727,7 +1757,7 @@ class _HomescreenState extends State<Homescreen> {
 
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -1755,7 +1785,7 @@ class _HomescreenState extends State<Homescreen> {
               //  color: Colors.green,
               height: 350,
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
                 itemBuilder: (context, index) {
@@ -1855,7 +1885,7 @@ class _HomescreenState extends State<Homescreen> {
 
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -1883,7 +1913,7 @@ class _HomescreenState extends State<Homescreen> {
               // color: Colors.green,
               height: 340,
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
                 itemBuilder: (context, index) {
@@ -1969,7 +1999,7 @@ class _HomescreenState extends State<Homescreen> {
             ),
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -1997,7 +2027,7 @@ class _HomescreenState extends State<Homescreen> {
               //  color: Colors.green,
               height: 360,
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
                 itemBuilder: (context, index) {
@@ -2078,46 +2108,45 @@ class _HomescreenState extends State<Homescreen> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Icon(
-              Icons.layers_outlined,
-              size: 18,
-              color: Color(0xFFE53935), // BookMyShow red
-            ),
+                Icon(
+                  Icons.layers_outlined,
+                  size: 18,
+                  color: Color(0xFFE53935), // BookMyShow red
+                ),
                 const SizedBox(width: 8),
-            const Text(
-              "Explore All Categories",
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFFE53935),
-              ),
-            ),
+                const Text(
+                  "Explore All Categories",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFFE53935),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Divider(thickness: 1,),
+              child: Divider(thickness: 1),
             ),
             const SizedBox(height: 48),
 
-        /// Optional faded watermark (can remove if not needed)
-        Opacity(
-          opacity: 0.20,
-          child: Center(
-            child: Image.network(
-              "https://latestlogo.com/wp-content/uploads/2024/03/bookmyshow.png",
-              height: 40,
+            /// Optional faded watermark (can remove if not needed)
+            Opacity(
+              opacity: 0.20,
+              child: Center(
+                child: Image.network(
+                  "https://latestlogo.com/wp-content/uploads/2024/03/bookmyshow.png",
+                  height: 40,
+                ),
+              ),
             ),
-          ),
-        ),
 
-        const SizedBox(height: 48),
-
+            const SizedBox(height: 48),
           ],
         ),
       ),
@@ -2125,16 +2154,4 @@ class _HomescreenState extends State<Homescreen> {
   }
 }
 
-class Movie {
-  final String image;
-  final String title;
-  final String info;
-  final String description;
 
-  Movie({
-    required this.image,
-    required this.title,
-    required this.info,
-    required this.description,
-  });
-}
