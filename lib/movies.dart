@@ -1,3 +1,4 @@
+import 'package:book_my_show/model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -19,50 +20,50 @@ class _MoviesState extends State<Movies> {
 
   List<String> itms = ["Malayalam", "English", "Hindi"];
 
-  List<Map<String, dynamic>> movies = [
-    {
-      "image":
-          "https://th.bing.com/th?id=OIF.6f%2bykKGFhK7KmA8g331U%2fg&rs=1&pid=ImgDetMain&o=7&rm=3",
-      "title": "Avatar: Fire and Ash",
-      "rating": "8",
-      "votes": "100K+",
-    },
-    {
-      "image":
-          "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kalamkaval-et00468439-1761645584.jpg",
-      "title": "Kalamkaval",
-      "rating": "8.6",
-      "votes": "60.4K+",
-    },
-    {
-      "image":
-          "https://cdn.trackmyshow.in/movie_data/sarvam-maya/sarvam-maya_portrait.jpg",
-      "title": "Sarvam Maya",
-      "rating": "9.2",
-      "votes": "56.1K+",
-    },
-    {
-      "image":
-          "https://m.media-amazon.com/images/M/MV5BYjdkNWI3MmQtZDRmZC00NWYwLThmYjQtODE2YjQwNzA0Yjg0XkEyXkFqcGc@._V1_.jpg",
-      "title": "Bha Bha Ba",
-      "rating": "7",
-      "votes": "39.7K+",
-    },
-    {
-      "image":
-          "https://cdn.moviefone.com/image-assets/1273274/xmDQj0clWvkPiuvsl9LEwkrFjIA.jpg?d=360x540&q=60",
-      "title": "Haal(Malayalam)",
-      "rating": "8.9",
-      "votes": "1.1K+",
-    },
-    {
-      "image":
-          "http://www.impawards.com/intl/india/2025/posters/dhurandhar.jpg",
-      "title": "Dhurandhar",
-      "rating": "9.3",
-      "votes": "454K+",
-    },
-  ];
+  // List<Map<String, dynamic>> movies = [
+  //   {
+  //     "image":
+  //         "https://th.bing.com/th?id=OIF.6f%2bykKGFhK7KmA8g331U%2fg&rs=1&pid=ImgDetMain&o=7&rm=3",
+  //     "title": "Avatar: Fire and Ash",
+  //     "rating": "8",
+  //     "votes": "100K+",
+  //   },
+  //   {
+  //     "image":
+  //         "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kalamkaval-et00468439-1761645584.jpg",
+  //     "title": "Kalamkaval",
+  //     "rating": "8.6",
+  //     "votes": "60.4K+",
+  //   },
+  //   {
+  //     "image":
+  //         "https://cdn.trackmyshow.in/movie_data/sarvam-maya/sarvam-maya_portrait.jpg",
+  //     "title": "Sarvam Maya",
+  //     "rating": "9.2",
+  //     "votes": "56.1K+",
+  //   },
+  //   {
+  //     "image":
+  //         "https://m.media-amazon.com/images/M/MV5BYjdkNWI3MmQtZDRmZC00NWYwLThmYjQtODE2YjQwNzA0Yjg0XkEyXkFqcGc@._V1_.jpg",
+  //     "title": "Bha Bha Ba",
+  //     "rating": "7",
+  //     "votes": "39.7K+",
+  //   },
+  //   {
+  //     "image":
+  //         "https://cdn.moviefone.com/image-assets/1273274/xmDQj0clWvkPiuvsl9LEwkrFjIA.jpg?d=360x540&q=60",
+  //     "title": "Haal(Malayalam)",
+  //     "rating": "8.9",
+  //     "votes": "1.1K+",
+  //   },
+  //   {
+  //     "image":
+  //         "http://www.impawards.com/intl/india/2025/posters/dhurandhar.jpg",
+  //     "title": "Dhurandhar",
+  //     "rating": "9.3",
+  //     "votes": "454K+",
+  //   },
+  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -295,7 +296,7 @@ class _MoviesState extends State<Movies> {
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: movies.length,
+                itemCount: Recomendedmovies.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 14,
@@ -316,7 +317,7 @@ class _MoviesState extends State<Movies> {
                                   borderRadius: BorderRadius.circular(10),
                                   image: DecorationImage(
                                     image: NetworkImage(
-                                      movies[index]["image"],
+                                      Recomendedmovies[index]["image"],
                                     ),
                                     fit: BoxFit.cover,
                                   ),
@@ -331,12 +332,12 @@ class _MoviesState extends State<Movies> {
                             const Icon(Icons.star, color: Colors.red, size: 16),
                             const SizedBox(width: 4),
                             Text(
-                              movies[index]["rating"],
+                              Recomendedmovies[index]["rating"],
                               style: const TextStyle(fontWeight: FontWeight.bold),
                             ),
                            Spacer(),
                             Text(
-                              "${movies[index]["votes"]}  Votes",
+                              "${Recomendedmovies[index]["votes"]}  Votes",
                               style: const TextStyle(
                                 color: Colors.grey,
                                 fontSize: 12,
@@ -347,7 +348,7 @@ class _MoviesState extends State<Movies> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        movies[index]["title"],
+                        Recomendedmovies[index]["title"],
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(

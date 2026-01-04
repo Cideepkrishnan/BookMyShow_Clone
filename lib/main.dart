@@ -1,4 +1,5 @@
 import 'package:book_my_show/dashbord.dart';
+import 'package:book_my_show/movie_detail.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Dashbord() ,
+      home:MovieDetail()
+     // Dashbord() ,
     );
   }
 }
