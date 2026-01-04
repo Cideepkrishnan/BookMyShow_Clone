@@ -495,7 +495,7 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                             SizedBox(height: 6),
                             Text(
-                              "See what’s playing in cinemas near you",
+                              "See what's playing in cinemas near you",
                               style: TextStyle(
                                 fontSize: 13,
                                 color: Colors.blue,

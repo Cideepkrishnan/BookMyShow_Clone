@@ -1,4 +1,5 @@
 import 'package:book_my_show/model.dart';
+import 'package:book_my_show/movie_detail.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -310,19 +311,24 @@ class _MoviesState extends State<Movies> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child:  Container(
-                                height: 250,
-                                width: 180,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: NetworkImage(
-                                      Recomendedmovies[index]["image"],
+                        child:  InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) =>MovieDetail(movie: DetailMovies[index]) ,));
+                          },
+                          child: Container(
+                                  height: 250,
+                                  width: 180,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        Recomendedmovies[index]["image"],
+                                      ),
+                                      fit: BoxFit.cover,
                                     ),
-                                    fit: BoxFit.cover,
                                   ),
                                 ),
-                              ),
+                        ),
                       ),
                       const SizedBox(height: 1),
                       Padding(
