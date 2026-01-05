@@ -1,4 +1,5 @@
 import 'package:book_my_show/model.dart';
+import 'package:book_my_show/movie_detail.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +15,16 @@ class _HomescreenState extends State<Homescreen> {
     "https://static.vecteezy.com/system/resources/previews/003/599/325/large_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg",
     "https://static.vecteezy.com/system/resources/previews/001/937/403/original/paper-art-shopping-online-on-smartphone-sale-promotion-backgroud-banner-for-market-ecommerce-free-vector.jpg",
     "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
-    //"https://static.vecteezy.com/system/resources/previews/000/621/356/original/vector-online-shop-or-ecommerce-landing-page-template.jpg"
   ];
   int currentIndex = 0;
 
   int currentIndeex = 0;
+
+  List<String> jio = [
+    "assets/images/Anora.jpg",
+    "assets/images/allher.jpg",
+    "assets/images/Landman.jpg",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -211,33 +217,19 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ),
                         ],
-                        //  List.generate(banners.length, (index) {
-                        //   return AnimatedContainer(
-                        //     duration: const Duration(milliseconds: 300),
-                        //     margin: const EdgeInsets.symmetric(horizontal: 4),
-                        //     width: currentIndex == index ? 10 : 8,
-                        //     height: 8,
-                        //     decoration: BoxDecoration(
-                        //       shape: BoxShape.circle,
-                        //       color: currentIndex == index
-                        //           ? Colors.white
-                        //           : Colors.grey,
-                        //     ),
-                        //   );
-                        // }),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            // SizedBox(height: 40),
+            SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(7),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(12),
                 child: Container(
-                  height: 85,
+                  height: 75,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -251,20 +243,44 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   child: Row(
                     children: [
-                      /// 🎬 Left Image Section
                       Expanded(
-                        flex: 6,
-                        child: Image.asset(
-                          "assets/images/Anora.jpg",
-                          fit: BoxFit.cover,
+                        flex: 7,
+                        child: CarouselSlider.builder(
+                          itemCount: banners.length,
+                          itemBuilder: (context, index, realIndex) {
+                            return Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                Image.asset(jio[index], fit: BoxFit.cover),
+                              ],
+                            );
+                          },
+                          options: CarouselOptions(
+                            height: double.infinity,
+                            viewportFraction: 1.1, // VERY IMPORTANT
+                            autoPlay: true,
+                            autoPlayAnimationDuration: Duration(seconds: 2),
+                            scrollPhysics: BouncingScrollPhysics(),
+                            enlargeCenterPage: false,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                currentIndex = index;
+                              });
+                            },
+                          ),
                         ),
+
+                        // child: Image.asset(
+                        //   "assets/images/Anora.jpg",
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
 
                       /// 🎥 Right Content Section
                       Expanded(
                         flex: 4,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -277,38 +293,42 @@ class _HomescreenState extends State<Homescreen> {
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
+                                      fontSize: 13,
                                     ),
                                   ),
-                                  SizedBox(width: 8),
+                                  SizedBox(width: 6),
                                   Text(
                                     "hub",
-                                    style: TextStyle(color: Colors.grey),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.grey,
+                                    ),
                                   ),
                                 ],
                               ),
 
-                              const SizedBox(height: 6),
+                              const SizedBox(height: 5),
 
                               Row(
                                 children: const [
                                   Icon(
                                     Icons.star,
                                     color: Colors.white,
-                                    size: 15,
+                                    size: 13,
                                   ),
-                                  SizedBox(width: 6),
+                                  SizedBox(width: 4),
                                   Text(
                                     "JioHotstar",
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 14,
+                                      fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ],
                               ),
 
-                              const SizedBox(height: 8),
+                              const SizedBox(height: 2),
 
                               /// Watch Now Button
                               Padding(
@@ -316,7 +336,7 @@ class _HomescreenState extends State<Homescreen> {
                                 child: Text(
                                   "WATCH NOW",
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 11,
                                     color: Colors.cyanAccent,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1,
@@ -333,7 +353,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 5),
 
             /// Recommended Movies
             Padding(
@@ -344,10 +364,10 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 5),
 
             Container(
-             // color: Colors.green,
+              // color: Colors.green,
               height: 320,
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -364,16 +384,28 @@ class _HomescreenState extends State<Homescreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                height: 250,
-                                width: 175,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  image: DecorationImage(
-                                    image: NetworkImage(
-                                      Recomendedmovies[index]["image"],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MovieDetail(
+                                        movie: DetailMovies[index],
+                                      ),
                                     ),
-                                    fit: BoxFit.cover,
+                                  );
+                                },
+                                child: Container(
+                                  height: 250,
+                                  width: 175,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        Recomendedmovies[index]["image"],
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -394,7 +426,7 @@ class _HomescreenState extends State<Homescreen> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                
+
                                     Spacer(),
                                     //styling separatly for text
                                     Text(
@@ -445,26 +477,32 @@ class _HomescreenState extends State<Homescreen> {
                   // Navigate to cinema screen
                 },
                 child: Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: const Color(0xF4F3F6FA),
-                    borderRadius: BorderRadius.circular(20),
+                    color: const Color(0xF4DFE7F1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
                     children: [
-                      /// 🎨 Left Illustration
                       Container(
-                        height: 60,
-                        width: 60,
+                        height: 55,
+                        width: 55,
                         decoration: BoxDecoration(
                           color: const Color(0xFFFFE1C7),
                           borderRadius: BorderRadius.circular(16),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              "https://img.freepik.com/vecteurs-premium/cinema-logo_23-2147503279.jpg",
+                            // "assets/images/cinema.jpg"
+                            ),
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                        child: const Icon(
-                          Icons.map_outlined,
-                          size: 34,
-                          color: Colors.redAccent,
-                        ),
+                        // child: const Icon(
+                        //   Icons.map_outlined,
+                        //   size: 34,
+                        //   color: Colors.redAccent,
+                        // ),
                       ),
 
                       const SizedBox(width: 16),
@@ -520,11 +558,11 @@ class _HomescreenState extends State<Homescreen> {
                   // mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                       height: 220,
-                        width: double.infinity,
+                      height: 220,
+                      width: double.infinity,
                       child: Image.network(
                         "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c7a83a72879611.5bf674d4f05f9.jpg",
-                       
+
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -609,19 +647,17 @@ class _HomescreenState extends State<Homescreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                       Container(
-                                height: 240,
-                                width: 160,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  image: DecorationImage(
-                                    image: NetworkImage(
-                                      banners[index],
-                                    ),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
+                        Container(
+                          height: 240,
+                          width: 160,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                              image: NetworkImage(banners[index]),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                         SizedBox(height: 6),
                         Text(
                           index == 0 ? "Wed, 31 Dec" : "Wed, 31 Dec onwards",
@@ -979,8 +1015,9 @@ class _HomescreenState extends State<Homescreen> {
                           bottom: 10,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(14),
-                            child: Image.network(
-                              "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
+                            child: Image.asset(
+                            //  "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
+                             "assets/images/t20.png",
                               height: 55,
                               fit: BoxFit.cover,
                             ),
@@ -1256,7 +1293,7 @@ class _HomescreenState extends State<Homescreen> {
                             child: Stack(
                               children: [
                                 Image.network(
-                                 movies[index].image,
+                                  movies[index].image,
                                   height: 250,
                                   width: 170,
                                   fit: BoxFit.cover,
@@ -1295,7 +1332,7 @@ class _HomescreenState extends State<Homescreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                   movies[index].title,
+                                  movies[index].title,
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -1303,7 +1340,7 @@ class _HomescreenState extends State<Homescreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                   movies[index].info,
+                                  movies[index].info,
                                   style: const TextStyle(color: Colors.grey),
                                 ),
                                 const SizedBox(height: 12),
@@ -2153,5 +2190,3 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 }
-
-

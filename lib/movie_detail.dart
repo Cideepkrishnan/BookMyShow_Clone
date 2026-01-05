@@ -2,7 +2,7 @@ import 'package:book_my_show/model.dart';
 import 'package:flutter/material.dart';
 
 class MovieDetail extends StatefulWidget {
-   final Map<String, dynamic> movie;
+  final Map<String, dynamic> movie;
   const MovieDetail({super.key, required this.movie});
 
   @override
@@ -16,10 +16,10 @@ class _MovieDetailState extends State<MovieDetail> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-       // leading: BackButton(color: Colors.black),
+        // leading: BackButton(color: Colors.black),
         title: Text(
           widget.movie["title"],
-          style: TextStyle(fontSize: 15,color: Colors.black),
+          style: TextStyle(fontSize: 15, color: Colors.black),
         ),
         actions: const [
           Icon(Icons.share_outlined, color: Colors.black),
@@ -65,8 +65,8 @@ class _MovieDetailState extends State<MovieDetail> {
                       borderRadius: BorderRadius.circular(12),
                       image: DecorationImage(
                         image: NetworkImage(
-                         // "https://images.moneycontrol.com/static-mcnews/2025/07/20250707120301_dhss.jpg?impolicy=website&width=770&height=431",
-                         widget.movie["image"],
+                          // "https://images.moneycontrol.com/static-mcnews/2025/07/20250707120301_dhss.jpg?impolicy=website&width=770&height=431",
+                          widget.movie["image"],
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -175,12 +175,10 @@ class _MovieDetailState extends State<MovieDetail> {
               ),
 
               // Description with ...more
-              
-
               Padding(
-                padding:  EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(5.0),
                 child: RichText(
-                  text:  TextSpan(
+                  text: TextSpan(
                     style: TextStyle(
                       fontSize: 11,
                       color: Colors.black87,
@@ -197,13 +195,11 @@ class _MovieDetailState extends State<MovieDetail> {
                           color: Color(0xFFE53935),
                           fontWeight: FontWeight.w600,
                         ),
-                        
                       ),
                     ],
                   ),
                 ),
               ),
-
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -584,9 +580,10 @@ class _MovieDetailState extends State<MovieDetail> {
                 height: 180,
                 // color: Colors.amber,
                 child: ListView.builder(
-                  itemCount: castmovies.length,
+                  itemCount: widget.movie["cast"].length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    final cast = widget.movie["cast"][index];
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -605,27 +602,33 @@ class _MovieDetailState extends State<MovieDetail> {
                                     image: DecorationImage(
                                       image: NetworkImage(
                                         //"https://th.bing.com/th/id/OSK.537805c0d69909805d3cef2525b06ed2?w=160&h=238&c=7&rs=1&qlt=80&o=6&dpr=1.3&pid=SANGAM",
-                                     castmovies[index].castimage
+                                        cast["castimage"],
                                       ),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
                                 SizedBox(height: 6),
-                                Text(
-                                  castmovies[index].castname,
-                                  style: TextStyle(fontSize: 12),
-                                  textAlign: TextAlign.left,
-                                  maxLines: 2,
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    cast["castname"],
+                                    style: TextStyle(fontSize: 12),
+                                    // textAlign: TextAlign.start,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    castmovies[index].castcharacter,
+                                    " as ${cast["castcharacter"]}",
                                     style: TextStyle(
                                       color: Colors.grey,
                                       fontSize: 12,
                                     ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ],
@@ -669,9 +672,10 @@ class _MovieDetailState extends State<MovieDetail> {
                 height: 190,
                 // color: Colors.amber,
                 child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: widget.movie["crew"].length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    final crew = widget.movie["crew"][index];
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -689,7 +693,8 @@ class _MovieDetailState extends State<MovieDetail> {
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        "https://tse4.mm.bing.net/th/id/OIP.5FnX2XMgDnVew_RK6q5LLAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+                                        //"https://tse4.mm.bing.net/th/id/OIP.5FnX2XMgDnVew_RK6q5LLAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+                                        crew["image"],
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -697,7 +702,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                 ),
                                 SizedBox(height: 6),
                                 Text(
-                                  "James Cameron",
+                                  crew["name"],
                                   style: TextStyle(fontSize: 12),
                                   textAlign: TextAlign.left,
                                   maxLines: 2,
@@ -705,7 +710,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    "Director, Producer, Writer, Screenplayer",
+                                    crew["role"],
                                     style: TextStyle(
                                       color: Colors.grey,
                                       fontSize: 10,

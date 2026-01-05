@@ -20,51 +20,6 @@ class _MoviesState extends State<Movies> {
   int currentIndex = 0;
 
   List<String> itms = ["Malayalam", "English", "Hindi"];
-
-  // List<Map<String, dynamic>> movies = [
-  //   {
-  //     "image":
-  //         "https://th.bing.com/th?id=OIF.6f%2bykKGFhK7KmA8g331U%2fg&rs=1&pid=ImgDetMain&o=7&rm=3",
-  //     "title": "Avatar: Fire and Ash",
-  //     "rating": "8",
-  //     "votes": "100K+",
-  //   },
-  //   {
-  //     "image":
-  //         "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kalamkaval-et00468439-1761645584.jpg",
-  //     "title": "Kalamkaval",
-  //     "rating": "8.6",
-  //     "votes": "60.4K+",
-  //   },
-  //   {
-  //     "image":
-  //         "https://cdn.trackmyshow.in/movie_data/sarvam-maya/sarvam-maya_portrait.jpg",
-  //     "title": "Sarvam Maya",
-  //     "rating": "9.2",
-  //     "votes": "56.1K+",
-  //   },
-  //   {
-  //     "image":
-  //         "https://m.media-amazon.com/images/M/MV5BYjdkNWI3MmQtZDRmZC00NWYwLThmYjQtODE2YjQwNzA0Yjg0XkEyXkFqcGc@._V1_.jpg",
-  //     "title": "Bha Bha Ba",
-  //     "rating": "7",
-  //     "votes": "39.7K+",
-  //   },
-  //   {
-  //     "image":
-  //         "https://cdn.moviefone.com/image-assets/1273274/xmDQj0clWvkPiuvsl9LEwkrFjIA.jpg?d=360x540&q=60",
-  //     "title": "Haal(Malayalam)",
-  //     "rating": "8.9",
-  //     "votes": "1.1K+",
-  //   },
-  //   {
-  //     "image":
-  //         "http://www.impawards.com/intl/india/2025/posters/dhurandhar.jpg",
-  //     "title": "Dhurandhar",
-  //     "rating": "9.3",
-  //     "votes": "454K+",
-  //   },
-  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,6 +70,7 @@ class _MoviesState extends State<Movies> {
       ),
       // backgroundColor: Colors.green,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -122,9 +78,10 @@ class _MoviesState extends State<Movies> {
               "Now Showing",
               style: TextStyle(color: Colors.black, fontSize: 18),
             ),
+            SizedBox(height: 1,),
             Text(
               "Kanhangad | 6 Movies",
-              style: TextStyle(color: Colors.grey, fontSize: 12),
+              style: TextStyle(color: Colors.grey, fontSize: 11),
             ),
           ],
         ),
@@ -227,10 +184,10 @@ class _MoviesState extends State<Movies> {
             ),
             SizedBox(height: 2),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: Container(
-                height: 70,
-                //  color: Colors.amber,
+                height: 68,
+                 // color: Colors.amber,
                 child: ListView.builder(
                   itemCount: itms.length,
                   scrollDirection: Axis.horizontal,
