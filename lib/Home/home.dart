@@ -11,10 +11,12 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+
+ 
   List<String> banners = [
-    "https://static.vecteezy.com/system/resources/previews/003/599/325/large_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg",
-    "https://static.vecteezy.com/system/resources/previews/001/937/403/original/paper-art-shopping-online-on-smartphone-sale-promotion-backgroud-banner-for-market-ecommerce-free-vector.jpg",
-    "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+    "assets/images/yesbnk.jpg",
+    "assets/images/iccmen.jpg",
+    "assets/images/newyear.jpg",
   ];
   int currentIndex = 0;
 
@@ -29,24 +31,24 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.amber,
+       backgroundColor: Colors.white,
       appBar: AppBar(
-        //backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text(
               "It All Starts Here!",
               style: TextStyle(
+                fontSize: 18,
                 color: Colors.black,
-                //fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 2),
             Text(
-              "Cherupuzha",
-              style: TextStyle(color: Colors.red, fontSize: 12),
+              "Kanhangad  >",
+              style: TextStyle(color: Colors.red, fontSize: 11, fontWeight: FontWeight.bold,),
             ),
           ],
         ),
@@ -80,28 +82,46 @@ class _HomescreenState extends State<Homescreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(9.0),
               child: Container(
                 // color: Colors.amber,
                 height: 90,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: categoryList.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 12),
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => categoryList[index]["screen"],));
+                      },
                       child: Container(
-                        color: Colors.amber,
-
+                        // color: Colors.amber,
                         child: Column(
                           children: [
-                            CircleAvatar(
-                              radius: 28,
-                              backgroundColor: Colors.grey.shade200,
-                              child: Icon(Icons.abc, color: Colors.red),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                radius: 22,
+                                backgroundColor: Colors.white,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(7,), // 👈 adjust this
+                                  child: Image.asset(
+                                    categoryList[index]["icon"]!,
+                                    width: 20,
+                                    height: 20,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
                             ),
-                            const SizedBox(height: 6),
-                            Text("label", style: const TextStyle(fontSize: 12)),
+                            //const SizedBox(height: 6),
+                            Text(
+                              categoryList[index]['title']!,
+                              style: const TextStyle(
+                                fontSize: 9.5,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -111,14 +131,14 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
             Container(
-              height: 200,
+              height: 170,
               margin: EdgeInsets.symmetric(horizontal: 12),
               decoration: BoxDecoration(
                 // color: Colors.black,
-                borderRadius: BorderRadius.circular(22),
+                borderRadius: BorderRadius.circular(11),
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(22),
+                borderRadius: BorderRadius.circular(11),
                 child: Stack(
                   children: [
                     // Carousel moves INSIDE this container
@@ -128,7 +148,7 @@ class _HomescreenState extends State<Homescreen> {
                         return Stack(
                           fit: StackFit.expand,
                           children: [
-                            Image.network(banners[index], fit: BoxFit.cover),
+                            Image.asset(banners[index], fit: BoxFit.cover),
 
                             // Gradient overlay
                             Container(
@@ -150,21 +170,29 @@ class _HomescreenState extends State<Homescreen> {
                               left: 0,
                               right: 0,
                               child: Center(
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.red,
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 22,
-                                      vertical: 10,
+                                child: SizedBox(
+                                  height: 26,
+                                  width: 100,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.red,
+                                      // padding: const EdgeInsets.symmetric(
+                                      //   horizontal: 22,
+                                      //   vertical: 10,
+                                      // ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
                                     ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8),
+                                    child: Text(
+                                      "Know More",
+                                      style: TextStyle(
+                                        fontSize: 9.5,
+                                        color: Colors.white,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                  ),
-                                  child: const Text(
-                                    "Know More",
-                                    style: TextStyle(color: Colors.white),
                                   ),
                                 ),
                               ),
@@ -194,17 +222,17 @@ class _HomescreenState extends State<Homescreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 40,
+                            height: 35,
                             child: ListView.builder(
                               shrinkWrap: true,
                               itemCount: banners.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (BuildContext context, int index) {
                                 return Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: Container(
-                                    height: 6,
-                                    width: currentIndex == index ? 8 : 6,
+                                    height: 4,
+                                    width: currentIndex == index ? 8 : 4,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: currentIndex == index
@@ -259,7 +287,7 @@ class _HomescreenState extends State<Homescreen> {
                             height: double.infinity,
                             viewportFraction: 1.1, // VERY IMPORTANT
                             autoPlay: true,
-                            autoPlayAnimationDuration: Duration(seconds: 2),
+                            autoPlayAnimationDuration: Duration(seconds: 4),
                             scrollPhysics: BouncingScrollPhysics(),
                             enlargeCenterPage: false,
                             onPageChanged: (index, reason) {
@@ -493,16 +521,11 @@ class _HomescreenState extends State<Homescreen> {
                           image: DecorationImage(
                             image: NetworkImage(
                               "https://img.freepik.com/vecteurs-premium/cinema-logo_23-2147503279.jpg",
-                            // "assets/images/cinema.jpg"
+                             
                             ),
                             fit: BoxFit.cover,
                           ),
                         ),
-                        // child: const Icon(
-                        //   Icons.map_outlined,
-                        //   size: 34,
-                        //   color: Colors.redAccent,
-                        // ),
                       ),
 
                       const SizedBox(width: 16),
@@ -613,7 +636,6 @@ class _HomescreenState extends State<Homescreen> {
             ),
             SizedBox(height: 10),
 
-            /// Recommended Movies
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
@@ -639,7 +661,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(left: 12),
-                itemCount: 3,
+                itemCount: newyear.length,
                 itemBuilder: (context, index) {
                   return Container(
                     width: 160,
@@ -653,23 +675,19 @@ class _HomescreenState extends State<Homescreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
-                              image: NetworkImage(banners[index]),
+                              image: NetworkImage(newyear[index]['image']!),
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
                         SizedBox(height: 6),
                         Text(
-                          index == 0 ? "Wed, 31 Dec" : "Wed, 31 Dec onwards",
+                          newyear[index]['date']!,
                           style: TextStyle(fontSize: 12, color: Colors.black54),
                         ),
                         SizedBox(height: 4),
-
-                        /// Event Title
                         Text(
-                          index == 0
-                              ? "Vedan Live - A Boche New Year 2026"
-                              : "SPACETECH FESTIVAL WINTER EDITION",
+                          newyear[index]['title']!,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -678,12 +696,8 @@ class _HomescreenState extends State<Homescreen> {
                           ),
                         ),
                         SizedBox(height: 4),
-
-                        /// Venue
                         Text(
-                          index == 0
-                              ? "Boche 1000 Acre: Wayanad"
-                              : "Palm Bliss Resort & Spa: Kullu",
+                        newyear[index]['venue']!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(fontSize: 12, color: Colors.grey),
@@ -697,7 +711,6 @@ class _HomescreenState extends State<Homescreen> {
 
             SizedBox(height: 10),
 
-            /// Recommended Movies
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
@@ -927,40 +940,9 @@ class _HomescreenState extends State<Homescreen> {
                         padding: const EdgeInsets.all(30.0),
                         child: Image.network(
                           "https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/best-of-bms-banner-2025-web-collection-202512100543.jpg",
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fitWidth,
                         ),
                       ),
-                      // Row(
-                      //   crossAxisAlignment: CrossAxisAlignment.center,
-                      //   children: [
-                      //     /// Left Section
-                      //     Column(
-                      //       crossAxisAlignment: CrossAxisAlignment.start,
-                      //       mainAxisAlignment: MainAxisAlignment.center,
-                      //       children: [
-                      //         /// CTA Button
-                      //         Container(
-                      //           padding: const EdgeInsets.symmetric(
-                      //             horizontal: 10,
-                      //             vertical: 6,
-                      //           ),
-                      //           decoration: BoxDecoration(
-                      //             color: Colors.white,
-                      //             borderRadius: BorderRadius.circular(6),
-                      //           ),
-                      //           child: const Text(
-                      //             "Know More",
-                      //             style: TextStyle(
-                      //               color: Colors.red,
-                      //               fontWeight: FontWeight.bold,
-                      //               fontSize: 12,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ],
-                      //     ),
-                      //   ],
-                      // ),
                     ],
                   ),
                 ),
@@ -969,7 +951,6 @@ class _HomescreenState extends State<Homescreen> {
 
             SizedBox(height: 10),
 
-            /// Recommended Movies
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
@@ -979,7 +960,6 @@ class _HomescreenState extends State<Homescreen> {
             ),
             SizedBox(height: 6),
 
-            /// Subtitle
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
@@ -1016,8 +996,8 @@ class _HomescreenState extends State<Homescreen> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(14),
                             child: Image.asset(
-                            //  "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
-                             "assets/images/t20.png",
+                              //  "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
+                              "assets/images/t20.png",
                               height: 55,
                               fit: BoxFit.cover,
                             ),

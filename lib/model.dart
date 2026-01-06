@@ -1,3 +1,11 @@
+import 'package:book_my_show/Home/hsbc.dart';
+import 'package:book_my_show/Home/kidszone.dart';
+import 'package:book_my_show/Home/menst20.dart';
+import 'package:book_my_show/Home/musicshow.dart';
+import 'package:book_my_show/Home/seeall.dart';
+import 'package:book_my_show/Home/sports.dart';
+import 'package:book_my_show/Movies/movies.dart';
+
 class Movie {
   final String image;
   final String title;
@@ -62,9 +70,6 @@ class Movie {
 
 
 
-
-
-
   class TopMovie {
   final String image;
   final String title;
@@ -95,10 +100,28 @@ final List<TopMovie> movies = [
       info: "2h 10m • Action • UA • English",
       description: "A gripping action thriller with intense sequences...",
     ),
+      TopMovie(
+      image:
+          "https://th.bing.com/th/id/R.d0239421a5d4116ff097239b0310a450?rik=LqvnL0lFsRrPxQ&riu=http%3a%2f%2fftp.impawards.com%2f2025%2fposters%2frunning_man_ver3.jpg&ehk=Q%2bDOah3VLL6izoW9jD7RqgNQ4TD3VKYXAjXrY72goh8%3d&risl=&pid=ImgRaw&r=0",
+      title: "The Running Man",
+      info: "2h 14m • Action • UA • Sci_Fi,Thriller • A",
+      description: "Millions Hunt,One Runs.Everyone Watches.In a near-future society,",
+    ),
+      TopMovie(
+      image:
+          "https://tse4.mm.bing.net/th/id/OIP.DSxaEsag2WTpL-u3ekr1jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
+      title: "Action Hero",
+      info: "2h 10m • Action • UA • English",
+      description: "A gripping action thriller with intense sequences...",
+    ),
+      TopMovie(
+      image:
+          "https://tse4.mm.bing.net/th/id/OIP.DSxaEsag2WTpL-u3ekr1jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
+      title: "Action Hero",
+      info: "2h 10m • Action • UA • English",
+      description: "A gripping action thriller with intense sequences...",
+    ),
   ];
-
-
-
 
 
 
@@ -483,3 +506,60 @@ class Crew {
     },
   ];
 
+
+
+List<Map<String, dynamic>> categoryList = [
+  {
+    "title": "Movies",
+    "icon": "assets/icons/movie.png",
+    "screen":  Movies(),
+  },
+  {
+    "title": "HSBC\nLounge",
+    "icon": "assets/icons/lounge.png",
+    "screen": const Hsbclounge(),
+  },
+  {
+    "title": "Music\nShows",
+    "icon": "assets/icons/music.png",
+    "screen": const Musicshow(),
+  },
+  {
+    "title": "Men’s\nT20WC 2026",
+    "icon": "assets/icons/cricket.png",
+    "screen": const Menst20(),
+  },
+  {
+    "title": "Kids\nZone",
+    "icon": "assets/icons/kids.png",
+    "screen": const Kidszone(),
+  },
+   {
+    "title": "Sports",
+    "icon": "assets/icons/sports.png",
+    "screen": const Sports(),
+  },
+   {
+    "title": "See All",
+    "icon": "assets/icons/layers.png",
+    "screen": const Seeall(),
+  },
+];
+
+
+ List<Map<String, String>> newyear=[
+  {"image":"https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-vedan-live-a-boche-new-year-2026-0-2025-12-2-t-3-7-6.jpg",
+    "title":"Vedan Live - A Boche New Year 2026",
+    "date":"Wed, 31 Dec",
+    "venue":"Boche 1000 Acre: Wayanad"
+  },
+   {
+    "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-V2VkLCAzMSBEZWMgb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00471318-gpajgtnknn-portrait.jpg",
+    "title":"SPACETECH FESTIVAL WINTER EDITION",
+    "date":"Wed, 31 Dec onwards",
+    "venue":"Palm Bliss Resort & Spa: Kullu",
+   }
+    
+
+
+  ];

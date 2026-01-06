@@ -1,6 +1,6 @@
-import 'package:book_my_show/home.dart';
+import 'package:book_my_show/Home/home.dart';
 import 'package:book_my_show/live_event.dart';
-import 'package:book_my_show/movies.dart';
+import 'package:book_my_show/Movies/movies.dart';
 import 'package:book_my_show/profileScreen/profile.dart';
 import 'package:flutter/material.dart';
 
