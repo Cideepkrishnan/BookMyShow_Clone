@@ -74,7 +74,7 @@ class _MovieDetailState extends State<MovieDetail> {
                   ),
                   SizedBox(
                     height: 30,
-                    width: 130,
+                    //width: 150,
                     child: ElevatedButton.icon(
                       onPressed: () {},
                       icon: Icon(Icons.play_arrow, color: Colors.white),
@@ -627,7 +627,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                       color: Colors.grey,
                                       fontSize: 12,
                                     ),
-                                    maxLines: 2,
+                                    maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),

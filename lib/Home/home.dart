@@ -148,7 +148,7 @@ class _HomescreenState extends State<Homescreen> {
                         return Stack(
                           fit: StackFit.expand,
                           children: [
-                            Image.asset(banners[index], fit: BoxFit.cover),
+                            Image.asset(banners[index], fit: BoxFit.fill),
 
                             // Gradient overlay
                             Container(
@@ -1365,22 +1365,56 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 12),
 
             /// Dot Indicator
+//         Row(
+//   mainAxisAlignment: MainAxisAlignment.center,
+//   children: List.generate(
+//     movies.length,
+//     (index) => AnimatedContainer(
+//       duration: const Duration(milliseconds: 300),
+//       curve: Curves.easeInOut,
+//       margin: const EdgeInsets.symmetric(horizontal: 4),
+//       height: 6,
+//       width: currentIndex == index ? 18 : 6,
+//       decoration: BoxDecoration(
+//         color: currentIndex == index
+//             ? Colors.black
+//             : Colors.grey.shade400,
+//         borderRadius: BorderRadius.circular(10),
+//       ),
+//     ),
+//   ),
+// )
+
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                movies.length,
-                (index) => Container(
-                  width: currentIndex == index ? 10 : 8,
-                  height: 8,
-                  margin: const EdgeInsets.symmetric(horizontal: 4),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: currentIndex == index
-                        ? Colors.black
-                        : Colors.grey.shade400,
+              children: [
+                Container(
+                  height: 20,
+                  child: ListView.builder(
+                     physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: movies.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return 
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Container(
+                          height: 6,
+                          width: currentIndex == index ? 8 : 5,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: currentIndex == index
+                                ? Colors.black
+                                : Colors.grey.shade400,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
-              ),
+              ],
             ),
 
             const SizedBox(height: 15),

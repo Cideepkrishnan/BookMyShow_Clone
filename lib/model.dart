@@ -109,17 +109,17 @@ final List<TopMovie> movies = [
     ),
       TopMovie(
       image:
-          "https://tse4.mm.bing.net/th/id/OIP.DSxaEsag2WTpL-u3ekr1jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
-      title: "Action Hero",
-      info: "2h 10m • Action • UA • English",
-      description: "A gripping action thriller with intense sequences...",
+          "https://media2.firstshowing.net/firstshowing/img17/NurembergPostermainbigimg591.jpg",
+      title: "Nuremberg",
+      info: "2h 30m • Drama,Historical • UA16+ • English",
+      description: "A young American soldier and a German psychologist must race against time to..",
     ),
       TopMovie(
       image:
-          "https://tse4.mm.bing.net/th/id/OIP.DSxaEsag2WTpL-u3ekr1jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
-      title: "Action Hero",
-      info: "2h 10m • Action • UA • English",
-      description: "A gripping action thriller with intense sequences...",
+          "https://media2.firstshowing.net/firstshowing/img16/TheConjuringLastritesposter5991.jpg",
+      title: "The Conjuring:Last Rites",
+      info: "2h 15m • Horrer,Thriller • UA • English,Hindi,Tamil,Telengu",
+      description: "Ed and Lorraine Warren face their most haunting and dangerous case yet.",
     ),
   ];
 
