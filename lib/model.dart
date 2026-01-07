@@ -563,3 +563,22 @@ List<Map<String, dynamic>> categoryList = [
 
 
   ];
+
+
+
+   List<Map<String, String>> planfortoday=[
+  {"image":"https://tse2.mm.bing.net/th/id/OIP.Ysou3aI0o03qS0SG4N0H3gHaKd?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "title":"Jung Koode Exhibition Golden : The Moments",
+    "date":"Wed, 7 Jan onwards",
+    "venue":"Stage 1,Mehaboob Studios: Mumbai Artist Leagacy"
+  },
+   {
+    "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNiBPY3Q%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,lx-15,ly-15,w-50,l-end/et00135711-eppyfgqmzv-portrait.jpg",
+    "title":"Comedy Ladder",
+    "date":"Wed, 7 Jan onwards",
+    "venue":"Multiple venues\n Stand Up Comedy",
+   }
+    
+
+
+  ];

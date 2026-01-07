@@ -1,3 +1,5 @@
+import 'package:book_my_show/Home/browseByCinema.dart';
+import 'package:book_my_show/Movies/filter.dart';
 import 'package:book_my_show/model.dart';
 import 'package:book_my_show/movie_detail.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -34,7 +36,9 @@ class _MoviesState extends State<Movies> {
                 heroTag: "cinema",
                 backgroundColor: const Color(0xFFE31837),
                 elevation: 6,
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => Browsebycinema(),));
+                },
                 icon: const Icon(
                   Icons.location_on_outlined,
                   color: Colors.white,
@@ -62,7 +66,9 @@ class _MoviesState extends State<Movies> {
             heroTag: "filter",
             backgroundColor: const Color(0xFFE31837),
             elevation: 6,
-            onPressed: () {},
+            onPressed: () {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => Filterscreen(),));
+            },
             mini: true,
             child: const Icon(Icons.filter_alt_outlined, color: Colors.white),
           ),

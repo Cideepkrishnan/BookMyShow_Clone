@@ -1,3 +1,4 @@
+import 'package:book_my_show/Home/browseByCinema.dart';
 import 'package:book_my_show/model.dart';
 import 'package:book_my_show/movie_detail.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -502,6 +503,7 @@ class _HomescreenState extends State<Homescreen> {
               child: InkWell(
                 borderRadius: BorderRadius.circular(20),
                 onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Browsebycinema(),));
                   // Navigate to cinema screen
                 },
                 child: Container(
