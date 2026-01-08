@@ -1,5 +1,5 @@
 import 'package:book_my_show/Home/home.dart';
-import 'package:book_my_show/live_event.dart';
+import 'package:book_my_show/Live_Event/live_event.dart';
 import 'package:book_my_show/Movies/movies.dart';
 import 'package:book_my_show/profileScreen/profile.dart';
 import 'package:flutter/material.dart';
