@@ -567,6 +567,7 @@ List<Map<String, dynamic>> categoryList = [
 
 
    List<Map<String, String>> planfortoday=[
+  
   {"image":"https://tse2.mm.bing.net/th/id/OIP.Ysou3aI0o03qS0SG4N0H3gHaKd?rs=1&pid=ImgDetMain&o=7&rm=3",
     "title":"Jung Koode Exhibition Golden : The Moments",
     "date":"Wed, 7 Jan onwards",
@@ -579,6 +580,204 @@ List<Map<String, dynamic>> categoryList = [
     "venue":"Multiple venues\n Stand Up Comedy",
    }
     
+  ];
 
 
+
+
+   class Thinksincity {
+  final String image;
+  final String title;
+  final String info;
+  final String description;
+  final String price;
+
+  Thinksincity({
+    required this.image,
+    required this.title,
+    required this.info,
+    required this.description,
+    required this.price
+  });
+}
+
+final List<Thinksincity> citythings = [
+    Thinksincity(
+      image:
+          "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAxMCBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00063784-npfqsbzmaj-portrait.jpg",
+      title: "Wonderla Amusement Park Kochi",
+      info: "Amusement park/Tourist attraction",
+      description:
+          "The happiest place in Gods on country -Left or Right,Wherever you look you can hear giggles,screms.", price: '₹1189 onwards',
+    ),
+    Thinksincity(
+      image:
+          "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNyBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00461392-qxnxjecnvf-portrait.jpg",
+      title: "CALVIN HARRIS- Live in Bengaluru",
+      info: "Music Shows",
+      description: "CALVIN HARRIS -Live in bengaluru! The wait is finally over .The man who redifined dance,music", price: '₹3000 onwards',
+    ),
+      Thinksincity(
+      image:
+          "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCA5IEphbiBvbndhcmRz,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00440528-emygavqqbp-portrait.jpg",
+      title: "Silver Strom: Water&Amusement Park",
+      info: "Amusement parks",
+      description: "", price: '₹200 onwards',
+    ),
+    
+  ];
+
+
+ final List<Map<String, String>> musishow = [
+    {
+      'image':
+          'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNCBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00458267-mznkfpbrve-portrait.jpg',
+      'date': 'Sat, 24 Jan onwards',
+      'title': 'Lollapalooza India 2026',
+      'location': 'Mahalaxmi Race Cousese:Mumbai',
+      "type":"Concerts"
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNyBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00461392-qxnxjecnvf-portrait.jpg',
+      'date': 'Fri, 17 Apr onwards',
+      'title': 'CALVIN HARRIS-Live in Bengaluru',
+      'location': 'NICE Grounds:Bengaluru',
+      "type":"Concerts"
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAyMyBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00469594-gjrmfczsls-portrait.jpg',
+      'date': 'Fri, 23 Jan',
+      'title': 'Linkin Park:From Zero World Tour 2026',
+      'location': 'Brigade Innovation Gardens:Muddenahalli,Bengaluru',
+      "type":"Concerts"
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCA5IEphbiBvbndhcmRz,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00469295-pleswjxnrp-portrait.jpg',
+      'date': 'Fri, 9 Jan onwards',
+      'title': 'Jung Kook Exhibihition"GOLDEN:The Moments"',
+      'location': 'Stage 1 mehaboob studios:Mumbai',
+      "type":"Artist Legacy"
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VGh1LCAyMiBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00464841-jchggvcgya-portrait.jpg',
+      'date': 'Thu, 22 Jan onwards',
+      'title': 'John Mayer Solo-Live in Mumbai,2026',
+      'location': 'Mahalaxmi Race Cousese:Mumbai',
+      "type":"Concerts"
+    },
+      {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VGh1LCAzMCBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00480699-vleemvxwmb-portrait.jpg',
+      'date': 'Sun, 26 Apr onwards',
+      'title': 'Scorpions Coming Home Live 2026- Bengaluru',
+      'location': 'NICE Grounds:Bengaluru',
+      "type":"Concerts"
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAyOSBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00475232-taxugdgkxn-portrait.jpg',
+      'date': 'Sun, 29 Mar onwards',
+      'title': 'Def Leppard India Tour-Bengaluru',
+      'location': 'NICE Grounds:Bengaluru',
+      "type":"Concerts"
+    },
+  ];
+
+ final List<Map<String, String>> comedyList = [
+    {
+      'image':
+          'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCA5IEphbiBvbndhcmRz,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,lx-15,ly-15,w-50,l-end/et00135711-eppyfgqmzv-portrait.jpg',
+      'date': 'Fri, 9 Jan onwards',
+      'title': 'Comedy Ladder',
+      'subtitle': 'Multiple Venues',
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNiBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00355125-wteqqdaagg-portrait.jpg',
+      'date': 'Fri, 16 Jan onwards',
+      'title': 'Kisi Ko Batana Mat Ft. Anubhav Singh Bassi',
+      'subtitle': 'MLR Convention Centre',
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VGh1LCAyOSBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,lx-15,ly-15,w-50,l-end/et00135461-nwfldcpufj-portrait.jpg',
+      'date': 'Thu, 29 Jan',
+      'title': 'Chalta Hai Comedy',
+      'subtitle': 'Multiple Venues',
+    },
+  ];
+
+   final List<Map<String, String>> weekendCategories = [
+    {
+      "title": "Music\nShows",
+      "events": "3 EVENTS",
+      "image": "assets/images/musicandshow.jpg",
+      "gradient": "[Color(0xFF3EE0C1), Color(0xFF2BB0E6)]",
+    },
+    {
+      "title": "Amusement\nPark",
+      "events": "2 EVENTS",
+      "image": "assets/images/amusment.jpg",
+      "gradient": "[Color(0xFF9BA7FF), Color(0xFF5A9CFD)]",
+    },
+    {
+      "title": "Comedy\nShows",
+      "events": "1 EVENT",
+      "image": "assets/images/comedy.jpg",
+      "gradient": " [Color(0xFF3EE0C1), Color(0xFF3AA4D8)]",
+    },
+    {
+      "title": "Plays &\nPerformances",
+      "events": "1 EVENT",
+      "image": "assets/images/plays.jpg",
+      "gradient": "[Color(0xFF6EC6FF), Color(0xFF5A8DEE)]",
+    },
+    {
+      "title": "Exhibitions",
+      "events": "1 EVENT",
+      "image": "assets/images/exhibition.jpg",
+      "gradient": "[Color(0xFF6EC6FF), Color(0xFF5A8DEE)]",
+    },
+  ];
+
+   final List<Map<String, String>> topSport = [
+    {
+      'image':
+          'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAyNSBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00478654-jfarhrfvrr-portrait.jpg',
+      'date': 'Sun, 25 Jan ',
+      'title': 'India Vs New Zealand\n3rd T20I',
+      'type': 'T20',
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCA5IEphbiBvbndhcmRz,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,lx-15,ly-15,w-50,l-end/et00465007-lbsnyszhcf-portrait.jpg',
+      'date': 'Fri, 9 Jan onwards',
+      'title': 'ISPL Season 3',
+      'type': 'T10',
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-TW9uLCAxOSBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00475921-ccrlujlwtk-portrait.jpg',
+      'date': 'Mon, 19 Jan',
+      'title': 'Ahmedabad vs Chennai',
+      'type': 'T10',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-TW9uLCAyNiBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00475928-auklrgwnxh-portrait.jpg',
+      'date': 'Mon, 26 Jan',
+      'title': 'Delhi vs Kolkata',
+      'type': 'T10',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAxIE1hcg%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00478245-gesthhlbwn-portrait.jpg',
+      'date': 'Sun, 1 Mar',
+      'title': 'Red Bull Moto Jam\n(Pre-Registration)',
+      'type': 'Bike Racing',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VHVlLCAyMCBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00475922-tpnjxtdeuu-portrait.jpg',
+      'date': 'Tue, 20 Jan',
+      'title': 'Delhi vs Chennai',
+      'type': 'T10',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNCBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00475926-jvwwkcyjcy-portrait.jpg',
+      'date': 'Sat, 24 Jan',
+      'title': 'Chennai vs Srinagar &\nHyderabad vs Mumbai',
+      'type': 'T10',
+    },
   ];
