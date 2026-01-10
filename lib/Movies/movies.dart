@@ -13,15 +13,15 @@ class Movies extends StatefulWidget {
 }
 
 class _MoviesState extends State<Movies> {
-  List<String> banners = [
-    "https://static.vecteezy.com/system/resources/previews/003/599/325/large_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg",
-    "https://static.vecteezy.com/system/resources/previews/001/937/403/original/paper-art-shopping-online-on-smartphone-sale-promotion-backgroud-banner-for-market-ecommerce-free-vector.jpg",
-    "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
-    //"https://static.vecteezy.com/system/resources/previews/000/621/356/original/vector-online-shop-or-ecommerce-landing-page-template.jpg"
+  List<String> Moviebanners = [
+    "assets/images/mbaner3.png",
+    "assets/images/mbaner2.png",
+    "assets/images/mbaner1.png"
+    
   ];
   int currentIndex = 0;
 
-  List<String> itms = ["Malayalam", "English", "Hindi"];
+  List<String> itms = ["Malayalam", "English", "Hindi","Tamil"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,30 +95,28 @@ class _MoviesState extends State<Movies> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          //  mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 180,
-                //margin: EdgeInsets.symmetric(horizontal: 10),
+                height: 170,
                 decoration: BoxDecoration(
                   // color: Colors.black,
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(10),
                   child: Stack(
                     children: [
                       // Carousel moves INSIDE this container
                       CarouselSlider.builder(
-                        itemCount: banners.length,
+                        itemCount: Moviebanners.length,
                         itemBuilder: (context, index, realIndex) {
                           return Stack(
                             fit: StackFit.expand,
                             children: [
-                              Image.network(banners[index], fit: BoxFit.cover),
+                              Image.asset(Moviebanners[index], fit: BoxFit.cover),
               
                               // Gradient overlay
                               Container(
@@ -161,14 +159,14 @@ class _MoviesState extends State<Movies> {
                               height: 40,
                               child: ListView.builder(
                                 shrinkWrap: true,
-                                itemCount: banners.length,
+                                itemCount: Moviebanners.length,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (BuildContext context, int index) {
                                   return Padding(
-                                    padding: const EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: Container(
-                                      height: 6,
-                                      width: currentIndex == index ? 8 : 6,
+                                      height: 4,
+                                      width: currentIndex == index ? 6 : 4,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: currentIndex == index
@@ -192,7 +190,7 @@ class _MoviesState extends State<Movies> {
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: Container(
-                height: 68,
+                height: 65,
                  // color: Colors.amber,
                 child: ListView.builder(
                   itemCount: itms.length,

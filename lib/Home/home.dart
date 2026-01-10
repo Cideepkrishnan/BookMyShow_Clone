@@ -1621,7 +1621,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: MustAttendLive.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -1629,27 +1629,27 @@ class _HomescreenState extends State<Homescreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
-                          width: 150,
+                          width: 140,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 240,
+                                height: 230,
                                 width: 150,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
                                   image: DecorationImage(
                                     image: NetworkImage(
-                                      "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                      MustAttendLive[index]['image']!,
                                     ),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
                               Text(
-                                "Sun, 1 Feb",
+                                  MustAttendLive[index]['date']!,
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF6F6F6F),
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -1659,11 +1659,11 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Title
                               Text(
-                                "The Lumineers: The Automatic World Tour",
+                                 MustAttendLive[index]['title']!,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFF1F1F1F),
                                 ),
@@ -1673,11 +1673,11 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Venue
                               Text(
-                                "Huda Ground: Gurugram",
+                                 MustAttendLive[index]['location']!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -1707,12 +1707,12 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 12),
 
             Container(
-              //  color: Colors.green,
-              height: 320,
+               // color: Colors.green,
+              height: 340,
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: comedyList.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -1720,20 +1720,21 @@ class _HomescreenState extends State<Homescreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
-                          width: 160,
+                          width: 150,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Stack(
                                 children: [
                                   Container(
-                                    height: 240,
-                                    width: 160,
+                                    height: 230,
+                                    width: 150,
+                                    clipBehavior: Clip.hardEdge,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15),
+                                      borderRadius: BorderRadius.circular(10),
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                          "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                          comedyList[index]['image']!,
                                         ),
                                         fit: BoxFit.cover,
                                       ),
@@ -1764,9 +1765,9 @@ class _HomescreenState extends State<Homescreen> {
                                 ],
                               ),
                               Text(
-                                "Thu, 29 Jan",
+                                comedyList[index]['date']!,
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF6F6F6F),
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -1776,11 +1777,11 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Title
                               Text(
-                                "Chalta Hai Comedy",
+                                 comedyList[index]['title']!,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFF1F1F1F),
                                 ),
@@ -1790,11 +1791,11 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Venue
                               Text(
-                                "Multiple Venues",
+                                comedyList[index]['subtitle']!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -1840,7 +1841,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: popularevent.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -1855,13 +1856,13 @@ class _HomescreenState extends State<Homescreen> {
                               Stack(
                                 children: [
                                   Container(
-                                    height: 240,
-                                    width: 160,
+                                    height: 230,
+                                    //width: 160,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                          "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                         popularevent[index]['image']!,
                                         ),
                                         fit: BoxFit.cover,
                                       ),
@@ -1892,7 +1893,7 @@ class _HomescreenState extends State<Homescreen> {
                                 ],
                               ),
                               Text(
-                                "Sun, 4 Jan",
+                                popularevent[index]['date']!,
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Color(0xFF6F6F6F),
@@ -1904,7 +1905,7 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Title
                               Text(
-                                "Solve the Rubik's Cube, Sharpen 6 Vital Skills",
+                                 popularevent[index]['title']!,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
@@ -1918,7 +1919,7 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Venue
                               Text(
-                                "Upskill",
+                                 popularevent[index]['type']!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
@@ -1964,11 +1965,11 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 12),
             Container(
               // color: Colors.green,
-              height: 340,
+              height: 330,
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: topSport.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -1976,68 +1977,60 @@ class _HomescreenState extends State<Homescreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
-                          width: 160,
+                          width: 150,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Stack(
                                 children: [
                                   Container(
-                                    height: 240,
-                                    width: 160,
+                                    height: 230,
+                                   // width: 160,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                          "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                         topSport[index]['image']!
                                         ),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
                                   ),
-                                  Positioned(
-                                    top: 8,
-                                    left: 8,
-                                    child: Icon(
-                                      Icons.copy_outlined,
-                                      color: Colors.white,
-                                      size: 18,
-                                    ),
-                                  ),
+                               
                                 ],
-                              ),
+                              ),SizedBox(height: 4,),
                               Text(
-                                "Thu, 1 Jan onwards",
+                                 topSport[index]['date']!,
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF6F6F6F),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
 
-                              SizedBox(height: 4),
+                             // SizedBox(height: 4),
 
                               /// Title
                               Text(
-                                "Chess Tournament",
+                                  topSport[index]['title']!,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFF1F1F1F),
                                 ),
                               ),
 
-                              const SizedBox(height: 2),
+                              //const SizedBox(height: 2),
 
                               /// Venue
                               Text(
-                                "Chess",
+                                 topSport[index]['type']!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -2082,7 +2075,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: musishow.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -2090,41 +2083,41 @@ class _HomescreenState extends State<Homescreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
-                          width: 160,
+                          width: 150,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 240,
-                                width: 160,
+                                height: 230,
+                                //width: 160,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
                                   image: DecorationImage(
                                     image: NetworkImage(
-                                      "https://static.vecteezy.com/system/resources/previews/001/750/452/large_2x/online-shopping-and-e-commerce-banner-vector.jpg",
+                                      musishow[index]['image']!,
                                     ),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
                               Text(
-                                "Sun, 19 Apr",
+                                musishow[index]['date']!,
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   color: Color(0xFF6F6F6F),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
 
-                              SizedBox(height: 4),
+                             // SizedBox(height: 4),
 
                               /// Title
                               Text(
-                                "CALVIN HARRIS - Live in Delhi NCR",
+                                musishow[index]['title']!,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFF1F1F1F),
                                 ),
@@ -2134,7 +2127,7 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Venue
                               Text(
-                                "Leisure Valley Ground: Gurgaon",
+                               musishow[index]['location']!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
@@ -2146,7 +2139,7 @@ class _HomescreenState extends State<Homescreen> {
 
                               /// Category
                               Text(
-                                "Concerts",
+                                musishow[index]['type']!,
                                 style: const TextStyle(
                                   fontSize: 12,
                                   color: Color(0xFF8A8A8A),

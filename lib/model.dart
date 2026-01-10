@@ -215,7 +215,7 @@ class Crew {
       "crew":[
         {"name":"James Cameron",
         "role":"Director,Producer,Writer,ScreenPlay",
-        "image":"https://asiaone.news/wp-content/uploads/2026/01/fizza-fi-91767516210-0-640x480-1.webp"
+        "image":"https://people.com/thmb/SXnExkFnWJ9iM_4AEEP1X3lMqQE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(686x343:688x345)/JamesCameron-071523-02-3b6468ee0c524c3b901648fc2ed3ba58.jpg"
         },
         
          {"name":"Amanda Silver",
@@ -443,7 +443,7 @@ class Crew {
     // },
     {
       "image":
-          "http://www.impawards.com/intl/india/2025/posters/dhurandhar.jpg",
+          "https://images.timesnownews.com/thumb/msid-152702833,width-1280,height-720,resizemode-75/152702833.jpg",
       "title": "Dhurandhar",
       "rating": "9.3",
       "votes": "454K+",
@@ -779,5 +779,85 @@ final List<Thinksincity> citythings = [
       'date': 'Sat, 24 Jan',
       'title': 'Chennai vs Srinagar &\nHyderabad vs Mumbai',
       'type': 'T10',
+    },
+  ];
+
+
+    final List<Map<String, String>> popularevent = [
+    {
+      'image':
+          'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNCBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00458267-mznkfpbrve-portrait.jpg',
+      'date': 'Sat 24 Jan onward ',
+      'title': 'Lollapalooza india 2026',
+      'type': 'Concerts',
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VHVlLCAyMSBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00480700-cnrlwwpwnf-portrait.jpg',
+      'date': 'Thu, 30 Apr ',
+      'title': 'Scorpions Coming Home Live 2026 -Mumbai',
+      'type': 'Concerts',
+    },
+    {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAyNyBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00475231-xsjararabu-portrait.jpg',
+      'date': 'Fri, 27 Mar',
+      'title': 'Def Leppard India Tour - Mumbai',
+      'type': 'Concerts',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAxOCBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,lx-15,ly-15,w-50,l-end/et00446959-whxkyxwmht-portrait.jpg',
+      'date': 'Sun, 18 Jan onwards',
+      'title': 'Sanam Live India Tour',
+      'type': 'Multiple Venues',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNiBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,lx-15,ly-15,w-50,l-end/et00470839-lyfzxzpgjl-portrait.jpg',
+      'date': 'Fri, 16 Jan onwards',
+      'title': 'Anuv Jain - Dastakhat India Tour 2026',
+      'type': 'Multiple Venues',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNCBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00478088-dzwtmsuthb-portrait.jpg',
+      'date': 'Sat, 24 Jan',
+      'title': 'Lollapalooza India 2026 -Rupay Amplified Accesss',
+      'type': 'Concerts',
+    },
+     {
+      'image': 'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAyMyBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00468551-sgwsrvzrzr-portrait.jpg',
+      'date': 'Fri, 23 Jan',
+      'title': 'Calum Scott - The Avenoir Tour 2026',
+      'type': 'Concerts',
+    },
+  ];
+
+  final List<Map<String,String>> MustAttendLive=[
+    {
+      "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCA5IEphbiBvbndhcmRz,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00440528-emygavqqbp-portrait.jpg",
+      "date":"Sat 10 Jan onwards",
+      "title":"Silver Strom: Snow, Water&Amusement Park",
+      "location":"Silver Storm-Anamala Road:Chalakudy"
+    },
+    {
+      "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U2F0LCAyNCBKYW4gb253YXJkcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end:l-text,ie-UFJPTU9URUQ%3D,co-FFFFFF,bg-DC354B,ff-Roboto,fs-20,lx-N16,ly-12,lfo-top_right,pa-12_14_12_14,r-6,l-end/et00458267-mznkfpbrve-portrait.jpg",
+      "date":"Sat 24 Jan onward",
+      "title":"Lollapalooza india 2026",
+      "location":"Mahalaxmi Race Course:Mumbai"
+    },
+    {
+      "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNyBBcHI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00461392-qxnxjecnvf-portrait.jpg",
+      "date":"Fri, 17 Apr onwards",
+      "title":"CALVIN HARRIS-Live in Bengaluru",
+      "location":"NICE Grounds:Bengaluru"
+    },
+     {
+      "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAyNSBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00478654-jfarhrfvrr-portrait.jpg",
+      "date":"Sun, 25 Jan",
+      "title":"India Vs New Zealand\n3rd T20I",
+      "location":"ACA Stadium,Guwahati"
+    },
+     {
+      "image":"https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAyMyBKYW4%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00469594-gjrmfczsls-portrait.jpg",
+      "date":"Fri, 23 Jan",
+      "title":"Linkin Park:From Zero World Tour 2026",
+      "location":"Brigade Innovation Gardens:Muddenahalli,Bengaluru"
     },
   ];
