@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:
-     BookMyShowScreen()
-      //Dashbord() ,
+    // BookMyShowScreen()
+      Dashbord() ,
     );
   }
 }

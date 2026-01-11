@@ -28,8 +28,10 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
         backgroundColor: Colors.white,
         elevation: 1,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,135 +135,149 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
 
           /// SEATS
           /// SEATS (TOP ALIGNED)
-Expanded(
-  child: Row(
-    crossAxisAlignment: CrossAxisAlignment.start, // 👈 IMPORTANT
-    children: [
-
-      /// FIXED LEFT ROW LABEL STRIP
-      SizedBox(
-        width: 29,
-        height: rows.length * 26.0,
-        child: Container(
-        decoration: BoxDecoration(  color:Colors.grey.shade400,borderRadius: BorderRadius.circular(20)),
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: rows.length,
-            itemBuilder: (context, rowIndex) {
-              return SizedBox(
-                height: 26,
-                child: Text(
-                  rows[rowIndex],
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start, // 👈 IMPORTANT
+              children: [
+                /// FIXED LEFT ROW LABEL STRIP
+                SizedBox(
+                  width: 29,
+                  height: rows.length * 26.0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade400,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: ListView.builder(
+                      padding: EdgeInsets.zero,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: rows.length,
+                      itemBuilder: (context, rowIndex) {
+                        return SizedBox(
+                          height: 26,
+                          child: Text(
+                            rows[rowIndex],
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-      ),
 
-      /// SEATS (HORIZONTAL SCROLL)
-      Expanded(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start, // 👈 IMPORTANT
-            children: List.generate(rows.length, (rowIndex) {
-              return SizedBox(
-                height: 28,
-                child: Row(
-                  children: [
+                /// SEATS (HORIZONTAL SCROLL)
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Column(
+                      crossAxisAlignment:
+                          CrossAxisAlignment.start, // 👈 IMPORTANT
+                      children: List.generate(rows.length, (rowIndex) {
+                        return SizedBox(
+                          height: 28,
+                          child: Row(
+                            children: [
+                              /// LEFT BLOCK
+                              ...List.generate(8, (seatIndex) {
+                                bool sold = rowIndex < 2 && seatIndex < 3;
 
-                    /// LEFT BLOCK
-                    ...List.generate(8, (seatIndex) {
-                      bool sold = rowIndex < 2 && seatIndex < 3;
+                                return Container(
+                                  margin: const EdgeInsets.all(3),
+                                  width: 14,
+                                  height: 14,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: sold
+                                        ? Colors.grey.shade300
+                                        : Colors.white,
+                                    borderRadius: BorderRadius.circular(3),
+                                    border: Border.all(
+                                      color: sold
+                                          ? Colors.grey
+                                          : const Color(0xFF28A745),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    "${seatIndex + 1}",
+                                    style: TextStyle(
+                                      fontSize: 8,
+                                      color: sold
+                                          ? Colors.grey
+                                          : const Color(0xFF28A745),
+                                    ),
+                                  ),
+                                );
+                              }),
 
-                      return Container(
-                        margin: const EdgeInsets.all(3),
-                        width: 14,
-                        height: 14,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: sold ? Colors.grey.shade300 : Colors.white,
-                          borderRadius: BorderRadius.circular(3),
-                          border: Border.all(
-                            color: sold
-                                ? Colors.grey
-                                : const Color(0xFF28A745),
+                              /// CENTER AISLE
+                              const SizedBox(width: 24),
+
+                              /// RIGHT BLOCK
+                              ...List.generate(8, (seatIndex) {
+                                bool sold = rowIndex < 2 && seatIndex < 2;
+
+                                return Container(
+                                  margin: const EdgeInsets.all(3),
+                                  width: 14,
+                                  height: 14,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: sold
+                                        ? Colors.grey.shade300
+                                        : Colors.white,
+                                    borderRadius: BorderRadius.circular(3),
+                                    border: Border.all(
+                                      color: sold
+                                          ? Colors.grey
+                                          : const Color(0xFF28A745),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    "${seatIndex + 9}",
+                                    style: TextStyle(
+                                      fontSize: 8,
+                                      color: sold
+                                          ? Colors.grey
+                                          : const Color(0xFF28A745),
+                                    ),
+                                  ),
+                                );
+                              }),
+                            ],
                           ),
-                        ),
-                        child: Text(
-                          "${seatIndex + 1}",
-                          style: TextStyle(
-                            fontSize: 8,
-                            color: sold
-                                ? Colors.grey
-                                : const Color(0xFF28A745),
-                          ),
-                        ),
-                      );
-                    }),
-
-                    /// CENTER AISLE
-                    const SizedBox(width: 24),
-
-                    /// RIGHT BLOCK
-                    ...List.generate(8, (seatIndex) {
-                      bool sold = rowIndex < 2 && seatIndex < 2;
-
-                      return Container(
-                        margin: const EdgeInsets.all(3),
-                        width: 14,
-                        height: 14,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: sold ? Colors.grey.shade300 : Colors.white,
-                          borderRadius: BorderRadius.circular(3),
-                          border: Border.all(
-                            color: sold
-                                ? Colors.grey
-                                : const Color(0xFF28A745),
-                          ),
-                        ),
-                        child: Text(
-                          "${seatIndex + 9}",
-                          style: TextStyle(
-                            fontSize: 8,
-                            color: sold
-                                ? Colors.grey
-                                : const Color(0xFF28A745),
-                          ),
-                        ),
-                      );
-                    }),
-                  ],
+                        );
+                      }),
+                    ),
+                  ),
                 ),
-              );
-            }),
+              ],
+            ),
           ),
-        ),
-      ),
-    ],
-  ),
-),
-
 
           /// SCREEN
           Column(
-            children: const [
-              Icon(Icons.crop_16_9, color: Colors.lightBlue, size: 40),
+            children: [
+              // Icon(Icons.crop_16_9, color: Colors.lightBlue, size: 40),
+              Container(
+                // height: 100,
+                width: 350,
+                color: Colors.amber,
+                child: Image.asset(
+                  "assets/images/screen.png",
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
               SizedBox(height: 4),
               Text(
                 "All eyes this way please!",
                 style: TextStyle(fontSize: 11, color: Colors.grey),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 200),
             ],
           ),
 

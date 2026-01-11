@@ -28,7 +28,9 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
-        leading: const Icon(Icons.arrow_back, color: Colors.black),
+        leading:IconButton(onPressed: () {
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back_ios,size: 20,)),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -129,18 +131,15 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(
-                      left: 10.0,
+                      left: 13.0,
                       top: 8,
                       bottom: 8,
-                      right: 2,
+                      right: 10,
                     ),
                     child: Container(
-                      // padding: const EdgeInsets.symmetric(
-                      //   horizontal: 23,
-                      //   vertical: 5,
-                      // ),
+                      padding: const EdgeInsets.only(left: 10,top: 5,bottom: 5,right: 10 ),
                       // height: 40,
-                      width: 65,
+                     // width: 80,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),

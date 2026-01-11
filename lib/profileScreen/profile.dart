@@ -27,18 +27,20 @@ class _ProfileState extends State<Profile> {
               ),
             ),
             SizedBox(height: 2),
-            InkWell(
-              onTap: () {},
-              child: Row(
-                children: [
-                  Text(
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    
+                  },
+                  child: Text(
                     "Edit Profile",
                     style: TextStyle(color: Colors.grey, fontSize: 13),
                   ),
-                  SizedBox(width: 10),
-                  Icon(Icons.arrow_forward_ios, size: 8, color: Colors.grey),
-                ],
-              ),
+                ),
+                SizedBox(width: 10),
+                Icon(Icons.arrow_forward_ios, size: 8, color: Colors.grey),
+              ],
             ),
           ],
         ),

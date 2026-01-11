@@ -402,7 +402,7 @@ class _LiveEventState extends State<LiveEvent> {
                   ),
                   const SizedBox(height: 16),
                   Container(
-                    height: 310,
+                    height: 322,
                     // color: Colors.blue,
                     child: ListView.builder(
                       padding: EdgeInsets.zero,
@@ -763,7 +763,7 @@ class _LiveEventState extends State<LiveEvent> {
                   ),
                   const SizedBox(height: 16),
                   Container(
-                    height: 310,
+                    height: 322,
                     // color: Colors.blue,
                     child: ListView.builder(
                       padding: EdgeInsets.zero,
@@ -1224,7 +1224,7 @@ class _LiveEventState extends State<LiveEvent> {
                                 Text(
                                   topSport[index]['title']!,
                                   style: const TextStyle(
-                                    fontSize: 13,
+                                    fontSize: 12,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
                                   ),

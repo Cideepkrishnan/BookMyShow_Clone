@@ -1,3 +1,4 @@
+import 'package:book_my_show/Booking/bookingscreen.dart';
 import 'package:book_my_show/model.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,9 @@ class _MovieDetailState extends State<MovieDetail> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        // leading: BackButton(color: Colors.black),
+         leading: IconButton(onPressed: () {
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back_ios,size: 20,)),
         title: Text(
           widget.movie["title"],
           style: TextStyle(fontSize: 15, color: Colors.black),
@@ -29,7 +32,12 @@ class _MovieDetailState extends State<MovieDetail> {
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(12),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {return
+              BookMyShowScreen();
+            },));
+            
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
             //minimumSize: const Size(double.infinity, 50),
