@@ -28,9 +28,12 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
-        leading:IconButton(onPressed: () {
-          Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back_ios,size: 20,)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios, size: 20),
+        ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -137,9 +140,14 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                       right: 10,
                     ),
                     child: Container(
-                      padding: const EdgeInsets.only(left: 10,top: 5,bottom: 5,right: 10 ),
+                      padding: const EdgeInsets.only(
+                        left: 10,
+                        top: 5,
+                        bottom: 5,
+                        right: 10,
+                      ),
                       // height: 40,
-                     // width: 80,
+                      // width: 80,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -328,7 +336,6 @@ void _showSeatCountBottomSheet(BuildContext context) {
               children: [
                 const SizedBox(height: 12),
 
-                /// DRAG HANDLE
                 Container(
                   height: 4,
                   width: 40,
@@ -340,7 +347,6 @@ void _showSeatCountBottomSheet(BuildContext context) {
 
                 const SizedBox(height: 20),
 
-                /// TITLE
                 const Text(
                   "How many seats?",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -348,7 +354,6 @@ void _showSeatCountBottomSheet(BuildContext context) {
 
                 const SizedBox(height: 15),
 
-                /// IMAGE (CHANGES BASED ON SEATS)
                 SizedBox(
                   height: 90,
                   child: Image.asset(
@@ -359,7 +364,6 @@ void _showSeatCountBottomSheet(BuildContext context) {
 
                 const SizedBox(height: 10),
 
-                /// SEAT SELECTOR
                 SizedBox(
                   height: 30,
                   child: ListView.builder(
@@ -393,11 +397,6 @@ void _showSeatCountBottomSheet(BuildContext context) {
                     },
                   ),
                 ),
-
-                const SizedBox(height: 10),
-                const Divider(),
-
-                /// PRICE & AVAILABILITY
                 Column(
                   children: const [
                     Text(
@@ -406,7 +405,7 @@ void _showSeatCountBottomSheet(BuildContext context) {
                     ),
                     SizedBox(height: 6),
                     Text(
-                      "₹190",
+                      "₹150",
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
@@ -422,11 +421,9 @@ void _showSeatCountBottomSheet(BuildContext context) {
                       ),
                     ),
                   ],
-                ),
+                ), // const Spacer(),
+                const Divider(),
 
-                // const Spacer(),
-
-                /// SELECT SEATS BUTTON
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: SizedBox(
@@ -434,12 +431,13 @@ void _showSeatCountBottomSheet(BuildContext context) {
                     height: 40,
                     child: ElevatedButton(
                       onPressed: () {
-                        // selectedSeat value is available here
                         Navigator.pop(context);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const SeatSelectionScreen(),
+                            builder: (_) => SeatSelectionScreen(
+                              maxSelectableSeats: selectedSeat,
+                            ),
                           ),
                         );
                       },
