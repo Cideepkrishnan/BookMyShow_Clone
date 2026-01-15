@@ -521,7 +521,7 @@ void _showConfirmingSheet(BuildContext parentContext) {
 
     Navigator.of(parentContext).push(
       MaterialPageRoute(
-        builder: (_) => const BookingSuccessScreen(),
+        builder: (_) => const ConfirmBookingScreen(),
       ),
     );
   });
