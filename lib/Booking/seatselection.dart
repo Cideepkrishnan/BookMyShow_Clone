@@ -3,8 +3,17 @@ import 'package:flutter/material.dart';
 
 class SeatSelectionScreen extends StatefulWidget {
   final int maxSelectableSeats;
+  final String movieTitle;
+  final String showTime;
+  final String theatreName;
 
-  const SeatSelectionScreen({super.key, required this.maxSelectableSeats});
+  const SeatSelectionScreen({
+    super.key,
+    required this.maxSelectableSeats,
+    required this.movieTitle,
+    required this.showTime,
+    required this.theatreName,
+  });
 
   @override
   State<SeatSelectionScreen> createState() => _SeatSelectionScreenState();
@@ -21,6 +30,7 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
     "02:30 PM",
     "05:15 PM",
     "05:30 PM",
+    "10:30 PM"
   ];
 
   final List<String> rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
@@ -37,15 +47,15 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
           icon: const Icon(Icons.arrow_back_ios, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Sarvam Maya",
+        title: Text(
+          widget.movieTitle,
           style: TextStyle(color: Colors.black, fontSize: 14),
         ),
       ),
 
       body: Column(
         children: [
-          /// PRICE + TICKETS
+                            //  price& ticket
           Padding(
             padding: const EdgeInsets.all(10),
             child: Row(
@@ -63,8 +73,7 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
               ],
             ),
           ),
-
-          /// TIME LIST
+                                     //  time list
           SizedBox(
             height: 65,
             child: ListView.builder(
@@ -118,13 +127,13 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
           ),
 
           const SizedBox(height: 6),
-
-          /// SEATS
+ 
+                      //  seats
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /// LEFT ROW LABEL STRIP
+                            //  left side fixted label
                 SizedBox(
                   width: 30,
                   height: 210,
@@ -138,10 +147,7 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
                       itemCount: rows.length,
                       itemBuilder: (context, rowIndex) {
                         return Container(
-                          // height: 20,
-                          margin: const EdgeInsets.all(
-                            3,
-                          ), // 👈 SAME AS SEAT BOX
+                          margin: const EdgeInsets.all(3),
                           alignment: Alignment.center,
                           child: Text(
                             rows[rowIndex],
@@ -156,8 +162,8 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
                     ),
                   ),
                 ),
-
-                /// SEATS GRID
+ 
+                                //  seats grid
                 Expanded(
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -167,7 +173,8 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
                           height: 22,
                           child: Row(
                             children: [
-                              /// LEFT BLOCK
+                                              // left set
+
                               ...List.generate(8, (seatIndex) {
                                 final seatId =
                                     "${rows[rowIndex]}${seatIndex + 1}";
@@ -184,10 +191,10 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
                                 );
                               }),
 
-                              /// CENTER AISLE
                               const SizedBox(width: 24),
 
-                              /// RIGHT BLOCK
+                                        // right set
+
                               ...List.generate(8, (seatIndex) {
                                 final seatId =
                                     "${rows[rowIndex]}${seatIndex + 9}";
@@ -213,8 +220,9 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
               ],
             ),
           ),
+  
+                           //  screen image
 
-          /// SCREEN IMAGE
           Column(
             children: [
               Image.asset(
@@ -230,8 +238,9 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
               const SizedBox(height: 12),
             ],
           ),
+  
+                   //   bottom box with text
 
-          /// LEGEND
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -249,7 +258,8 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
 
           const SizedBox(height: 12),
 
-          /// PAY BUTTON (ONLY WHEN SEATS SELECTED)
+                           // pay button(appear only select the seats)
+
           if (selectedSeats.isNotEmpty)
             Container(
               padding: const EdgeInsets.all(12),
@@ -268,7 +278,14 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
                 height: 46,
                 child: ElevatedButton(
                   onPressed: () {
-                    _showTermsBottomSheet(context);
+                    _showTermsBottomSheet(
+                      context,
+                      widget.movieTitle,
+                      widget.showTime,
+                      widget.theatreName,
+                      selectedSeats.length,
+                      selectedSeats.toList(),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFE53935),
@@ -292,7 +309,8 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
     );
   }
 
-  /// SEAT TAP HANDLER
+            //  seat tap
+
   void _onSeatTap(String seatId, bool sold) {
     if (sold) return;
 
@@ -304,8 +322,9 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
       }
     });
   }
+  
+         //  seat container
 
-  /// SEAT BOX
   Widget _seatBox(int number, bool sold, bool selected, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
@@ -336,7 +355,8 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
     );
   }
 
-  /// LEGEND BOX
+           
+
   static Widget _legendBox(Color fill, Color border, String text) {
     return Row(
       children: [
@@ -356,7 +376,14 @@ class _SeatSelectionScreenState extends State<SeatSelectionScreen> {
   }
 }
 
-void _showTermsBottomSheet(BuildContext context) {
+void _showTermsBottomSheet(
+  BuildContext context,
+  String movieTitle,
+  String showTime,
+  String theatreName,
+  int ticketCount,
+  List<String> seats,
+) {
   showModalBottomSheet(
     context: context,
     backgroundColor: Colors.transparent,
@@ -372,18 +399,8 @@ void _showTermsBottomSheet(BuildContext context) {
           children: [
             const SizedBox(height: 10),
 
-            /// DRAG INDICATOR
-            // Container(
-            //   width: 40,
-            //   height: 4,
-            //   decoration: BoxDecoration(
-            //     color: Colors.grey.shade400,
-            //     borderRadius: BorderRadius.circular(10),
-            //   ),
-            // ),
             const SizedBox(height: 16),
 
-            /// TITLE
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Align(
@@ -397,7 +414,6 @@ void _showTermsBottomSheet(BuildContext context) {
 
             const SizedBox(height: 10),
 
-            /// CONTENT
             Flexible(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.only(
@@ -425,7 +441,6 @@ void _showTermsBottomSheet(BuildContext context) {
               ),
             ),
 
-            /// BUTTONS
             Padding(
               padding: const EdgeInsets.all(12),
               child: Row(
@@ -454,12 +469,15 @@ void _showTermsBottomSheet(BuildContext context) {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                       // Navigator.pop(context); // 👈 Close Terms sheet
-
                         Future.delayed(const Duration(milliseconds: 200), () {
                           _showConfirmingSheet(
                             context,
-                          ); // 👈 Open confirming sheet
+                            movieTitle,
+                            showTime,
+                            theatreName,
+                            ticketCount,
+                            seats,
+                          );
                         });
                       },
                       child: Container(
@@ -486,7 +504,14 @@ void _showTermsBottomSheet(BuildContext context) {
   );
 }
 
-void _showConfirmingSheet(BuildContext parentContext) {
+void _showConfirmingSheet(
+  BuildContext parentContext,
+  String movieTitle,
+  String showTime,
+  String theatreName,
+  int ticketCount,
+  List<String> seats,
+) {
   showModalBottomSheet(
     context: parentContext,
     isScrollControlled: true,
@@ -515,15 +540,19 @@ void _showConfirmingSheet(BuildContext parentContext) {
     },
   );
 
-  /// ✅ AUTO NAVIGATE AFTER 2 SECONDS
   Future.delayed(const Duration(seconds: 2), () {
-    Navigator.of(parentContext, rootNavigator: true).pop(); // close sheet
+    Navigator.of(parentContext, rootNavigator: true).pop();
 
     Navigator.of(parentContext).push(
       MaterialPageRoute(
-        builder: (_) => const ConfirmBookingScreen(),
+        builder: (_) => ConfirmBookingScreen(
+          movieTitle: movieTitle,
+          showTime: showTime,
+          theatreName: theatreName,
+          ticketCount: ticketCount,
+          seats: seats,
+        ),
       ),
     );
   });
 }
-

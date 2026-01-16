@@ -1,21 +1,43 @@
+import 'package:book_my_show/Booking/payment.dart';
 import 'package:flutter/material.dart';
 
 class ConfirmBookingScreen extends StatelessWidget {
-  const ConfirmBookingScreen({super.key});
+  final String movieTitle;
+  final String showTime;
+  final String theatreName;
+  final int ticketCount;
+  final List<String> seats;
+
+  const ConfirmBookingScreen({
+    super.key,
+    required this.movieTitle,
+    required this.showTime,
+    required this.theatreName,
+    required this.ticketCount,
+    required this.seats,
+  });
 
   @override
   build(BuildContext context) {
+    final int ticketPrice = 150 * ticketCount;
+    final double convenienceFee = 15.40 * ticketCount;
+    final double donation = 3.00;
+    final double totalAmount = ticketPrice + convenienceFee + donation;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF5F6FA),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.5,
-        leading: IconButton(onPressed: () {
-          Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back_ios_new,size: 20,)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new, size: 20),
+        ),
         title: const Text(
           "Confirm booking",
-          style: TextStyle(color: Colors.black,fontSize: 18),
+          style: TextStyle(color: Colors.black, fontSize: 18),
         ),
       ),
 
@@ -23,8 +45,6 @@ class ConfirmBookingScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-
-            /// MOVIE DETAILS
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -35,30 +55,33 @@ class ConfirmBookingScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Expanded(
                         child: Text(
-                          "Sarvam Maya",
+                          movieTitle,
                           style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       Text(
-                        "3",
+                        "$ticketCount",
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 4),
-                  const Text(
-                    "Fri, 16 Jan, 2026 | 10:30 AM",
-                    style: TextStyle(color: Colors.black,fontSize: 12),
+                  Text(
+                    "Mon, 19 Jan, 2026 | $showTime",
+                    style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
-                  //const SizedBox(height: 6),
-                  const Text(
-                    "Malayalam (2D)\nVGM RED - D11, D12, D13\nVGM Multiplex A/C 2K 7.1 Dolby (VGM RED)",
-                    style: TextStyle(color: Colors.black54,fontSize: 11),
+                  Text(
+                    "Malayalam (2D)\nVGM RED - ${seats.join(', ')}\n$theatreName",
+                    style: TextStyle(color: Colors.black54, fontSize: 11),
                   ),
                   const SizedBox(height: 8),
 
@@ -70,11 +93,14 @@ class ConfirmBookingScreen extends StatelessWidget {
                     ),
                     child: RichText(
                       text: const TextSpan(
-                        style: TextStyle(color: Colors.black,fontSize: 11),
+                        style: TextStyle(color: Colors.black, fontSize: 11),
                         children: [
                           TextSpan(
                             text: "Cancellation Available\n",
-                            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 11,
+                            ),
                           ),
                           TextSpan(
                             text:
@@ -94,7 +120,6 @@ class ConfirmBookingScreen extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            /// PRICE DETAILS
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
@@ -104,45 +129,61 @@ class ConfirmBookingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: const [
-                      Expanded(child: Text("Ticket(s) price", style: TextStyle(color: Colors.black,fontSize: 12))),
-                      Text("₹570.00", style: TextStyle(color: Colors.black,fontSize: 12)),
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "Ticket(s) price",
+                          style: TextStyle(color: Colors.black, fontSize: 12),
+                        ),
+                      ),
+                      Text(
+                        "₹${ticketPrice.toStringAsFixed(2)}",
+                        style: TextStyle(color: Colors.black, fontSize: 12),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 10),
                   Row(
-                    children: const [
-                      Expanded(child: Text("Convenience fees", style: TextStyle(color: Colors.black,fontSize: 12))),
-                      Text("₹77.88", style: TextStyle(color: Colors.black,fontSize: 12)),
-                    ],
-                  ),
-                 SizedBox(height: 10),
-                  Row(
-                    children: const [
+                    children: [
                       Expanded(
                         child: Text(
-                          "Give to Underprivileged Musicians\n(₹1 per ticket)"
-                         , style: TextStyle(color: Colors.black,fontSize: 12)
+                          "Convenience fees",
+                          style: TextStyle(color: Colors.black, fontSize: 12),
                         ),
                       ),
                       Text(
-                        "Add ₹3.00", style: TextStyle(color: Colors.red,fontSize: 12)
-                       
+                        "₹${convenienceFee.toStringAsFixed(2)}",
+                        style: TextStyle(color: Colors.black, fontSize: 12),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "Give to Underprivileged Musicians\n(₹1 per ticket)",
+                          style: TextStyle(color: Colors.black, fontSize: 12),
+                        ),
+                      ),
+                      Text(
+                        "Add ₹${donation.toStringAsFixed(2)}",
+                        style: TextStyle(color: Colors.red, fontSize: 12),
                       ),
                     ],
                   ),
                   const Divider(height: 24),
                   Row(
-                    children: const [
+                    children: [
                       Expanded(
                         child: Text(
-                          "Order total", style: TextStyle(color: Colors.black,fontSize: 12)
-                         
+                          "Order total",
+                          style: TextStyle(color: Colors.black, fontSize: 12),
                         ),
                       ),
                       Text(
-                        "₹647.88"
-                       , style: TextStyle(color: Colors.black,fontSize: 12)
+                        "₹${totalAmount.toStringAsFixed(2)}",
+                        style: TextStyle(color: Colors.black, fontSize: 12),
                       ),
                     ],
                   ),
@@ -152,7 +193,6 @@ class ConfirmBookingScreen extends StatelessWidget {
 
             const SizedBox(height: 8),
 
-            /// CONTACT DETAILS
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
@@ -166,25 +206,25 @@ class ConfirmBookingScreen extends StatelessWidget {
                     children: const [
                       Expanded(
                         child: Text(
-                          "For Sending Booking Details", style: TextStyle(color: Colors.black,fontSize: 12)
-                         
+                          "For Sending Booking Details",
+                          style: TextStyle(color: Colors.black, fontSize: 12),
                         ),
                       ),
                       Text(
-                        "Edit", style: TextStyle(color: Colors.red,fontSize: 12)
-                       
+                        "Edit",
+                        style: TextStyle(color: Colors.red, fontSize: 12),
                       ),
                     ],
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    "+91-9072462527 | cideep671@gmail.com", style: TextStyle(color: Colors.black54,fontSize: 12)
-                   
+                    "+91-9072462527 | cideep671@gmail.com",
+                    style: TextStyle(color: Colors.black54, fontSize: 12),
                   ),
                   const SizedBox(height: 6),
                   const Text(
-                    "Kerala (for GST purposes)", style: TextStyle(color: Colors.black,fontSize: 12)
-                    
+                    "Kerala (for GST purposes)",
+                    style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                 ],
               ),
@@ -192,7 +232,6 @@ class ConfirmBookingScreen extends StatelessWidget {
 
             const SizedBox(height: 8),
 
-            /// APPLY OFFERS
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -219,41 +258,49 @@ class ConfirmBookingScreen extends StatelessWidget {
         ),
       ),
 
-      /// BOTTOM BAR
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-         
-        ),
+        decoration: const BoxDecoration(color: Colors.white),
         child: Row(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              children: const [
-                Text("Total", style: TextStyle(color: Colors.black87,fontSize: 11)),
+              children: [
+                Text(
+                  "Total",
+                  style: TextStyle(color: Colors.black87, fontSize: 11),
+                ),
                 SizedBox(height: 4),
                 Text(
-                  "₹647.88",
-                  style: TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.bold),
+                  "₹${totalAmount.toStringAsFixed(2)}",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             const Spacer(),
             ElevatedButton(
-              onPressed: () {},
+             // onPressed: () {},
+             onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => PaymentScreen(
+          totalAmount: totalAmount,
+        ),
+      ),
+    );
+  },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFE53935),
-               
+
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
               child: const Text(
                 "Continue",
-                style: TextStyle(fontSize: 16,color: Colors.white),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
           ],

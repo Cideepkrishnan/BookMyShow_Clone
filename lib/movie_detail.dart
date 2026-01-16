@@ -33,14 +33,18 @@ class _MovieDetailState extends State<MovieDetail> {
         padding: EdgeInsets.all(12),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {return
-              BookMyShowScreen();
-            },));
-            
+            Navigator.push(
+              context, 
+              MaterialPageRoute(
+                builder: (context) => BookMyShowScreen(
+                  movieTitle: widget.movie["title"],
+                  movieDuration: widget.movie["duration"],
+                ),
+              )
+            );
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
-            //minimumSize: const Size(double.infinity, 50),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -73,7 +77,6 @@ class _MovieDetailState extends State<MovieDetail> {
                       borderRadius: BorderRadius.circular(12),
                       image: DecorationImage(
                         image: NetworkImage(
-                          // "https://images.moneycontrol.com/static-mcnews/2025/07/20250707120301_dhss.jpg?impolicy=website&width=770&height=431",
                           widget.movie["image"],
                         ),
                         fit: BoxFit.cover,
@@ -82,7 +85,6 @@ class _MovieDetailState extends State<MovieDetail> {
                   ),
                   SizedBox(
                     height: 30,
-                    //width: 150,
                     child: ElevatedButton.icon(
                       onPressed: () {},
                       icon: Icon(Icons.play_arrow, color: Colors.white),
@@ -105,7 +107,6 @@ class _MovieDetailState extends State<MovieDetail> {
                 ],
               ),
 
-              //raitng
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
@@ -141,7 +142,6 @@ class _MovieDetailState extends State<MovieDetail> {
                 ),
               ),
 
-              // const SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -182,7 +182,6 @@ class _MovieDetailState extends State<MovieDetail> {
                 ],
               ),
 
-              // Description with ...more
               Padding(
                 padding: EdgeInsets.all(5.0),
                 child: RichText(
@@ -268,7 +267,6 @@ class _MovieDetailState extends State<MovieDetail> {
                 ),
               ),
 
-              //top offer
               SizedBox(height: 10),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
@@ -278,11 +276,8 @@ class _MovieDetailState extends State<MovieDetail> {
                 ),
               ),
 
-              //List needed
-              //top offer
               SizedBox(
                 height: 80,
-                // color: Colors.green,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
@@ -336,7 +331,6 @@ class _MovieDetailState extends State<MovieDetail> {
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                      // const SizedBox(height: 4),
                                       Text(
                                         "Tap to view details",
                                         style: const TextStyle(
@@ -357,7 +351,6 @@ class _MovieDetailState extends State<MovieDetail> {
                 ),
               ),
 
-              //topreview
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -379,10 +372,8 @@ class _MovieDetailState extends State<MovieDetail> {
               ),
               SizedBox(height: 8),
 
-              //List needed
               Container(
                 height: 45,
-                // color: Colors.amber,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
@@ -456,7 +447,6 @@ class _MovieDetailState extends State<MovieDetail> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          /// USER ROW
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -494,7 +484,6 @@ class _MovieDetailState extends State<MovieDetail> {
                                 ],
                               ),
 
-                              /// RATING
                               Row(
                                 children: const [
                                   Icon(Icons.star, color: Colors.red, size: 18),
@@ -512,7 +501,6 @@ class _MovieDetailState extends State<MovieDetail> {
 
                           const SizedBox(height: 12),
 
-                          /// TAGS
                           const Text(
                             "#SuperDirection #GreatActing #WowMusic #Wellmade",
                             style: TextStyle(fontSize: 12, color: Colors.grey),
@@ -522,7 +510,6 @@ class _MovieDetailState extends State<MovieDetail> {
 
                           const SizedBox(height: 6),
 
-                          /// REVIEW TEXT
                           const Text(
                             "Avatar 3 is a fire-tastic film that delivers breathtaking visuals and thrilling action sequences.",
                             style: TextStyle(
@@ -535,7 +522,6 @@ class _MovieDetailState extends State<MovieDetail> {
 
                           const SizedBox(height: 6),
 
-                          /// READ MORE
                           const Text(
                             "Read More ›",
                             style: TextStyle(fontSize: 11, color: Colors.red),
@@ -543,7 +529,6 @@ class _MovieDetailState extends State<MovieDetail> {
 
                           const SizedBox(height: 12),
 
-                          /// FOOTER
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: const [
@@ -583,10 +568,8 @@ class _MovieDetailState extends State<MovieDetail> {
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
               ),
 
-              //cast
               Container(
                 height: 180,
-                // color: Colors.amber,
                 child: ListView.builder(
                   itemCount: widget.movie["cast"].length,
                   scrollDirection: Axis.horizontal,
@@ -599,7 +582,6 @@ class _MovieDetailState extends State<MovieDetail> {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             width: 90,
-                            // color: Colors.blueAccent,
                             child: Column(
                               children: [
                                 Container(
@@ -609,7 +591,6 @@ class _MovieDetailState extends State<MovieDetail> {
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        //"https://th.bing.com/th/id/OSK.537805c0d69909805d3cef2525b06ed2?w=160&h=238&c=7&rs=1&qlt=80&o=6&dpr=1.3&pid=SANGAM",
                                         cast["castimage"],
                                       ),
                                       fit: BoxFit.cover,
@@ -622,7 +603,6 @@ class _MovieDetailState extends State<MovieDetail> {
                                   child: Text(
                                     cast["castname"],
                                     style: TextStyle(fontSize: 12),
-                                    // textAlign: TextAlign.start,
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -653,8 +633,6 @@ class _MovieDetailState extends State<MovieDetail> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   height: 80,
-                  //width: 280,
-                  //margin: const EdgeInsets.symmetric(horizontal: 16),
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
                     color: Colors.black,
@@ -675,10 +653,8 @@ class _MovieDetailState extends State<MovieDetail> {
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
               ),
 
-              //cast
               Container(
                 height: 190,
-                // color: Colors.amber,
                 child: ListView.builder(
                   itemCount: widget.movie["crew"].length,
                   scrollDirection: Axis.horizontal,
@@ -691,7 +667,6 @@ class _MovieDetailState extends State<MovieDetail> {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             width: 90,
-                            // color: Colors.blueAccent,
                             child: Column(
                               children: [
                                 Container(
@@ -701,7 +676,6 @@ class _MovieDetailState extends State<MovieDetail> {
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        //"https://tse4.mm.bing.net/th/id/OIP.5FnX2XMgDnVew_RK6q5LLAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
                                         crew["image"],
                                       ),
                                       fit: BoxFit.cover,
@@ -739,7 +713,6 @@ class _MovieDetailState extends State<MovieDetail> {
 
               SizedBox(height: 10),
 
-              /// Recommended Movies
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -765,7 +738,6 @@ class _MovieDetailState extends State<MovieDetail> {
               SizedBox(height: 10),
 
               Container(
-                //color: Colors.green,
                 height: 290,
                 child: ListView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -816,7 +788,6 @@ class _MovieDetailState extends State<MovieDetail> {
                                       ),
 
                                       Spacer(),
-                                      //styling separatly for text
                                       Text(
                                         Recomendedmovies[index]["votes"],
                                         style: const TextStyle(

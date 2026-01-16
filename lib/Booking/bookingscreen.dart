@@ -2,7 +2,14 @@ import 'package:book_my_show/Booking/seatselection.dart';
 import 'package:flutter/material.dart';
 
 class BookMyShowScreen extends StatefulWidget {
-  const BookMyShowScreen({super.key});
+  final String movieTitle;
+  final String movieDuration;
+  
+  const BookMyShowScreen({
+    super.key,
+    required this.movieTitle,
+    required this.movieDuration,
+  });
 
   @override
   State<BookMyShowScreen> createState() => _BookMyShowScreenState();
@@ -13,7 +20,7 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
   List<Map<String, dynamic>> theaters = [
     {
       "name": "VGM Multiplex A/C 2K 7.1 Dolby",
-      "times": ["05:15 PM", "05:30 PM", "07:50 PM", "08:15 PM", "10:30 PM"],
+      "times": ["10:30 AM", "02:30 PM", "05:15 PM", "05:30 PM", "10:30 PM"],
     },
     {
       "name": "Vinayaka Theater Complex 2K A/C Dolby 7.1",
@@ -36,14 +43,14 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
-              "Sarvam Maya",
+              widget.movieTitle,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             SizedBox(height: 2),
             Text(
-              "Movie runtime: 2h 27m",
+              "Movie runtime: ${widget.movieDuration}",
               style: TextStyle(color: Colors.grey, fontSize: 12),
             ),
           ],
@@ -97,7 +104,7 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          "${10 + index}",
+                          "${19 + index}",
                           style: TextStyle(
                             color: isSelected ? Colors.white : Colors.black,
                             fontSize: 18,
@@ -146,14 +153,10 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                         bottom: 5,
                         right: 10,
                       ),
-                      // height: 40,
-                      // width: 80,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          // color: isClear ? const Color(0xFFE53935) : Colors.grey.shade300,
-                        ),
+                        border: Border.all(),
                       ),
                       child: Center(
                         child: Text(
@@ -168,7 +171,6 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
             ),
 
             Container(
-              //  margin: const EdgeInsets.all(12),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -188,7 +190,6 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          /// THEATRE NAME
                           const SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -207,14 +208,13 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                               ),
                             ],
                           ),
-                          // const SizedBox(height: 5),
                           const Text(
                             "Cancellation available",
                             style: TextStyle(fontSize: 12, color: Colors.green),
                           ),
                           const SizedBox(height: 10),
-
-                          /// TIME GRID
+                  
+                 // time grid
                           Padding(
                             padding: const EdgeInsets.all(5.0),
                             child: GridView.builder(
@@ -231,19 +231,20 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
                               itemBuilder: (context, timeIndex) {
                                 return InkWell(
                                   onTap: () {
-                                    _showSeatCountBottomSheet(context);
+                                    _showSeatCountBottomSheet(
+                                      context,
+                                      widget.movieTitle,
+                                      times[timeIndex],
+                                      theatre["name"],
+                                    );
                                   },
                                   child: Container(
                                     height: 45,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(
-                                        3,
-                                      ), // VERY SMALL radius
+                                      borderRadius: BorderRadius.circular(3),
                                       border: Border.all(
-                                        color: const Color(
-                                          0xFF4CAF50,
-                                        ), // green / orange / grey
+                                        color: const Color(0xFF4CAF50),
                                         width: 1,
                                       ),
                                     ),
@@ -316,7 +317,12 @@ class _BookMyShowScreenState extends State<BookMyShowScreen> {
   }
 }
 
-void _showSeatCountBottomSheet(BuildContext context) {
+void _showSeatCountBottomSheet(
+  BuildContext context,
+  String movieTitle,
+  String showTime,
+  String theatreName,
+) {
   int selectedSeat = 2;
 
   showModalBottomSheet(
@@ -421,7 +427,7 @@ void _showSeatCountBottomSheet(BuildContext context) {
                       ),
                     ),
                   ],
-                ), // const Spacer(),
+                ),
                 const Divider(),
 
                 Padding(
@@ -437,6 +443,9 @@ void _showSeatCountBottomSheet(BuildContext context) {
                           MaterialPageRoute(
                             builder: (_) => SeatSelectionScreen(
                               maxSelectableSeats: selectedSeat,
+                              movieTitle: movieTitle,
+                              showTime: showTime,
+                              theatreName: theatreName,
                             ),
                           ),
                         );
