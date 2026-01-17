@@ -17,9 +17,12 @@ class _MovieDetailState extends State<MovieDetail> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-         leading: IconButton(onPressed: () {
-          Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back_ios,size: 20,)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios, size: 20),
+        ),
         title: Text(
           widget.movie["title"],
           style: TextStyle(fontSize: 15, color: Colors.black),
@@ -29,18 +32,22 @@ class _MovieDetailState extends State<MovieDetail> {
           SizedBox(width: 12),
         ],
       ),
+
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(12),
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(
-              context, 
+              context,
               MaterialPageRoute(
                 builder: (context) => BookMyShowScreen(
                   movieTitle: widget.movie["title"],
                   movieDuration: widget.movie["duration"],
+                  movieImage: widget.movie["image2"],
+                  movieType: widget.movie["type"],
+                  movieRating: widget.movie["rating"],
                 ),
-              )
+              ),
             );
           },
           style: ElevatedButton.styleFrom(
@@ -76,9 +83,7 @@ class _MovieDetailState extends State<MovieDetail> {
                       color: Colors.amber,
                       borderRadius: BorderRadius.circular(12),
                       image: DecorationImage(
-                        image: NetworkImage(
-                          widget.movie["image"],
-                        ),
+                        image: NetworkImage(widget.movie["image"]),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -590,9 +595,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                        cast["castimage"],
-                                      ),
+                                      image: NetworkImage(cast["castimage"]),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -675,9 +678,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                        crew["image"],
-                                      ),
+                                      image: NetworkImage(crew["image"]),
                                       fit: BoxFit.cover,
                                     ),
                                   ),

@@ -25,7 +25,7 @@ class Movie {
  List<Map<String, dynamic>> Recomendedmovies = [
     {
       "image":
-          "https://th.bing.com/th?id=OIF.6f%2bykKGFhK7KmA8g331U%2fg&rs=1&pid=ImgDetMain&o=7&rm=3",
+          "https://tse1.explicit.bing.net/th/id/OIP.cAmhGhJVcly_YSPeUx0Q7gHaK-?rs=1&pid=ImgDetMain&o=7&rm=3",
       "title": "Avatar: Fire and Ash",
       "rating": "8",
       "votes": "100K+",
@@ -177,6 +177,9 @@ class Crew {
   
  List<Map<String, dynamic>> DetailMovies = [
     {
+
+       "image2":
+          "https://tse1.explicit.bing.net/th/id/OIP.cAmhGhJVcly_YSPeUx0Q7gHaK-?rs=1&pid=ImgDetMain&o=7&rm=3",
       "image":
           "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/aa88957c-3b5f-4369-90ac-b781496a70f3/compose?aspectRatio=1.78&format=webp&width=1200",
       "title": "Avatar: Fire and Ash",
@@ -242,6 +245,9 @@ class Crew {
 
 
     {
+
+       "image2":
+          "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kalamkaval-et00468439-1761645584.jpg",
       "image":
           "https://i.ytimg.com/vi/RBflOx6sEYs/maxresdefault.jpg",
       "title": "Kalamkaval",
@@ -307,6 +313,9 @@ class Crew {
 
 
     {
+
+       "image2":
+          "https://cdn.trackmyshow.in/movie_data/sarvam-maya/sarvam-maya_portrait.jpg",
       "image":
           "https://img.nowrunning.com/content/movie/2025/sarva-31076/bg2_sarvam-maya.jpg",
       "title": "Sarvam Maya",
@@ -367,6 +376,9 @@ class Crew {
     },
 
     {
+
+      "image2":
+          "https://m.media-amazon.com/images/M/MV5BYjdkNWI3MmQtZDRmZC00NWYwLThmYjQtODE2YjQwNzA0Yjg0XkEyXkFqcGc@._V1_.jpg",
       "image":
           "https://tse4.mm.bing.net/th/id/OIP.NWkw4WjrwsogTBtu2JakBQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
       "title": "Bha Bha Ba",
@@ -442,6 +454,9 @@ class Crew {
     //   "date":" 18 Dec, 2025",
     // },
     {
+
+      "image2":
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhL5Wh1VyoX7YsblPAhUln1TsvRlme7CxRBw4R4BxrpqEXvJpWO8J8FLU_pfWYm7FZwWymzm7RbHkbXefhNbvKdGgvWimaoMA-UGr_NRHaSszEsse_kqmBoFtn_Q1XaDNQfikFQpMxJ1TGphWNHw7t2qZvv27l2eBM9JnoiaXcu-ACHTMROQHc7MTu4PxwA/s16000/images%20(64).jpeg",
       "image":
           "https://images.timesnownews.com/thumb/msid-152702833,width-1280,height-720,resizemode-75/152702833.jpg",
       "title": "Dhurandhar",

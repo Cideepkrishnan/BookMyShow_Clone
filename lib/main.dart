@@ -1,4 +1,5 @@
 import 'package:book_my_show/Booking/bookingscreen.dart';
+import 'package:book_my_show/Booking/payment_sucess.dart';
 import 'package:book_my_show/Home/Best%20Events/planfortody.dart';
 import 'package:book_my_show/Home/browseByCinema.dart';
 import 'package:book_my_show/Movies/filter.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:
-    // BookMyShowScreen()
+    // PaymentSucess()
       Dashbord() ,
     );
   }
