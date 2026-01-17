@@ -1,3 +1,4 @@
+import 'package:book_my_show/profileScreen/editprofile.dart';
 import 'package:book_my_show/profileScreen/youroder.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF4F6F8),
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
@@ -31,11 +33,13 @@ class _ProfileState extends State<Profile> {
               children: [
                 InkWell(
                   onTap: () {
-                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return EditProfileScreen();
+                    },));
                   },
                   child: Text(
                     "Edit Profile",
-                    style: TextStyle(color: Colors.grey, fontSize: 13),
+                    style: TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                 ),
                 SizedBox(width: 10),
@@ -68,7 +72,7 @@ class _ProfileState extends State<Profile> {
                 title: Text(
                   "Your Orders",
                   style: const TextStyle(fontSize: 13,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w400),
                 ),
                 subtitle: Text(
                   "View all your bookings & purchases",
@@ -84,7 +88,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.tv_outlined,color: Colors.black),
               title: Text(
                 "Stream Library",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               subtitle: Text(
                 "Rented & Purchased Movies",
@@ -99,7 +103,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.credit_card, color: Colors.black),
               title: Text(
                "Play Credit Card",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               subtitle: Text(
                "View your Play Credit Card details and offers",
@@ -114,7 +118,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.help_outline, color: Colors.black),
               title: Text(
                "Help Centre",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               subtitle: Text(
                 "Need help or have questions?",
@@ -129,7 +133,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.settings_outlined, color: Colors.black),
               title: Text(
                "Accounts & Settings",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               subtitle: Text(
                "Location, Payments, Permissions & More",
@@ -138,14 +142,16 @@ class _ProfileState extends State<Profile> {
               trailing: const Icon(Icons.chevron_right),
             ),
           ),
-          Divider(height: 1, thickness: 6),
+       
+         SizedBox(height: 10,),
+         
            Container(
             color: Colors.white,
             child: ListTile(
               leading: Icon(Icons.card_giftcard, color: Colors.black),
               title: Text(
                 "Rewards",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               subtitle: Text(
                "View your rewards & unlock new ones",
@@ -160,7 +166,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.local_offer_outlined,color: Colors.black),
               title: Text(
                "Offers",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               trailing: const Icon(Icons.chevron_right),
             ),
@@ -171,7 +177,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.redeem_outlined, color: Colors.black),
               title: Text(
                "Gift Cards",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               
               trailing: const Icon(Icons.chevron_right),
@@ -183,7 +189,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.fastfood_outlined, color: Colors.black),
               title: Text(
                 "Food & Beverages",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
             
               trailing: const Icon(Icons.chevron_right),
@@ -195,7 +201,7 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.event_available_outlined, color: Colors.black),
               title: Text(
                "List your Show",
-                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w600),
+                style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400),
               ),
               subtitle: Text(
               "Got an event? Partner with us",
@@ -210,11 +216,11 @@ class _ProfileState extends State<Profile> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text("Share", style: TextStyle(fontSize: 12, color: Colors.grey),),
+            Text("Share", style: TextStyle(fontSize: 12, color: Colors.grey,decoration: TextDecoration.underline,decorationColor: Colors.grey),),
             SizedBox(width: 16),
             Text("|", style: TextStyle(fontSize: 12, color: Colors.grey),),
             SizedBox(width: 16),
-            Text("Rate Us", style: TextStyle(fontSize: 12, color: Colors.grey),),
+            Text("Rate Us", style: TextStyle(fontSize: 12, color: Colors.grey,decoration: TextDecoration.underline,decorationColor: Colors.grey),),
             SizedBox(width: 16),
             Text("|", style: TextStyle(fontSize: 12, color: Colors.grey),),
             SizedBox(width: 16),
@@ -225,11 +231,11 @@ class _ProfileState extends State<Profile> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text("Terms & Conditions", style: TextStyle(fontSize: 12, color: Colors.grey),),
+            Text("Terms & Conditions", style: TextStyle(fontSize: 12, color: Colors.grey,decoration: TextDecoration.underline,decorationColor: Colors.grey),),
             SizedBox(width: 16),
             Text("|", style: TextStyle(fontSize: 12, color: Colors.grey),),
             SizedBox(width: 12),
-            Text("Privacy Policy", style: TextStyle(fontSize: 12, color: Colors.grey),),
+            Text("Privacy Policy", style: TextStyle(fontSize: 12, color: Colors.grey,decoration: TextDecoration.underline,decorationColor: Colors.grey),),
           ],
         ),
       ],

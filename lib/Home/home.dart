@@ -49,7 +49,7 @@ class _HomescreenState extends State<Homescreen> {
             SizedBox(height: 2),
             Text(
               "Kanhangad  >",
-              style: TextStyle(color: Colors.red, fontSize: 11, fontWeight: FontWeight.bold,),
+              style: TextStyle(color: Colors.red, fontSize: 11, fontWeight: FontWeight.w400,),
             ),
           ],
         ),
@@ -63,7 +63,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
               Positioned(
                 right: 10,
-                top: 10,
+                top: 8,
                 child: CircleAvatar(
                   radius: 8,
                   backgroundColor: Colors.red,
@@ -83,7 +83,7 @@ class _HomescreenState extends State<Homescreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(9.0),
+              padding: const EdgeInsets.only(top: 4,bottom: 10,right: 10),
               child: Container(
                 // color: Colors.amber,
                 height: 90,
@@ -105,7 +105,7 @@ class _HomescreenState extends State<Homescreen> {
                                 radius: 22,
                                 backgroundColor: Colors.white,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(7,), // 👈 adjust this
+                                  padding: const EdgeInsets.all(7,), 
                                   child: Image.asset(
                                     categoryList[index]["icon"]!,
                                     width: 20,
@@ -118,9 +118,10 @@ class _HomescreenState extends State<Homescreen> {
                             //const SizedBox(height: 6),
                             Text(
                               categoryList[index]['title']!,
+                               textAlign: TextAlign.center,
                               style: const TextStyle(
                                 fontSize: 9.5,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ],
@@ -286,7 +287,7 @@ class _HomescreenState extends State<Homescreen> {
                           },
                           options: CarouselOptions(
                             height: double.infinity,
-                            viewportFraction: 1.1, // VERY IMPORTANT
+                            viewportFraction: 1.1, 
                             autoPlay: true,
                             autoPlayAnimationDuration: Duration(seconds: 4),
                             scrollPhysics: BouncingScrollPhysics(),
@@ -298,14 +299,9 @@ class _HomescreenState extends State<Homescreen> {
                             },
                           ),
                         ),
-
-                        // child: Image.asset(
-                        //   "assets/images/Anora.jpg",
-                        //   fit: BoxFit.cover,
-                        // ),
                       ),
 
-                      /// 🎥 Right Content Section
+                      ///  Right Content Section
                       Expanded(
                         flex: 4,
                         child: Padding(
@@ -359,7 +355,6 @@ class _HomescreenState extends State<Homescreen> {
 
                               const SizedBox(height: 2),
 
-                              /// Watch Now Button
                               Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Text(
@@ -389,7 +384,7 @@ class _HomescreenState extends State<Homescreen> {
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Recommended Movies",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
 
@@ -409,7 +404,7 @@ class _HomescreenState extends State<Homescreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
-                          width: 175,
+                          width: 155,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -451,18 +446,17 @@ class _HomescreenState extends State<Homescreen> {
                                     Text(
                                       Recomendedmovies[index]["rating"],
                                       style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 11,
                                       ),
                                     ),
 
                                     Spacer(),
-                                    //styling separatly for text
+
                                     Text(
                                       Recomendedmovies[index]["votes"],
                                       style: const TextStyle(
                                         color: Colors.black,
-                                        fontSize: 12,
+                                        fontSize: 11,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
@@ -485,8 +479,8 @@ class _HomescreenState extends State<Homescreen> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 13,
                                 ),
                               ),
                             ],
@@ -509,7 +503,7 @@ class _HomescreenState extends State<Homescreen> {
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: const Color(0xF4DFE7F1),
+                   color: const Color(0xFFEFF7FF),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -532,7 +526,6 @@ class _HomescreenState extends State<Homescreen> {
 
                       const SizedBox(width: 16),
 
-                      /// 📝 Text Section
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -567,8 +560,6 @@ class _HomescreenState extends State<Homescreen> {
                           ],
                         ),
                       ),
-
-                      /// ➡ Arrow
                     ],
                   ),
                 ),
@@ -603,8 +594,8 @@ class _HomescreenState extends State<Homescreen> {
                           Text(
                             "Apply for the best offer now",
                             style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(height: 12),
@@ -623,8 +614,8 @@ class _HomescreenState extends State<Homescreen> {
                                 "Apply Now",
                                 style: TextStyle(
                                   color: Colors.red,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
@@ -642,17 +633,17 @@ class _HomescreenState extends State<Homescreen> {
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "New Year Parties",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
-            SizedBox(height: 6),
+            SizedBox(height: 3),
 
             /// Offer Text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Welcome Offer. Use Code NYE250 at checkout",
-                style: TextStyle(fontSize: 14, color: Colors.blue),
+                style: TextStyle(fontSize: 13, color: Colors.blue),
               ),
             ),
 
@@ -666,7 +657,7 @@ class _HomescreenState extends State<Homescreen> {
                 itemCount: newyear.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 160,
+                    width: 155,
                     margin: const EdgeInsets.only(right: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -693,8 +684,8 @@ class _HomescreenState extends State<Homescreen> {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         SizedBox(height: 4),
@@ -702,7 +693,7 @@ class _HomescreenState extends State<Homescreen> {
                         newyear[index]['venue']!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                          style: TextStyle(fontSize: 11, color: Colors.grey),
                         ),
                       ],
                     ),
@@ -717,23 +708,23 @@ class _HomescreenState extends State<Homescreen> {
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Best Events This Week",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
-            SizedBox(height: 6),
+            SizedBox(height: 2),
 
             /// Subtitle
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Monday to Sunday, we got you covered",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: TextStyle(fontSize: 12, color: Colors.grey),
               ),
             ),
 
             SizedBox(height: 15),
             Container(
-              height: 130,
+              height: 120,
               //color: Colors.amber,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -741,12 +732,11 @@ class _HomescreenState extends State<Homescreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      width: 120,
+                      width: 110,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Stack(
                           children: [
-                            /// 🖼 Background Image
                             Positioned.fill(
                               child: Image.network(
                                 "https://www.resellerclub.com/blog/wp-content/uploads/2020/11/linux-vs-windows-vps-which-is-the-best-os-for-vps-bb.jpg",
@@ -754,18 +744,14 @@ class _HomescreenState extends State<Homescreen> {
                                 alignment: Alignment.centerLeft,
                               ),
                             ),
-
-                            /// 🎨 Color Overlay
                             Positioned.fill(
                               child: Container(color: Color(0x43E6A3B3)),
                             ),
-
-                            /// 📝 Text Content
                             Padding(
                               padding: const EdgeInsets.only(
-                                top: 40,
-                                left: 10,
-                                bottom: 5,
+                                top: 35,
+                                left: 8,
+                                bottom: 8,
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -774,7 +760,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "PLAN FOR\nTODAY",
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       height: 1.2,
                                     ),
@@ -784,7 +770,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "6 Events",
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -799,7 +785,7 @@ class _HomescreenState extends State<Homescreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      width: 120,
+                      width: 110,
 
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
@@ -833,7 +819,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "PLAN FOR\nTOMORROW",
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       height: 1.2,
                                     ),
@@ -843,7 +829,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "10+ Events",
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -858,7 +844,7 @@ class _HomescreenState extends State<Homescreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      width: 120,
+                      width: 110,
 
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
@@ -868,7 +854,7 @@ class _HomescreenState extends State<Homescreen> {
                             Positioned.fill(
                               child: Image.network(
                                 "https://st4.depositphotos.com/1017228/19776/i/1600/depositphotos_197764318-stock-photo-group-happy-multiracial-people-showing.jpg",
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fitHeight,
                                 alignment: Alignment.centerLeft,
                               ),
                             ),
@@ -892,7 +878,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "WEEKEND \n PLANS",
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       height: 1.2,
                                     ),
@@ -902,7 +888,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "20+ Events",
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -957,16 +943,16 @@ class _HomescreenState extends State<Homescreen> {
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Browse Events By Category",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
-            SizedBox(height: 6),
+            //SizedBox(height: 6),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Live events for all your entertainment needs",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: TextStyle(fontSize: 12, color: Colors.grey),
               ),
             ),
             SizedBox(height: 12),
@@ -983,50 +969,50 @@ class _HomescreenState extends State<Homescreen> {
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF1C1B5A), Color(0xFF3A3A9A)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
+                      image: DecorationImage(image: AssetImage( "assets/images/icmenst20.png",),fit: BoxFit.cover)
+                      // gradient: LinearGradient(
+                      //   colors: [Color(0xFF1C1B5A), Color(0xFF3A3A9A)],
+                      //   begin: Alignment.topLeft,
+                      //   end: Alignment.bottomRight,
+                      // ),
                     ),
-                    child: Stack(
-                      children: [
-                        /// Right Image
-                        Positioned(
-                          right: 5,
-                          bottom: 10,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(14),
-                            child: Image.asset(
-                              //  "https://i.namu.wiki/i/qBm0oeBXNIIR2rkTXVKetavhWp-q12SsKCuc0n_id8guSh-xqbSwKj7AS7ph7Uzc3Fl1NIWEvizZRxaNbKhvI3skxBLtyxoom9VjvE9KVKWiXjzd8LOW7wYq4HZSGv21_wlZUl3vDHBhZKKg1WY2FK4orfAD5hgXRGdSqvCNeAY.svg",
-                              "assets/images/t20.png",
-                              height: 55,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 16.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "ICC MEN'S\nT20WC\n2026",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                    // child: Stack(
+                    //   children: [
+                    //     /// Right Image
+                    //     Positioned(
+                    //       right: 5,
+                    //       bottom: 10,
+                    //       child: ClipRRect(
+                    //         borderRadius: BorderRadius.circular(14),
+                    //         child: Image.asset(
+                    //           "assets/images/t20.png",
+                    //           height: 55,
+                    //           fit: BoxFit.cover,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             top: 16.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "ICC MEN'S\nT20WC\n2026",
+                    //             style: TextStyle(
+                    //               color: Colors.white,
+                    //               fontSize: 16,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // ),
                   ),
                   Container(
                     width: 150,
@@ -1034,67 +1020,68 @@ class _HomescreenState extends State<Homescreen> {
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFDAC23E),
-                          Color.fromARGB(255, 215, 171, 60),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
+                        image: DecorationImage(image: AssetImage( "assets/images/cmedyshow.png",),fit: BoxFit.cover)
+                      // gradient: LinearGradient(
+                      //   colors: [
+                      //     Color(0xFFDAC23E),
+                      //     Color.fromARGB(255, 215, 171, 60),
+                      //   ],
+                      //   begin: Alignment.topLeft,
+                      //   end: Alignment.bottomRight,
+                      // ),
                     ),
-                    child: Stack(
-                      children: [
-                        /// Right Image
-                        Positioned(
-                          right: -30,
-                          bottom: -20,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(14),
-                            child: Image.network(
-                              "https://static.vecteezy.com/system/resources/previews/052/879/272/non_2x/young-man-in-yellow-shirt-with-glasses-smiling-confidently-png.png",
-                              height: 110,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 22.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "COMEDY\nSHOWS",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            //SizedBox(height: 8),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                bottom: 4.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "3 Events",
-                                style: const TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                    // child: Stack(
+                    //   children: [
+                    //     /// Right Image
+                    //     Positioned(
+                    //       right: -30,
+                    //       bottom: -20,
+                    //       child: ClipRRect(
+                    //         borderRadius: BorderRadius.circular(14),
+                    //         child: Image.network(
+                    //           "https://static.vecteezy.com/system/resources/previews/052/879/272/non_2x/young-man-in-yellow-shirt-with-glasses-smiling-confidently-png.png",
+                    //           height: 110,
+                    //           fit: BoxFit.cover,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             top: 22.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "COMEDY\nSHOWS",
+                    //             style: TextStyle(
+                    //               color: Colors.white,
+                    //               fontSize: 16,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //         //SizedBox(height: 8),
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             bottom: 4.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "3 Events",
+                    //             style: const TextStyle(
+                    //               color: Colors.white70,
+                    //               fontSize: 10,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // ),
                   ),
                   Container(
                     width: 150,
@@ -1102,64 +1089,65 @@ class _HomescreenState extends State<Homescreen> {
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF7FA8D8), Color(0xFF5E85C5)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
+                       image: DecorationImage(image: AssetImage( "assets/images/msicshow.png",),fit: BoxFit.cover)
+                      // gradient: LinearGradient(
+                      //   colors: [Color(0xFF7FA8D8), Color(0xFF5E85C5)],
+                      //   begin: Alignment.topLeft,
+                      //   end: Alignment.bottomRight,
+                      // ),
                     ),
-                    child: Stack(
-                      children: [
-                        /// Right Image
-                        Positioned(
-                          right: -15,
-                          bottom: -30,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(14),
-                            child: Image.network(
-                              "https://static.vecteezy.com/system/resources/previews/023/499/158/non_2x/woman-with-headphone-isolated-generative-ai-png.png",
-                              height: 130,
-                              fit: BoxFit.fitWidth,
-                            ),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 22.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "MUSIC\nSHOWS",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            //SizedBox(height: 8),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                bottom: 4.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "15+ Events",
-                                style: const TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                    // child: Stack(
+                    //   children: [
+                    //     /// Right Image
+                    //     Positioned(
+                    //       right: -15,
+                    //       bottom: -30,
+                    //       child: ClipRRect(
+                    //         borderRadius: BorderRadius.circular(14),
+                    //         child: Image.network(
+                    //           "https://static.vecteezy.com/system/resources/previews/023/499/158/non_2x/woman-with-headphone-isolated-generative-ai-png.png",
+                    //           height: 130,
+                    //           fit: BoxFit.fitWidth,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             top: 22.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "MUSIC\nSHOWS",
+                    //             style: TextStyle(
+                    //               color: Colors.white,
+                    //               fontSize: 18,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //         //SizedBox(height: 8),
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             bottom: 4.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "15+ Events",
+                    //             style: const TextStyle(
+                    //               color: Colors.white70,
+                    //               fontSize: 10,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // ),
                   ),
                   Container(
                     width: 150,
@@ -1167,64 +1155,65 @@ class _HomescreenState extends State<Homescreen> {
                     margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF3683DB), Color(0xFF173361)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
+                        image: DecorationImage(image: AssetImage( "assets/images/kdsshow.png",),fit: BoxFit.cover)
+                      // gradient: LinearGradient(
+                      //   colors: [Color(0xFF3683DB), Color(0xFF173361)],
+                      //   begin: Alignment.topLeft,
+                      //   end: Alignment.bottomRight,
+                      // ),
                     ),
-                    child: Stack(
-                      children: [
-                        /// Right Image
-                        Positioned(
-                          left: 65,
-                          bottom: 1,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(14),
-                            child: Image.network(
-                              "https://th.bing.com/th/id/R.a88861a27cabb8e2c2301b7f94ac743f?rik=3%2byWHFV6858lsg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2017%2f03%2fKids-Free-PNG-Image.png&ehk=mmYJJ281fFhO0FtH4PhE%2fDc0MFDNtosXINJWdz%2fQPKM%3d&risl=&pid=ImgRaw&r=0",
-                              height: 130,
-                              fit: BoxFit.fitHeight,
-                            ),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 32.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "KIDS",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            //SizedBox(height: 8),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                bottom: 4.0,
-                                left: 13,
-                              ),
-                              child: Text(
-                                "6 Events",
-                                style: const TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                    // child: Stack(
+                    //   children: [
+                    //     /// Right Image
+                    //     Positioned(
+                    //       left: 65,
+                    //       bottom: 1,
+                    //       child: ClipRRect(
+                    //         borderRadius: BorderRadius.circular(14),
+                    //         child: Image.network(
+                    //           "https://th.bing.com/th/id/R.a88861a27cabb8e2c2301b7f94ac743f?rik=3%2byWHFV6858lsg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2017%2f03%2fKids-Free-PNG-Image.png&ehk=mmYJJ281fFhO0FtH4PhE%2fDc0MFDNtosXINJWdz%2fQPKM%3d&risl=&pid=ImgRaw&r=0",
+                    //           height: 130,
+                    //           fit: BoxFit.fitHeight,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             top: 32.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "KIDS",
+                    //             style: TextStyle(
+                    //               color: Colors.white,
+                    //               fontSize: 18,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //         //SizedBox(height: 8),
+                    //         Padding(
+                    //           padding: const EdgeInsets.only(
+                    //             bottom: 4.0,
+                    //             left: 13,
+                    //           ),
+                    //           child: Text(
+                    //             "6 Events",
+                    //             style: const TextStyle(
+                    //               color: Colors.white70,
+                    //               fontSize: 10,
+                    //               fontWeight: FontWeight.bold,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // ),
                   ),
                 ],
               ),
@@ -1235,14 +1224,14 @@ class _HomescreenState extends State<Homescreen> {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 "Watch Top Movies Online",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: Text(
                 "Buy or Rent movies on BMS STREAM",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey,fontSize: 12),
               ),
             ),
 
@@ -1316,20 +1305,22 @@ class _HomescreenState extends State<Homescreen> {
                                 Text(
                                   movies[index].title,
                                   style: const TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
                                   movies[index].info,
-                                  style: const TextStyle(color: Colors.grey),
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(color: Colors.grey,fontSize: 11),
                                 ),
                                 const SizedBox(height: 12),
                                 Text(
                                   movies[index].description,
                                   maxLines: 4,
                                   overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(fontSize: 12),
                                 ),
                               ],
                             ),
@@ -1340,21 +1331,24 @@ class _HomescreenState extends State<Homescreen> {
                       const SizedBox(height: 20),
 
                       /// Buy or Rent Button
-                      OutlinedButton(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(
-                          minimumSize: const Size(double.infinity, 48),
-                          side: const BorderSide(color: Colors.red),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                      SizedBox(
+                        height: 40,
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          style: OutlinedButton.styleFrom(
+                            minimumSize: const Size(double.infinity, 48),
+                            side: const BorderSide(color: Colors.red),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
-                        ),
-                        child: const Text(
-                          "Buy or Rent",
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          child: const Text(
+                            "Buy or Rent",
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
@@ -1365,28 +1359,6 @@ class _HomescreenState extends State<Homescreen> {
             ),
 
             SizedBox(height: 12),
-
-            /// Dot Indicator
-//         Row(
-//   mainAxisAlignment: MainAxisAlignment.center,
-//   children: List.generate(
-//     movies.length,
-//     (index) => AnimatedContainer(
-//       duration: const Duration(milliseconds: 300),
-//       curve: Curves.easeInOut,
-//       margin: const EdgeInsets.symmetric(horizontal: 4),
-//       height: 6,
-//       width: currentIndex == index ? 18 : 6,
-//       decoration: BoxDecoration(
-//         color: currentIndex == index
-//             ? Colors.black
-//             : Colors.grey.shade400,
-//         borderRadius: BorderRadius.circular(10),
-//       ),
-//     ),
-//   ),
-// )
-
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -1426,8 +1398,8 @@ class _HomescreenState extends State<Homescreen> {
               child: Text(
                 "The Ultimate Events List",
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
                   color: Color(0xFF1F1F1F),
                 ),
               ),
@@ -1437,7 +1409,7 @@ class _HomescreenState extends State<Homescreen> {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Good times outdoor or at home",
-                style: TextStyle(fontSize: 14, color: Color(0xFF6F6F6F)),
+                style: TextStyle(fontSize: 12, color: Color(0xFF6F6F6F)),
               ),
             ),
             SizedBox(height: 16),
@@ -1598,16 +1570,16 @@ class _HomescreenState extends State<Homescreen> {
                   Text(
                     "Must-Attend Live Events",
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                       color: Color(0xFF1F1F1F),
                     ),
                   ),
                   Text(
                     "See All ›",
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       color: Color(0xFFE53935),
                     ),
                   ),
@@ -1664,7 +1636,7 @@ class _HomescreenState extends State<Homescreen> {
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   fontSize: 13,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w400,
                                   color: Color(0xFF1F1F1F),
                                 ),
                               ),
@@ -1674,10 +1646,10 @@ class _HomescreenState extends State<Homescreen> {
                               /// Venue
                               Text(
                                  MustAttendLive[index]['location']!,
-                                maxLines: 1,
+                                maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 11,
+                                  fontSize: 10,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -1698,8 +1670,8 @@ class _HomescreenState extends State<Homescreen> {
               child: Text(
                 "The Laughter Therapy",
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
                   color: Color(0xFF1F1F1F),
                 ),
               ),
@@ -1782,7 +1754,7 @@ class _HomescreenState extends State<Homescreen> {
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   fontSize: 13,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w400,
                                   color: Color(0xFF1F1F1F),
                                 ),
                               ),
@@ -1795,7 +1767,7 @@ class _HomescreenState extends State<Homescreen> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 11,
+                                  fontSize: 10,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -1818,16 +1790,16 @@ class _HomescreenState extends State<Homescreen> {
                   Text(
                     "Popular Events",
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                       color: Color(0xFF1F1F1F),
                     ),
                   ),
                   Text(
                     "See All ›",
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       color: Color(0xFFE53935),
                     ),
                   ),
@@ -1909,8 +1881,8 @@ class _HomescreenState extends State<Homescreen> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
                                   color: Color(0xFF1F1F1F),
                                 ),
                               ),
@@ -1923,7 +1895,7 @@ class _HomescreenState extends State<Homescreen> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 10,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -1946,16 +1918,16 @@ class _HomescreenState extends State<Homescreen> {
                   Text(
                     "Top Games & Sports Events",
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                       color: Color(0xFF1F1F1F),
                     ),
                   ),
                   Text(
                     "See All ›",
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       color: Color(0xFFE53935),
                     ),
                   ),
@@ -2017,7 +1989,7 @@ class _HomescreenState extends State<Homescreen> {
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   fontSize: 13,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w400,
                                   color: Color(0xFF1F1F1F),
                                 ),
                               ),
@@ -2030,7 +2002,7 @@ class _HomescreenState extends State<Homescreen> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 11,
+                                  fontSize: 10,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -2052,16 +2024,16 @@ class _HomescreenState extends State<Homescreen> {
                   Text(
                     "Your Music Studio",
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                       color: Color(0xFF1F1F1F),
                     ),
                   ),
                   Text(
                     "See All ›",
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       color: Color(0xFFE53935),
                     ),
                   ),
@@ -2118,7 +2090,7 @@ class _HomescreenState extends State<Homescreen> {
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   fontSize: 13,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w400,
                                   color: Color(0xFF1F1F1F),
                                 ),
                               ),
@@ -2131,7 +2103,7 @@ class _HomescreenState extends State<Homescreen> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 10,
                                   color: Color(0xFF8A8A8A),
                                 ),
                               ),
@@ -2168,18 +2140,15 @@ class _HomescreenState extends State<Homescreen> {
                   "Explore All Categories",
                   style: TextStyle(
                     fontSize: 12,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w400,
                     color: Color(0xFFE53935),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Divider(thickness: 1),
-            ),
-            const SizedBox(height: 48),
+            Divider(thickness: 1,indent: 20,endIndent: 20,),
+            const SizedBox(height: 10),
 
             /// Optional faded watermark (can remove if not needed)
             Opacity(
@@ -2187,6 +2156,7 @@ class _HomescreenState extends State<Homescreen> {
               child: Center(
                 child: Image.network(
                   "https://latestlogo.com/wp-content/uploads/2024/03/bookmyshow.png",
+                //  color: const Color(0xE79E9E9E),
                   height: 40,
                 ),
               ),

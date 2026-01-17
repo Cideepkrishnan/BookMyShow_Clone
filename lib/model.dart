@@ -109,7 +109,7 @@ final List<TopMovie> movies = [
     ),
       TopMovie(
       image:
-          "https://media2.firstshowing.net/firstshowing/img17/NurembergPostermainbigimg591.jpg",
+          "https://th.bing.com/th/id/R.5a1eb322141a49557a0b80e835fec1cc?rik=GFZC0X5G38lZ2g&riu=http%3a%2f%2fwww.impawards.com%2f2025%2fposters%2fnuremberg_ver5.jpg&ehk=5F%2bNqAreWs%2bKvGn4YXs030TczjDGr9XH157xmdhsQqI%3d&risl=&pid=ImgRaw&r=0",
       title: "Nuremberg",
       info: "2h 30m • Drama,Historical • UA16+ • English",
       description: "A young American soldier and a German psychologist must race against time to..",
@@ -540,7 +540,7 @@ List<Map<String, dynamic>> categoryList = [
     "screen": const Musicshow(),
   },
   {
-    "title": "Men’s\nT20WC 2026",
+    "title": "Men’s\n T20WC 2026",
     "icon": "assets/icons/cricket.png",
     "screen": const Menst20(),
   },

@@ -34,7 +34,7 @@ class _BrowsebycinemaState extends State<Browsebycinema> {
         }, icon: Icon(Icons.arrow_back_ios,size: 16,)),
         title: Text(
           "Cinemas",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
         ),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.filter_list, size: 14)),
