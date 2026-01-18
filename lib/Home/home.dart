@@ -41,7 +41,7 @@ class _HomescreenState extends State<Homescreen> {
             Text(
               "It All Starts Here!",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 19,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
@@ -259,7 +259,7 @@ class _HomescreenState extends State<Homescreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
-                  height: 75,
+                  height: 65,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -318,21 +318,21 @@ class _HomescreenState extends State<Homescreen> {
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 13,
+                                      fontSize: 12,
                                     ),
                                   ),
                                   SizedBox(width: 6),
                                   Text(
                                     "hub",
                                     style: TextStyle(
-                                      fontSize: 13,
+                                      fontSize: 12,
                                       color: Colors.grey,
                                     ),
                                   ),
                                 ],
                               ),
 
-                              const SizedBox(height: 5),
+                              const SizedBox(height: 3),
 
                               Row(
                                 children: const [
@@ -346,7 +346,7 @@ class _HomescreenState extends State<Homescreen> {
                                     "JioHotstar",
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 13,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -360,7 +360,7 @@ class _HomescreenState extends State<Homescreen> {
                                 child: Text(
                                   "WATCH NOW",
                                   style: TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 10,
                                     color: Colors.cyanAccent,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1,
@@ -601,7 +601,7 @@ class _HomescreenState extends State<Homescreen> {
                           SizedBox(height: 12),
                           SizedBox(
                             width: double.infinity,
-                            height: 48,
+                            height: 38,
                             child: OutlinedButton(
                               onPressed: () {},
                               style: OutlinedButton.styleFrom(
@@ -676,7 +676,7 @@ class _HomescreenState extends State<Homescreen> {
                         SizedBox(height: 6),
                         Text(
                           newyear[index]['date']!,
-                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                          style: TextStyle(fontSize: 11, color: Colors.black54),
                         ),
                         SizedBox(height: 4),
                         Text(
@@ -2135,8 +2135,8 @@ class _HomescreenState extends State<Homescreen> {
                   size: 18,
                   color: Color(0xFFE53935), // BookMyShow red
                 ),
-                const SizedBox(width: 8),
-                const Text(
+                 SizedBox(width: 8),
+                 Text(
                   "Explore All Categories",
                   style: TextStyle(
                     fontSize: 12,
@@ -2148,9 +2148,9 @@ class _HomescreenState extends State<Homescreen> {
             ),
             const SizedBox(height: 16),
             Divider(thickness: 1,indent: 20,endIndent: 20,),
-            const SizedBox(height: 10),
 
-            /// Optional faded watermark (can remove if not needed)
+             SizedBox(height: 10),
+
             Opacity(
               opacity: 0.20,
               child: Center(
@@ -2162,7 +2162,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
 
-            const SizedBox(height: 48),
+             SizedBox(height: 48),
           ],
         ),
       ),

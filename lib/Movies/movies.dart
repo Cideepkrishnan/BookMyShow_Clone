@@ -25,6 +25,7 @@ class _MoviesState extends State<Movies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -34,7 +35,7 @@ class _MoviesState extends State<Movies> {
               height: 44,
               child: FloatingActionButton.extended(
                 heroTag: "cinema",
-                backgroundColor: const Color(0xFFE31837),
+                backgroundColor: const Color(0xFFFA6464),
                 elevation: 6,
                 onPressed: () {
                    Navigator.push(context, MaterialPageRoute(builder: (context) => Browsebycinema(),));
@@ -48,7 +49,7 @@ class _MoviesState extends State<Movies> {
                   "Browse by Cinemas",
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                     fontSize: 14,
                   ),
                 ),
@@ -81,7 +82,7 @@ class _MoviesState extends State<Movies> {
           children: const [
             Text(
               "Now Showing",
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              style: TextStyle(color: Colors.black, fontSize: 19,fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 1,),
             Text(
@@ -216,7 +217,7 @@ class _MoviesState extends State<Movies> {
               child: Container(
                 height: 55,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFE31837),
+                  color: const Color(0xFFF95A5A),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Center(
@@ -228,7 +229,7 @@ class _MoviesState extends State<Movies> {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       Text(
@@ -236,7 +237,7 @@ class _MoviesState extends State<Movies> {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                       Icon(Icons.arrow_forward_ios, color: Colors.white),
@@ -298,7 +299,7 @@ class _MoviesState extends State<Movies> {
                             const SizedBox(width: 4),
                             Text(
                               Recomendedmovies[index]["rating"],
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(fontWeight: FontWeight.w400),
                             ),
                            Spacer(),
                             Text(
@@ -317,8 +318,8 @@ class _MoviesState extends State<Movies> {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13,
                         ),
                       ),
                     ],

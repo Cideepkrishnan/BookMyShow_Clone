@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
               "Hi Cideep!",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 22,
+                fontSize: 19,
                 fontWeight: FontWeight.bold,
               ),
             ),

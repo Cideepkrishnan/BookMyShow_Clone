@@ -30,7 +30,7 @@ class _LiveEventState extends State<LiveEvent> {
           children: const [
             Text(
               "Live Events",
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              style: TextStyle(color: Colors.black, fontSize: 19,fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 1),
             Text(
@@ -278,7 +278,7 @@ class _LiveEventState extends State<LiveEvent> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Text(
                 'Choices Vast But Filling Fast',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
             ),
             // const SizedBox(height: 6),
@@ -506,7 +506,7 @@ class _LiveEventState extends State<LiveEvent> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Text(
                 "Get Set For The Weekend",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
             ),
             //SizedBox(height: 2),
@@ -529,7 +529,7 @@ class _LiveEventState extends State<LiveEvent> {
                     child: Container(
                       width: 90,
                       height: 150,
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [Color(0xFF9BA7FF), Color(0xFF5A9CFD)],
@@ -543,34 +543,29 @@ class _LiveEventState extends State<LiveEvent> {
                         ),
                       ),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Spacer(),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              weekendCategories[index]['title']!,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                height: 1.2,
-                              ),
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.ellipsis,
+                         
+                          Text(
+                            weekendCategories[index]['title']!,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              height: 1.2,
                             ),
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.ellipsis,
                           ),
 
                           const SizedBox(height: 2),
 
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Text(
-                              weekendCategories[index]['events']!,
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 10,
-                              ),
+                          Text(
+                            weekendCategories[index]['events']!,
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 10,
                             ),
                           ),
                         ],
@@ -635,6 +630,7 @@ class _LiveEventState extends State<LiveEvent> {
                               ),
                               child: Stack(
                                 children: [
+                                  
                                   /// 🖼 Background Image
                                   Image.asset(
                                     "assets/images/concert.png",
@@ -886,8 +882,8 @@ class _LiveEventState extends State<LiveEvent> {
                 "Choose Your Favourite Play",
                 style: TextStyle(
                   //color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
@@ -957,10 +953,10 @@ class _LiveEventState extends State<LiveEvent> {
               padding: const EdgeInsets.only(left: 8, top: 10),
               child: Text(
                 "Pick Your Perfect Mix",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
-            SizedBox(height: 2),
+           // SizedBox(height: 2),
             const Padding(
               padding: EdgeInsets.only(left: 8),
               child: Text(
@@ -1252,7 +1248,7 @@ class _LiveEventState extends State<LiveEvent> {
               padding: const EdgeInsets.only(left: 8.0, top: 20),
               child: Text(
                 "Network. Learn. Engage",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
               ),
             ),
 
@@ -1260,7 +1256,7 @@ class _LiveEventState extends State<LiveEvent> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Text(
                 "Level up with workshops, talks and more",
-                style: TextStyle(fontSize: 11, color: Colors.grey),
+                style: TextStyle(fontSize: 11, color: Colors.black45),
               ),
             ),
             const SizedBox(height: 16),
@@ -1281,7 +1277,7 @@ class _LiveEventState extends State<LiveEvent> {
             SizedBox(height: 16),
             Container(
               color: const Color(0xFF2F2F2F),
-              height: 210,
+              height: 200,
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -1292,24 +1288,24 @@ class _LiveEventState extends State<LiveEvent> {
                       "There Is More To Amusement Parks",
                       style: TextStyle(
                         fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
                     ),
                    // const SizedBox(height: 4),
                     const Text(
                       "Get started",
-                      style: TextStyle(fontSize: 11, color: Colors.grey),
+                      style: TextStyle(fontSize: 11, color: Colors.white),
                     ),
                     const SizedBox(height: 10),
 
                     SizedBox(
-                      height: 140,
+                      height: 130,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
                           Container(
-                            width: 150,
+                            width: 140,
                             decoration: BoxDecoration(
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(15),
@@ -1360,7 +1356,7 @@ class _LiveEventState extends State<LiveEvent> {
                           SizedBox(width: 12),
                           Container(
                             // height: 100,
-                            width: 150,
+                            width: 140,
                             decoration: BoxDecoration(
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(15),
@@ -1426,7 +1422,7 @@ class _LiveEventState extends State<LiveEvent> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Text(
                 'Explore More Experiences',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
             ),
             // const SizedBox(height: 6),
@@ -1448,7 +1444,7 @@ class _LiveEventState extends State<LiveEvent> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        width: 133,
+                        width: 135,
                         height: 130,
                         decoration: BoxDecoration(
                           color: Colors.grey,
@@ -1477,24 +1473,24 @@ class _LiveEventState extends State<LiveEvent> {
                               ),
 
                               // Gradient for text readability
-                              Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  height: 70,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.transparent,
-                                        Colors.black.withOpacity(0.7),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // Positioned(
+                              //   bottom: 0,
+                              //   left: 0,
+                              //   right: 0,
+                              //   child: Container(
+                              //     height: 70,
+                              //     decoration: BoxDecoration(
+                              //       gradient: LinearGradient(
+                              //         begin: Alignment.topCenter,
+                              //         end: Alignment.bottomCenter,
+                              //         colors: [
+                              //           Colors.transparent,
+                              //           Colors.black.withOpacity(0.7),
+                              //         ],
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
 
                               // Text ON image
                               Positioned(
@@ -1508,7 +1504,7 @@ class _LiveEventState extends State<LiveEvent> {
                                       "KIDS",
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -1516,7 +1512,7 @@ class _LiveEventState extends State<LiveEvent> {
                                     Text(
                                       "2 Events",
                                       style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.white,
                                         fontSize: 11,
                                       ),
                                     ),
@@ -1561,29 +1557,29 @@ class _LiveEventState extends State<LiveEvent> {
                               ),
 
                               // Gradient for text readability
-                              Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  height: 80,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.transparent,
-                                        Colors.black.withOpacity(0.7),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // Positioned(
+                              //   bottom: 0,
+                              //   left: 0,
+                              //   right: 0,
+                              //   child: Container(
+                              //     height: 80,
+                              //     decoration: BoxDecoration(
+                              //       gradient: LinearGradient(
+                              //         begin: Alignment.topCenter,
+                              //         end: Alignment.bottomCenter,
+                              //         colors: [
+                              //           Colors.transparent,
+                              //           Colors.black.withOpacity(0.7),
+                              //         ],
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
 
                               // Text ON image
                               Positioned(
                                 bottom: 12,
-                                left: 12,
+                                left: 10,
                                 right: 12,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1592,7 +1588,7 @@ class _LiveEventState extends State<LiveEvent> {
                                       "PERFORMANCES",
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 14,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -1600,7 +1596,7 @@ class _LiveEventState extends State<LiveEvent> {
                                     Text(
                                       "1 Events",
                                       style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.white,
                                         fontSize: 11,
                                       ),
                                     ),
@@ -1644,24 +1640,24 @@ class _LiveEventState extends State<LiveEvent> {
                               ),
 
                               // Gradient for text readability
-                              Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  height: 70,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.transparent,
-                                        Colors.black.withOpacity(0.7),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // Positioned(
+                              //   bottom: 0,
+                              //   left: 0,
+                              //   right: 0,
+                              //   child: Container(
+                              //     height: 70,
+                              //     decoration: BoxDecoration(
+                              //       gradient: LinearGradient(
+                              //         begin: Alignment.topCenter,
+                              //         end: Alignment.bottomCenter,
+                              //         colors: [
+                              //           Colors.transparent,
+                              //           Colors.black.withOpacity(0.7),
+                              //         ],
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
 
                               // Text ON image
                               Positioned(
@@ -1675,7 +1671,7 @@ class _LiveEventState extends State<LiveEvent> {
                                       "EXHIBITIONS",
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -1683,7 +1679,7 @@ class _LiveEventState extends State<LiveEvent> {
                                     Text(
                                       "1 Events",
                                       style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.white,
                                         fontSize: 11,
                                       ),
                                     ),

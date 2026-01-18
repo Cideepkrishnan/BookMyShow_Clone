@@ -552,7 +552,7 @@ List<Map<String, dynamic>> categoryList = [
    {
     "title": "Sports",
     "icon": "assets/icons/sports.png",
-    "screen": const Sports(),
+    "screen": const SportsScreen(),
   },
    {
     "title": "See All",
