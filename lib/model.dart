@@ -532,7 +532,7 @@ List<Map<String, dynamic>> categoryList = [
   {
     "title": "HSBC\nLounge",
     "icon": "assets/icons/lounge.png",
-    "screen": const Hsbclounge(),
+    "screen": const HSBCLoungeScreen(),
   },
   {
     "title": "Music\nShows",
@@ -542,7 +542,7 @@ List<Map<String, dynamic>> categoryList = [
   {
     "title": "Men’s\n T20WC 2026",
     "icon": "assets/icons/cricket.png",
-    "screen": const Menst20(),
+    "screen": const T20WorldCupScreen(),
   },
   {
     "title": "Kids\nZone",
@@ -557,7 +557,7 @@ List<Map<String, dynamic>> categoryList = [
    {
     "title": "See All",
     "icon": "assets/icons/layers.png",
-    "screen": const Seeall(),
+    "screen": const SeeAllScreen(),
   },
 ];
 

@@ -1,24 +1,25 @@
 import 'package:book_my_show/model.dart';
 import 'package:flutter/material.dart';
 
-class Musicshow extends StatefulWidget {
-  const Musicshow({super.key});
+class ComedyShows extends StatefulWidget {
+  const ComedyShows({super.key});
 
   @override
-  State<Musicshow> createState() => _MusicshowState();
+  State<ComedyShows> createState() => _ComedyShowsState();
 }
 
-class _MusicshowState extends State<Musicshow> {
+class _ComedyShowsState extends State<ComedyShows> {
   final List<Map<String, dynamic>> filterOptions = [
     {"title": "Filters",},
     {"title": "Sort By",},
-    {"title": "Browse By Venues",},
+    {"title": "Browse By Venues", },
   ];
 
- 
+  
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -33,16 +34,16 @@ class _MusicshowState extends State<Musicshow> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text(
-              "Music Shows",
+              "Comedy Shows",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: FontWeight.w500,
               ),
             ),
             Text(
-              "Kanhangad | 26 Events",
-              style: TextStyle(color: Colors.grey, fontSize: 11),
+              "Kanhangad | 2 Events",
+              style: TextStyle(color: Colors.black54, fontSize: 10),
             ),
           ],
         ),
@@ -61,7 +62,7 @@ class _MusicshowState extends State<Musicshow> {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/mushw.png"),
+                  image: AssetImage("assets/images/cdshowbaner.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -79,8 +80,6 @@ class _MusicshowState extends State<Musicshow> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      // margin: EdgeInsets.only(right: index == filterOptions.length - 1 ? 0 : 12),
-                      //width: filterOptions[index]["width"],
                       padding: EdgeInsets.only(
                         top: 3,
                         bottom: 3,
@@ -112,7 +111,7 @@ class _MusicshowState extends State<Musicshow> {
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: musishow.length,
+              itemCount: comedyList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 5,
@@ -135,7 +134,7 @@ class _MusicshowState extends State<Musicshow> {
                             borderRadius: BorderRadius.circular(8),
                             image: DecorationImage(
                               image: NetworkImage(
-                                musishow[index]["image"]!,
+                                comedyList[index]["image"]!,
                               ),
                               fit: BoxFit.cover,
                             ),
@@ -156,7 +155,7 @@ class _MusicshowState extends State<Musicshow> {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
-                            musishow[index]["date"]!,
+                            comedyList[index]["date"]!,
                             style: const TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w500,
@@ -166,30 +165,23 @@ class _MusicshowState extends State<Musicshow> {
 
                         const SizedBox(height: 4),
                         Text(
-                          musishow[index]["title"]!,
+                          comedyList[index]["title"]!,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
                             height: 1.3,
                           ),
                         ),
 
                         const SizedBox(height: 2),
                         Text(
-                          musishow[index]["location"]!,
+                          comedyList[index]["subtitle"]!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            fontSize: 10,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Text(
-                          musishow[index]["type"]!,
-                          style: const TextStyle(
-                            fontSize: 9,
+                            fontSize: 11,
                             color: Colors.black54,
                           ),
                         ),

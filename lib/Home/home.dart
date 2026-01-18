@@ -1,3 +1,4 @@
+import 'package:book_my_show/Home/Theter_Location/theter_location.dart';
 import 'package:book_my_show/Home/browseByCinema.dart';
 import 'package:book_my_show/model.dart';
 import 'package:book_my_show/movie_detail.dart';
@@ -37,7 +38,7 @@ class _HomescreenState extends State<Homescreen> {
         backgroundColor: Colors.white,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children:  [
             Text(
               "It All Starts Here!",
               style: TextStyle(
@@ -47,9 +48,16 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
             SizedBox(height: 2),
-            Text(
-              "Kanhangad  >",
-              style: TextStyle(color: Colors.red, fontSize: 11, fontWeight: FontWeight.w400,),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {return CitySelector();
+                  
+                },));
+              },
+              child: Text(
+                "Kanhangad  >",
+                style: TextStyle(color: Colors.red, fontSize: 11, fontWeight: FontWeight.w400,),
+              ),
             ),
           ],
         ),
@@ -85,8 +93,8 @@ class _HomescreenState extends State<Homescreen> {
             Padding(
               padding: const EdgeInsets.only(top: 4,bottom: 10,right: 10),
               child: Container(
-                // color: Colors.amber,
-                height: 90,
+               // color: Colors.amber,
+                height: 80,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: categoryList.length,
@@ -95,28 +103,25 @@ class _HomescreenState extends State<Homescreen> {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => categoryList[index]["screen"],));
                       },
-                      child: Container(
-                        // color: Colors.amber,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: CircleAvatar(
-                                radius: 22,
-                                backgroundColor: Colors.white,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(7,), 
-                                  child: Image.asset(
-                                    categoryList[index]["icon"]!,
-                                    width: 20,
-                                    height: 20,
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 3.0,left: 17,bottom: 3),
+                            child: CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Colors.white,
+                              child: Image.asset(
+                                categoryList[index]["icon"]!,
+                                width: 22,
+                                height: 22,
+                                fit: BoxFit.contain,
                               ),
                             ),
-                            //const SizedBox(height: 6),
-                            Text(
+                          ),
+                          //const SizedBox(height: 6),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 3.0,left: 17,bottom: 3),
+                            child: Text(
                               categoryList[index]['title']!,
                                textAlign: TextAlign.center,
                               style: const TextStyle(
@@ -124,8 +129,8 @@ class _HomescreenState extends State<Homescreen> {
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     );
                   },
@@ -738,45 +743,47 @@ class _HomescreenState extends State<Homescreen> {
                         child: Stack(
                           children: [
                             Positioned.fill(
-                              child: Image.network(
-                                "https://www.resellerclub.com/blog/wp-content/uploads/2020/11/linux-vs-windows-vps-which-is-the-best-os-for-vps-bb.jpg",
+                              child: Image.asset(
+                                "assets/images/toplan.png",
+
+                               // "https://www.resellerclub.com/blog/wp-content/uploads/2020/11/linux-vs-windows-vps-which-is-the-best-os-for-vps-bb.jpg",
                                 fit: BoxFit.cover,
                                 alignment: Alignment.centerLeft,
                               ),
                             ),
-                            Positioned.fill(
-                              child: Container(color: Color(0x43E6A3B3)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 35,
-                                left: 8,
-                                bottom: 8,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "PLAN FOR\nTODAY",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "6 Events",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // Positioned.fill(
+                            //   child: Container(color: Color(0x43E6A3B3)),
+                            // ),
+                            // Padding(
+                            //   padding: const EdgeInsets.only(
+                            //     top: 35,
+                            //     left: 8,
+                            //     bottom: 8,
+                            //   ),
+                            //   child: Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.center,
+                            //     children: [
+                            //       Text(
+                            //         "PLAN FOR\nTODAY",
+                            //         style: const TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 16,
+                            //           fontWeight: FontWeight.bold,
+                            //           height: 1.2,
+                            //         ),
+                            //       ),
+                            //       Spacer(),
+                            //       Text(
+                            //         "6 Events",
+                            //         style: const TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 12,
+                            //           fontWeight: FontWeight.bold,
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
@@ -791,51 +798,47 @@ class _HomescreenState extends State<Homescreen> {
                         borderRadius: BorderRadius.circular(15),
                         child: Stack(
                           children: [
-                            /// 🖼 Background Image
                             Positioned.fill(
-                              child: Image.network(
-                                "https://www.theladders.com/wp-content/uploads/happy_millennials2_190528-800x450.jpg",
+                              child: Image.asset(
+                                "assets/images/tplan.png",
+                              //  "https://www.theladders.com/wp-content/uploads/happy_millennials2_190528-800x450.jpg",
                                 fit: BoxFit.cover,
                                 alignment: Alignment.center,
                               ),
                             ),
-
-                            /// 🎨 Color Overlay
-                            Positioned.fill(
-                              child: Container(color: Color(0x6A70AF1D)),
-                            ),
-
-                            /// 📝 Text Content
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 40,
-                                left: 10,
-                                bottom: 5,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "PLAN FOR\nTOMORROW",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "10+ Events",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // Positioned.fill(
+                            //   child: Container(color: Color(0x6A70AF1D)),
+                            // ),
+                            // Padding(
+                            //   padding: const EdgeInsets.only(
+                            //     top: 40,
+                            //     left: 10,
+                            //     bottom: 5,
+                            //   ),
+                            //   child: Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.center,
+                            //     children: [
+                            //       Text(
+                            //         "PLAN FOR\nTOMORROW",
+                            //         style: const TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 16,
+                            //           fontWeight: FontWeight.bold,
+                            //           height: 1.2,
+                            //         ),
+                            //       ),
+                            //       Spacer(),
+                            //       Text(
+                            //         "10+ Events",
+                            //         style: const TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 12,
+                            //           fontWeight: FontWeight.bold,
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
@@ -852,49 +855,46 @@ class _HomescreenState extends State<Homescreen> {
                           children: [
                             /// 🖼 Background Image
                             Positioned.fill(
-                              child: Image.network(
-                                "https://st4.depositphotos.com/1017228/19776/i/1600/depositphotos_197764318-stock-photo-group-happy-multiracial-people-showing.jpg",
-                                fit: BoxFit.fitHeight,
+                              child: Image.asset(
+                                "assets/images/wplan.png",
+                               // "https://st4.depositphotos.com/1017228/19776/i/1600/depositphotos_197764318-stock-photo-group-happy-multiracial-people-showing.jpg",
+                                fit: BoxFit.cover,
                                 alignment: Alignment.centerLeft,
                               ),
                             ),
-
-                            /// 🎨 Color Overlay
-                            Positioned.fill(
-                              child: Container(color: Color(0x577CB2C0)),
-                            ),
-
-                            /// 📝 Text Content
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 40,
-                                left: 10,
-                                bottom: 5,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "WEEKEND \n PLANS",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "20+ Events",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // Positioned.fill(
+                            //   child: Container(color: Color(0x577CB2C0)),
+                            // ),
+                            // Padding(
+                            //   padding: const EdgeInsets.only(
+                            //     top: 40,
+                            //     left: 10,
+                            //     bottom: 5,
+                            //   ),
+                            //   child: Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.center,
+                            //     children: [
+                            //       Text(
+                            //         "WEEKEND \n PLANS",
+                            //         style: const TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 16,
+                            //           fontWeight: FontWeight.bold,
+                            //           height: 1.2,
+                            //         ),
+                            //       ),
+                            //       Spacer(),
+                            //       Text(
+                            //         "20+ Events",
+                            //         style: const TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 12,
+                            //           fontWeight: FontWeight.bold,
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),

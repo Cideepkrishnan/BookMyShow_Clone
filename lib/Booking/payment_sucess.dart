@@ -1,50 +1,6 @@
 import 'package:book_my_show/Booking/ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
-// class PaymentSucess extends StatefulWidget {
-//   const PaymentSucess({super.key});
-
-//   @override
-//   State<PaymentSucess> createState() => _PaymentSucessState();
-// }
-
-// class _PaymentSucessState extends State<PaymentSucess> {
-//   @override
-//   void initState() {
-//     // TODO: implement initState
-//     super.initState();
-//     Future.delayed(Duration(seconds: 3),() {
-//       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-//         return TicketScreen();
-//       },));
-//     },);
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: const Color(0xAD4CAF4F),
-//       body: Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Center(
-//             child: Lottie.asset(
-//               "assets/json/Success.json",
-//               height: 250,
-//               width: double.maxFinite,
-//               fit: BoxFit.contain,
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-
-
-
-
 class PaymentSuccess extends StatefulWidget {
   final String movieTitle;
   final String movieImage;

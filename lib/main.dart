@@ -5,6 +5,7 @@ import 'package:book_my_show/Home/browseByCinema.dart';
 import 'package:book_my_show/Movies/filter.dart';
 import 'package:book_my_show/dashbord.dart';
 import 'package:book_my_show/movie_detail.dart';
+import 'package:book_my_show/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -20,8 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:
-    // PaymentSucess()
-      Dashbord() ,
+     SplashScreen()
+      //Dashbord() ,
     );
   }
 }
