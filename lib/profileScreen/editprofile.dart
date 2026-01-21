@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
@@ -10,6 +11,22 @@ class EditProfileScreen extends StatefulWidget {
 class _EditProfileScreenState extends State<EditProfileScreen> {
   String selectedGender = '';
   String marriedStatus = 'No';
+
+  late String number;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _loadData();
+  }
+
+  _loadData()async{
+    SharedPreferences _prefs= await SharedPreferences.getInstance();
+    number=_prefs.getString('number')?? "";
+    setState(() {
+      
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +103,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),
-                        hintText: "+91 - 9072462527",
+                        hintText: 
+                        //"+91 - 9072462527",
+                        '$number',
                          hintStyle: TextStyle(fontSize: 12),
                       ),
                     ),
@@ -122,8 +141,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),
-                        hintText: "cideep671@gmail.com",
-                        hintStyle: TextStyle(fontSize: 12),
+                        // hintText: "cideep671@gmail.com",
+                        // hintStyle: TextStyle(fontSize: 12),
                       ),
                     ),
                   ),

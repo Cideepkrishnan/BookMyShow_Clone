@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Hi Cideep!",
+              "Hi !",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 19,

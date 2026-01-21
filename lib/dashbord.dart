@@ -5,15 +5,31 @@ import 'package:book_my_show/profileScreen/profile.dart';
 import 'package:flutter/material.dart';
 
 class Dashbord extends StatefulWidget {
-  const Dashbord({super.key});
+   final String city;
+  const Dashbord({super.key,required this.city});
 
   @override
   State<Dashbord> createState() => _DashbordState();
 }
 
 class _DashbordState extends State<Dashbord> {
-  List<Widget> pages=[Homescreen(),Movies(),LiveEvent(),Profile()];
+
+  // List<Widget> pages=[Homescreen(city: widget.city,),Movies(),LiveEvent(),Profile()];
   int current=0;
+
+  late List<Widget> pages;
+ @override
+  void initState() {
+    super.initState();
+
+    pages = [
+      Homescreen(city: widget.city),
+      Movies(),
+      LiveEvent(),
+      Profile(),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

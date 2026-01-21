@@ -1,4 +1,7 @@
+import 'package:book_my_show/Home/home.dart';
+import 'package:book_my_show/dashbord.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CitySelector extends StatefulWidget {
   const CitySelector({super.key});
@@ -22,79 +25,81 @@ class _CitySelectorState extends State<CitySelector> {
   ];
 
   final List<String> otherCities = [
-    'Aalo',
-    'Abohar',
-    'Abu Road',
-    'Achampet',
-    'Acharapakkam',
-    'Addanki',
-    "Baihar",
-    "Balod",
-    "Banki",
-    "Barhi",
-    "Basna",
-    "Chelur",
-    "Chennur",
-    "Cherthala",
-    "Cheyyur",
-    "Chikodi",
-    "Churu",
-    "Dang",
-    "Dandeli",
-    "Deesa",
-    "Dewas",
-    "Dhar",
-    "Erode",
-    "Erattupetta",
-    "Gajwal",
-    "Gangtok",
-    "Garia",
-    "Gaya",
-    "Harda",
-    "Hassan",
-    "Hisar",
-    "Hosur",
-    "Hunsur",
-    "Idar",
-    "Indi",
-    "Jaffna",
-    "Jaipur",
-    "Jalore",
-    "Jammu",
-    "Kaij",
-    "Kallara",
-    "Kandur",
-    "kanigiri",
-    "Ladakh",
-    "Latur",
-    "Leeja",
-    "Lonar",
-    "Lucknow",
-    "Maddur",
-    "Madikeri",
-    "Mahad",
-    "Maheshwar",
-    "Nagoda",
-    "Nashik",
-    "Nellore",
-    "Nenmara",
-    "Nilagiri",
-    "Ochira",
-    "Ooty",
-    "Pala",
-    "Palani",
-    "Palladam",
-    "Payyanur",
-    "Ranchi",
-    "Ranni",
-    "Sagar",
-    "Salem",
-    "Sangola",
-    "Srinagar",
-    "Tezu",
-    "Thamaraserry",
-    "Theni",
-      ];
+    'Kanhangad',
+   // 'Payyanur',
+    // 'Aalo',
+    // 'Abohar',
+    // 'Abu Road',
+    // 'Achampet',
+    // 'Acharapakkam',
+    // 'Addanki',
+    // "Baihar",
+    // "Balod",
+    // "Banki",
+    // "Barhi",
+    // "Basna",
+    // "Chelur",
+    // "Chennur",
+    // "Cherthala",
+    // "Cheyyur",
+    // "Chikodi",
+    // "Churu",
+    // "Dang",
+    // "Dandeli",
+    // "Deesa",
+    // "Dewas",
+    // "Dhar",
+    // "Erode",
+    // "Erattupetta",
+    // "Gajwal",
+    // "Gangtok",
+    // "Garia",
+    // "Gaya",
+    // "Harda",
+    // "Hassan",
+    // "Hisar",
+    // "Hosur",
+    // "Hunsur",
+    // "Idar",
+    // "Indi",
+    // "Jaffna",
+    // "Jaipur",
+    // "Jalore",
+    // "Jammu",
+    // "Kaij",
+    // "Kallara",
+    // "Kandur",
+    // "kanigiri",
+    // "Ladakh",
+    // "Latur",
+    // "Leeja",
+    // "Lonar",
+    // "Lucknow",
+    // "Maddur",
+    // "Madikeri",
+    // "Mahad",
+    // "Maheshwar",
+    // "Nagoda",
+    // "Nashik",
+    // "Nellore",
+    // "Nenmara",
+    // "Nilagiri",
+    // "Ochira",
+    // "Ooty",
+    // "Pala",
+    // "Palani",
+    // "Palladam",
+    // "Payyanur",
+    // "Ranchi",
+    // "Ranni",
+    // "Sagar",
+    // "Salem",
+    // "Sangola",
+    // "Srinagar",
+    // "Tezu",
+    // "Thamaraserry",
+    // "Theni",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +112,7 @@ class _CitySelectorState extends State<CitySelector> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black,size: 20,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
         ),
         title: const Text(
           'Kanhangad',
@@ -117,159 +122,173 @@ class _CitySelectorState extends State<CitySelector> {
             fontWeight: FontWeight.w400,
           ),
         ),
+        // actions: [
+        //   IconButton(onPressed: () {
+        //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+        //       return Dashbord();
+        //     },));
+        //   }, icon: Icon(Icons.abc))
+        // ],
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              height: 40,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey.shade300),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search for your city',
-                  hintStyle: TextStyle(
-                    color: Colors.black45,
-                    fontSize: 12,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search for your city',
+                    hintStyle: TextStyle(color: Colors.black45, fontSize: 12),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.grey.shade500,
+                      size: 18,
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 14,
+                    ),
                   ),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.grey.shade500,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.gps_fixed_outlined,
+                    color: Colors.red.shade400,
                     size: 18,
                   ),
-                  border: InputBorder.none,
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 14,
+                  const SizedBox(width: 8),
+                  Text(
+                    'Auto Detect My Location',
+                    style: TextStyle(
+                      color: Colors.red.shade400,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              color: const Color(0xFFF0EFEF),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                'POPULAR CITIES',
+                style: TextStyle(
+                  color: Colors.grey.shade600,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.gps_fixed_outlined,
-                  color: Colors.red.shade400,
-                  size: 18,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 0,
+                  crossAxisSpacing: 0,
+                  childAspectRatio: 0.75,
                 ),
-                const SizedBox(width: 8),
-                Text(
-                  'Auto Detect My Location',
-                  style: TextStyle(
-                    color: Colors.red.shade400,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            width: double.infinity,
-            color: const Color(0xFFF0EFEF),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: Text(
-              'POPULAR CITIES',
-              style: TextStyle(
-                color: Colors.grey.shade600,
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 0.5,
+                itemCount: popularCities.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey.shade300,
+                        // width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          popularCities[index]['image']!,
+                          height: 40,
+                          width: 50,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(height: 8),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: Text(
+                            popularCities[index]['name']!,
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black87,
+                              height: 1.2,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
-          ),
-           Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: GridView.builder(
+            Container(
+              width: double.infinity,
+              color: const Color(0xFFF0EFEF),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                'OTHER CITIES',
+                style: TextStyle(
+                  color: Colors.grey.shade600,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+            ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                mainAxisSpacing: 0,
-                crossAxisSpacing: 0,
-                childAspectRatio: 0.75,
-              ),
-              itemCount: popularCities.length,
+              itemCount: otherCities.length,
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey.shade300,
-                     // width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        popularCities[index]['image']!,
-                        height: 40,
-                        width: 50,
-                        fit: BoxFit.contain,
-                      ),
-                      const SizedBox(height: 8),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: Text(
-                          popularCities[index]['name']!,
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          style: const TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black87,
-                            height: 1.2,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ),
-          Container(
-            width: double.infinity,
-          color: const Color(0xFFF0EFEF),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: Text(
-              'OTHER CITIES',
-              style: TextStyle(
-                color: Colors.grey.shade600,
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: otherCities.length,
-            itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
                     border: Border(
-                      bottom: BorderSide(
-                        color: Colors.grey.shade200,
-                        width: 1,
-                      ),
+                      bottom: BorderSide(color: Colors.grey.shade200, width: 1),
                     ),
                   ),
                   child: ListTile(
-                    contentPadding: const EdgeInsets.only(
-                      left: 20,
-                    ),
+                    onTap: () async {
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      await prefs.setString('city', otherCities[index]);
+
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              Dashbord(city: otherCities[index]),
+                        ),
+                         (route) => false,
+                      );
+                    },
+
+                    contentPadding: const EdgeInsets.only(left: 20),
                     title: Text(
                       otherCities[index],
                       style: const TextStyle(
@@ -282,9 +301,8 @@ class _CitySelectorState extends State<CitySelector> {
                 );
               },
             ),
-          ]
-          ),
-        
+          ],
+        ),
       ),
     );
   }

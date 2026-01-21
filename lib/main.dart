@@ -4,6 +4,7 @@ import 'package:book_my_show/Home/Best%20Events/planfortody.dart';
 import 'package:book_my_show/Home/browseByCinema.dart';
 import 'package:book_my_show/Movies/filter.dart';
 import 'package:book_my_show/dashbord.dart';
+import 'package:book_my_show/Login/login_screen.dart';
 import 'package:book_my_show/movie_detail.dart';
 import 'package:book_my_show/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       home:
      SplashScreen()
       //Dashbord() ,
+      //LoginScreen()
     );
   }
 }

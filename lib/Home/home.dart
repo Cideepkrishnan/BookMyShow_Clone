@@ -6,13 +6,21 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class Homescreen extends StatefulWidget {
-  const Homescreen({super.key});
+   final String city;
+  const Homescreen({super.key, required this.city});
 
   @override
   State<Homescreen> createState() => _HomescreenState();
 }
 
 class _HomescreenState extends State<Homescreen> {
+   late String city;
+
+  @override
+  void initState() {
+    super.initState();
+    city = widget.city;
+  }
 
  
   List<String> banners = [
@@ -55,7 +63,8 @@ class _HomescreenState extends State<Homescreen> {
                 },));
               },
               child: Text(
-                "Kanhangad  >",
+               // "Kanhangad  >",
+                city,
                 style: TextStyle(color: Colors.red, fontSize: 11, fontWeight: FontWeight.w400,),
               ),
             ),
